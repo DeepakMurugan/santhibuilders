@@ -1,0 +1,37 @@
+# Delightful UI Builder
+
+Build this app using the HTML files referenced below. You can hotlink the images referenced in the HTML. The attached images are screenshots of the desired screens. Here are public links to the html of the screens which you should read and use to build the app:
+
+1. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzVkMWM0NmQ2MWQ1OTQ0NjZhMjVhZjc4M2NmNjM1NmI2EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+2. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzAwMDY1NzQyOGNlYjQxNWUwMDMwMzU1NGNlMzUwMTI1EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+3. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzMyOTBmZWU1MTAwZTQwN2U4MTFjM2FiZGRmOTJhOTIzEgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+4. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzg2Yjc1MDZiODg3ODRjODZiNDQ5NmRhNDY2ZmNjOGQ2EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+5. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2VlMmJhY2UxYmYzODRlMjdhY2MzZjE4ZTIwYWUzM2FiEgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+6. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzljMzcwODBmNTg1NzQ5OWU5MDM4YzBiNzFkMDdkMmQ2EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+7. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzZjMGYyNTYyODM1YTQ3Mjg5ZGY5NmRhZjc2MTUwOWIxEgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+8. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2M4ZWEyMDY0OWVkNzRmNDNhNWU1YmMxMjkzOWViOWJhEgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+9. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzViZmRhMDc1YTlhNjRlMzNiOTRhYzg1MjgyNDQ0M2U4EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+10. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2UzNTY4YzljNjMzZTQ1YjlhN2QxMzM3ZThkYWFiMTFmEgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+11. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2VlYzNhMmNiZDk2YzQ4MzhhMDNmMmNlZDRlZjkxNzE5EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+12. https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzllNjZlNjY4ODQ1MTRhOWNhZjY3MGE0ZTE2YjcwZDI0EgsSBxDLlOLL7g0YAZIBJAoKcHJvamVjdF9pZBIWQhQxMjQ3MzU1NzIxMzY5NDY2NjIxMg&filename=&opi=89354086
+
+
+make a clear complete website link all the page make a proper website also make a clear thing responsive pages for all the make a clear make a clear flow
+
+
+   use latest react website vite react tailwind css in it
+
+## Project
+
+Responsive multi-page construction website built with Vite, React, and Tailwind CSS.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
+```
