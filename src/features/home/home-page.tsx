@@ -17,7 +17,7 @@ const heroSlides = [
 ] as const;
 
 const residentialMeta: Record<string, { status: string; location: string; builtUp: string }> = {
-  "azure-horizon-villa": { status: "Completed", location: "Velachery, Chennai", builtUp: "2,400 sq.ft" },
+  "azure-horizon-villa": { status: "Completed", location: "pondicherry", builtUp: "2,400 sq.ft" },
   "monolith-residences": { status: "Ongoing", location: "Thiruvanmiyur", builtUp: "3,100 sq.ft" },
   "sea-crest-villas": { status: "Completed", location: "OMR, Chennai", builtUp: "2,150 sq.ft" },
 };
@@ -154,8 +154,8 @@ function HomeHeroSection({
   onSelectSlide: (index: number | ((current: number) => number)) => void;
 }) {
   return (
-    <header className={"relative w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto mt-6"}>
-      <div className={"relative h-[650px] md:h-[780px] overflow-hidden rounded-[2rem] shadow-2xl border border-outline-variant/20"}>
+    <header className={"relative mx-auto mt-4 w-full max-w-container-max px-margin-mobile sm:mt-6 md:px-gutter"}>
+      <div className={"relative min-h-155 overflow-hidden rounded-[1.5rem] border border-outline-variant/20 shadow-2xl sm:min-h-170 sm:rounded-[2rem] md:min-h-195"}>
         <div className={"absolute inset-0"} id={"hero-slider"}>
           {heroSlides.map((image, index) => (
             <div className={`hero-slide absolute inset-0 ${index === activeHeroSlide ? "opacity-100 z-0" : "opacity-0 z-0"}`} key={image}>
@@ -163,29 +163,29 @@ function HomeHeroSection({
             </div>
           ))}
         </div>
-        <div className={"absolute inset-0 bg-gradient-to-tr from-on-primary-fixed/90 via-on-primary-fixed/40 to-transparent z-10"}></div>
-        <div className={"absolute inset-0 z-20 flex items-center px-8 md:px-16"}>
+        <div className={"absolute inset-0 z-10 bg-linear-to-tr from-on-primary-fixed/90 via-on-primary-fixed/40 to-transparent"}></div>
+        <div className={"absolute inset-0 z-20 flex items-center px-5 py-12 sm:px-8 md:px-16"}>
           <div className={"max-w-3xl text-white"}>
-            <div className={"inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8 backdrop-blur-md"}>
+            <div className={"mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-md sm:mb-8 sm:px-4"}>
               <span className={"material-symbols-outlined text-secondary-container text-xs"}>verified</span>
               <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>ISO 9001:2015 Certified</span>
             </div>
-            <h1 className={"font-display-lg text-[48px] md:text-7xl mb-6 leading-[1.05] font-extrabold tracking-tight"}>
+            <h1 className={"font-display-lg text-4xl leading-[1.05] font-extrabold tracking-tight sm:text-5xl md:mb-6 md:text-7xl"}>
               {" "}Crafting{" "}
               <span className={"text-primary italic"}>Architectural</span>
               {" "}Masterpieces{" "}
             </h1>
-            <p className={"font-body-lg text-body-lg mb-10 opacity-90 max-w-lg leading-relaxed border-l-4 border-primary pl-8"}>
+            <p className={"font-body-lg mb-8 max-w-lg border-l-4 border-primary pl-4 text-base leading-relaxed opacity-90 sm:mb-10 sm:pl-8 sm:text-body-lg"}>
               {" "}Engineering structural excellence in Chennai starting at{" "}
               <span className={"text-white font-black underline decoration-secondary-container decoration-4 underline-offset-8"}>₹1899/Sq.Ft</span>
               .{" "}
             </p>
-            <div className={"flex flex-wrap gap-6"}>
-              <Link className={"bg-primary text-on-primary px-10 py-5 rounded-lg font-black text-lg hover:shadow-2xl hover:translate-x-2 transition-all shadow-lg flex items-center gap-3"} to={"/estimate-calculator"}>
+            <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:gap-6"}>
+              <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-base font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-10 sm:py-5 sm:text-lg"} to={"/estimate-calculator"}>
                 {" "}Calculate Cost Now{" "}
                 <span className={"material-symbols-outlined"}>arrow_forward</span>
               </Link>
-              <Link className={"bg-white/10 backdrop-blur-md border border-white/30 text-white px-10 py-5 rounded-lg font-bold hover:bg-white hover:text-on-surface transition-all"} to={"/projects"}>
+              <Link className={"flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-on-surface sm:px-10 sm:py-5"} to={"/projects"}>
                 {" "}View Projects{" "}
               </Link>
             </div>
@@ -200,7 +200,7 @@ function HomeHeroSection({
             title="Free Project Estimate"
           />
         </div>
-        <div className={"absolute bottom-12 left-12 z-30 flex gap-3"}>
+        <div className={"absolute bottom-6 left-5 z-30 flex gap-3 sm:bottom-12 sm:left-12"}>
           {heroSlides.map((slide, index) => (
             <button
               aria-label={`Go to slide ${index + 1}`}
@@ -224,18 +224,18 @@ function HomeLegacySection() {
         <div className={"grid lg:grid-cols-12 gap-12 items-center"}>
           <div className={"lg:col-span-7 relative group"}>
             <div className={"absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"}></div>
-            <img alt={"Santhi Builders Excellence"} className={"w-full h-[550px] object-cover rounded-3xl shadow-2xl border border-outline-variant/20 relative z-10"} src={"/images/excellence.jpg"} />
+            <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-cover shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-137.5"} src={"/images/excellence.jpg"} />
             <div className={"absolute -bottom-8 -right-8 bg-white p-10 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
               <p className={"text-primary font-black text-6xl leading-none"}>15+</p>
               <p className={"text-xs uppercase tracking-[0.3em] font-black text-on-surface-variant mt-2"}>Years of Trust</p>
             </div>
           </div>
-          <div className={"lg:col-span-5 space-y-8 lg:pl-12"}>
+          <div className={"space-y-6 lg:col-span-5 lg:space-y-8 lg:pl-12"}>
             <div className={"inline-flex items-center gap-3 text-primary font-black tracking-[0.3em] uppercase text-xs"}>
               <span className={"h-1 w-12 bg-primary rounded-full"}></span>
               {" "}Our Legacy{" "}
             </div>
-            <h2 className={"font-headline-lg text-4xl md:text-5xl lg:text-6xl leading-tight text-on-surface font-black"}>
+            <h2 className={"font-headline-lg text-4xl font-black leading-tight text-on-surface sm:text-5xl lg:text-6xl"}>
               {" "}Engineering the Future,{" "}
               <br />
               <span className={"text-primary italic"}>Honoring Foundations</span>
@@ -244,7 +244,7 @@ function HomeLegacySection() {
               {" "}With over 15 years of commitment, Santhi Builders has redefined Chennai's skyline. We don't just build; we craft legacies using cutting-edge engineering and refined traditional craftsmanship.{" "}
             </p>
             <div className={"pt-6"}>
-              <Link className={"bg-primary text-white px-10 py-5 rounded-lg font-black text-lg hover:shadow-2xl hover:-translate-y-1 transition-all flex items-center gap-3 w-fit"} to={"/about"}>
+              <Link className={"inline-flex w-fit items-center gap-3 rounded-lg bg-primary px-6 py-4 text-base font-black text-white transition-all hover:-translate-y-1 hover:shadow-2xl sm:px-10 sm:py-5 sm:text-lg"} to={"/about"}>
                 {" "}Learn More About Us{" "}
                 <span className={"material-symbols-outlined"}>north_east</span>
               </Link>
@@ -265,12 +265,12 @@ function HomeStatsSection() {
   ] as const;
 
   return (
-    <section className={"py-12 bg-surface-container-lowest border-y border-outline-variant/20 relative z-10 mx-margin-mobile md:mx-gutter rounded-[3rem] shadow-sm"}>
-      <div className={"max-w-container-max mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-12"}>
+    <section className={"relative z-10 mx-margin-mobile rounded-[2rem] border-y border-outline-variant/20 bg-surface-container-lowest py-8 shadow-sm sm:rounded-[3rem] md:mx-gutter md:py-12"}>
+      <div className={"mx-auto grid max-w-container-max grid-cols-2 gap-6 px-5 sm:gap-10 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12"}>
         {stats.map((stat) => (
           <div className={"text-left border-l-4 border-primary pl-6"} key={stat.label}>
-            <div className={"font-display-lg text-5xl text-primary mb-1 font-black"}>{stat.value}</div>
-            <p className={"font-label-sm text-on-surface-variant uppercase tracking-[0.2em] font-bold"}>{stat.label}</p>
+            <div className={"font-display-lg mb-1 text-4xl font-black text-primary sm:text-5xl"}>{stat.value}</div>
+              <p className={"font-label-sm text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface-variant sm:text-label-sm sm:tracking-[0.2em]"}>{stat.label}</p>
           </div>
         ))}
       </div>
@@ -311,9 +311,9 @@ function HomeExpertiseSection() {
   ] as const;
 
   return (
-    <section className={"py-section-gap overflow-visible"}>
+    <section className={"overflow-visible py-14 sm:py-section-gap"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
-        <div className={"flex flex-col lg:flex-row items-end justify-between mb-20 gap-8"}>
+        <div className={"mb-10 flex flex-col gap-6 sm:mb-20 lg:flex-row lg:items-end lg:justify-between"}>
           <div className={"max-w-2xl"}>
             <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Specializations</span>
             <h2 className={"font-headline-lg text-4xl md:text-5xl lg:text-6xl font-black"}>
@@ -322,15 +322,15 @@ function HomeExpertiseSection() {
           </div>
           <div className={"w-full lg:w-1/3 h-px bg-outline-variant/30 mb-4 hidden lg:block"}></div>
         </div>
-        <div className={"grid grid-cols-1 md:grid-cols-12 gap-8"}>
+        <div className={"grid grid-cols-1 gap-5 sm:gap-8 md:grid-cols-12"}>
           {items.map((item) => (
-            <div className={`card-interactive bg-white p-12 rounded-3xl border border-outline-variant/30 group relative overflow-hidden transform ${item.className}`} key={item.title}>
+            <div className={`card-interactive group relative overflow-hidden rounded-3xl border border-outline-variant/30 bg-white p-7 transform sm:p-10 lg:p-12 ${item.className}`} key={item.title}>
               {item.title === "Residential" && <div className={"absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -z-10 transition-all group-hover:w-full group-hover:h-full group-hover:rounded-none"}></div>}
               <div className={"w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors"}>
                 <span className={"material-symbols-outlined text-4xl text-primary group-hover:text-white"}>{item.icon}</span>
               </div>
-              <h4 className={"font-black text-3xl mb-4 text-on-surface"}>{item.title}</h4>
-              <p className={`text-lg text-on-surface-variant leading-relaxed ${item.maxWidth}`}>{item.body}</p>
+              <h4 className={"mb-4 text-2xl font-black text-on-surface sm:text-3xl"}>{item.title}</h4>
+              <p className={`text-base leading-relaxed text-on-surface-variant sm:text-lg ${item.maxWidth}`}>{item.body}</p>
             </div>
           ))}
         </div>
@@ -349,8 +349,8 @@ function HomeProjectsSection({
   setPortfolioApi: (api: CarouselApi) => void;
 }) {
   return (
-    <section className={"py-section-gap bg-surface-container-low/30 relative"}>
-      <div className={"absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-background to-transparent"}></div>
+    <section className={"relative bg-surface-container-low/30 py-14 sm:py-section-gap"}>
+      <div className={"absolute top-0 left-0 h-40 w-full bg-linear-to-b from-background to-transparent"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10"}>
         <div className={"mb-10 md:mb-16"}>
           <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Portfolio</span>
@@ -376,13 +376,13 @@ function HomeProjectsSection({
 
                 return (
                   <CarouselItem className={"pl-0 md:pl-4 md:basis-1/2 lg:basis-1/3"} key={project.slug}>
-                    <article className={"group/card relative h-[500px] rounded-[2.5rem] overflow-hidden border border-outline-variant/20 shadow-xl"}>
+                    <article className={"group/card relative h-107.5 overflow-hidden rounded-[2rem] border border-outline-variant/20 shadow-xl sm:h-125 sm:rounded-[2.5rem]"}>
                       <img alt={project.title} className={"absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"} src={project.image} />
-                      <div className={"absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"}></div>
+                      <div className={"absolute inset-0 bg-linear-to-t from-on-surface/80 via-transparent to-transparent"}></div>
                       <div className={`absolute top-6 left-6 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest z-20 ${meta.status === "Ongoing" ? "bg-secondary-container" : "bg-primary"}`}>
                         {meta.status}
                       </div>
-                      <div className={"absolute bottom-6 left-6 right-6 backdrop-blur-xl bg-white/10 border border-white/20 p-8 rounded-3xl transform transition-all duration-500 group-hover/card:-translate-y-2"}>
+                      <div className={"absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl transition-all duration-500 group-hover/card:-translate-y-2 sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-3xl sm:p-8"}>
                         <div className={"flex items-center gap-2 text-white/80 text-[10px] mb-2 uppercase tracking-widest font-bold"}>
                           <span className={"material-symbols-outlined text-primary text-sm"}>location_on</span>
                           {meta.location}
@@ -393,7 +393,7 @@ function HomeProjectsSection({
                             <p className={"text-[8px] uppercase font-bold text-white/60 mb-1 tracking-widest"}>Built Up</p>
                             <p className={"font-black text-sm text-primary"}>{meta.builtUp}</p>
                           </div>
-                          <Link className={"bg-white text-on-surface px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest opacity-0 group-hover/card:opacity-100 transition-all hover:bg-primary hover:text-white"} params={{ projectSlug: project.slug }} to={"/projects/$projectSlug"}>
+                          <Link className={"rounded-full bg-white px-3 py-2 text-[10px] font-black uppercase tracking-widest text-on-surface transition-all hover:bg-primary hover:text-white sm:px-4"} params={{ projectSlug: project.slug }} to={"/projects/$projectSlug"}>
                             View Project
                           </Link>
                         </div>
@@ -426,7 +426,7 @@ function HomeTestimonialsSection({
   testimonialApi: CarouselApi | undefined;
 }) {
   return (
-    <section className={"pt-12 md:pt-16 pb-section-gap bg-surface relative overflow-visible"}>
+    <section className={"relative overflow-visible bg-surface py-14 sm:pt-16 sm:pb-section-gap"}>
       <div className={"absolute top-1/2 left-0 w-full h-2/3 bg-primary/5 -skew-y-3 -z-10"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"mb-16"}>
@@ -438,18 +438,18 @@ function HomeTestimonialsSection({
             <CarouselContent className={"ml-0"}>
               {testimonials.map((item) => (
                 <CarouselItem key={item.name} className={"pl-0 md:pl-4 md:basis-[92%] lg:basis-[88%]"}>
-                  <div className={"testimonial-slide bg-white rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row items-stretch border border-outline-variant/20"}>
+                  <div className={"testimonial-slide flex flex-col items-stretch overflow-hidden rounded-[2rem] border border-outline-variant/20 bg-white shadow-2xl md:rounded-[3rem] lg:flex-row"}>
                     <div className={"w-full lg:w-3/5 aspect-video lg:h-auto relative group cursor-pointer overflow-hidden"}>
                       <img alt={item.name} className={"w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"} src={item.image} />
                       <div className={"absolute inset-0 bg-on-surface/20 flex items-center justify-center transition-colors group-hover:bg-on-surface/40"}>
-                        <div className={"w-16 h-16 md:w-24 md:h-24 bg-primary text-white rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm transform transition-transform group-hover:scale-110"}>
+                        <div className={"flex size-16 items-center justify-center rounded-full bg-primary text-white shadow-2xl backdrop-blur-sm transition-transform group-hover:scale-110 md:size-24"}>
                           <span className={"material-symbols-outlined text-4xl md:text-5xl fill-1"}>play_arrow</span>
                         </div>
                       </div>
                     </div>
-                    <div className={"w-full lg:w-2/5 p-8 md:p-10 lg:p-12 flex flex-col justify-center bg-surface-container-low/20 relative"}>
+                    <div className={"relative flex w-full flex-col justify-center bg-surface-container-low/20 p-6 md:p-10 lg:w-2/5 lg:p-12"}>
                       <span className={"material-symbols-outlined text-primary/10 text-7xl md:text-9xl absolute -top-3 right-4 md:right-8 leading-none -z-10"}>format_quote</span>
-                      <p className={"text-xl md:text-2xl text-on-surface mb-8 italic font-medium leading-[1.45] relative"}>{`"${item.quote}"`}</p>
+                      <p className={"relative mb-8 text-lg font-medium italic leading-[1.45] text-on-surface sm:text-xl md:text-2xl"}>{`"${item.quote}"`}</p>
                       <div className={"flex items-center gap-4 md:gap-5"}>
                         <div className={"w-14 h-14 md:w-20 md:h-20 rounded-2xl bg-white border-2 border-primary/20 overflow-hidden shadow-lg rotate-3"}>
                           <img alt={item.name} className={"w-full h-full object-cover"} src={item.avatar} />
@@ -502,7 +502,7 @@ function HomeWhySection() {
   ] as const;
 
   return (
-    <section className={"py-12 md:py-16 lg:py-20 bg-surface-container-low/50 relative overflow-hidden"}>
+    <section className={"relative overflow-hidden bg-surface-container-low/50 py-14 sm:py-16 lg:py-20"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"grid lg:grid-cols-12 gap-8 md:gap-10 items-end mb-10 md:mb-14"}>
           <div className={"lg:col-span-8"}>
@@ -515,7 +515,7 @@ function HomeWhySection() {
         </div>
         <div className={"grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 relative z-20"}>
           {items.map((item) => (
-            <div className={`card-interactive bg-white p-6 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-outline-variant/30 group shadow-xl transform ${item.className}`} key={item.title}>
+            <div className={`card-interactive group rounded-[2rem] border border-outline-variant/30 bg-white p-6 shadow-xl transform sm:p-8 md:rounded-[2.5rem] lg:p-10 ${item.className}`} key={item.title}>
               <div className={"w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform"}>
                 <span className={"material-symbols-outlined text-4xl text-primary"}>{item.icon}</span>
               </div>
@@ -537,7 +537,7 @@ function HomeComplianceSection({
   setPartnersApi: (api: CarouselApi) => void;
 }) {
   return (
-    <section className={"py-10 md:py-14 bg-surface-container-low border-y border-outline-variant/30 overflow-hidden relative"}>
+    <section className={"relative overflow-hidden border-y border-outline-variant/30 bg-surface-container-low py-10 sm:py-14"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-7 md:mb-10"}>
         <span className={"text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-4 block"}>Industry Compliance & Partners</span>
         <h3 className={"text-2xl sm:text-3xl md:text-4xl font-black text-on-surface"}>Recognized for Precision Built Quality</h3>
@@ -570,7 +570,7 @@ function HomeComplianceSection({
 
 function HomeTrustedClientsSection() {
   return (
-    <section className={"py-8 md:py-12 bg-white border-y border-outline-variant/10 relative overflow-hidden"}>
+    <section className={"relative overflow-hidden border-y border-outline-variant/10 bg-white py-8 sm:py-12"}>
       <div className={"absolute -left-12 top-1/2 -translate-y-1/2 w-44 h-44 bg-primary/5 rounded-full blur-3xl"}></div>
       <div className={"absolute -right-12 top-1/2 -translate-y-1/2 w-44 h-44 bg-secondary-container/10 rounded-full blur-3xl"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-5 md:mb-7 relative z-10"}>
@@ -582,7 +582,7 @@ function HomeTrustedClientsSection() {
         <div>
           <div className={"logo-scroll"}>
             {[...trustedClientLogos, ...trustedClientLogos].map((logo, index) => (
-              <div aria-hidden={index >= trustedClientLogos.length} className={"w-44 md:w-60 lg:w-72 flex items-center justify-center px-6 md:px-10 lg:px-12 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer border-x border-outline-variant/10"} key={`${logo.alt}-${index}`}>
+              <div aria-hidden={index >= trustedClientLogos.length} className={"flex w-36 cursor-pointer items-center justify-center border-x border-outline-variant/10 px-4 grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:w-52 sm:px-8 lg:w-72 lg:px-12"} key={`${logo.alt}-${index}`}>
                 <img alt={logo.alt} className={`${logo.heightClass} w-auto object-contain`} src={logo.src} />
               </div>
             ))}
@@ -595,12 +595,12 @@ function HomeTrustedClientsSection() {
 
 function HomeEstimatorSection() {
   return (
-    <section className={"py-10 md:py-14 relative overflow-hidden bg-primary mx-margin-mobile md:mx-gutter my-2 md:my-4 rounded-[2rem] md:rounded-[3rem] shadow-2xl backdrop-blur-sm border border-white/10"}>
+    <section className={"relative mx-margin-mobile my-2 overflow-hidden rounded-[2rem] border border-white/10 bg-primary py-10 shadow-2xl backdrop-blur-sm sm:my-4 sm:rounded-[3rem] sm:py-14 md:mx-gutter"}>
       <div className={"absolute inset-0 opacity-20"} style={{ backgroundImage: "radial-gradient(#fff 1.5px, transparent 1.5px)", backgroundSize: "40px 40px" }}></div>
       <div className={"absolute -top-24 -right-24 md:-top-32 md:-right-32 w-72 h-72 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"}></div>
       <div className={"absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"}></div>
       <div className={"max-w-container-max mx-auto px-5 md:px-8 lg:px-12 relative z-10 text-white"}>
-        <div className={"grid lg:grid-cols-12 gap-6 md:gap-8 lg:gap-10 items-center"}>
+        <div className={"grid items-center gap-6 md:gap-8 lg:grid-cols-12 lg:gap-10"}>
           <div className={"lg:col-span-8 text-center lg:text-left"}>
             <span className={"inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-4 md:mb-5"}>
               <span className={"material-symbols-outlined text-sm"}>calculate</span>
@@ -635,8 +635,8 @@ function HomeEstimatorSection() {
 
 function HomeFaqSection() {
   return (
-    <section className={"pt-8 md:pt-10 pb-12 md:pb-16"}>
-      <div className={"max-w-4xl mx-auto px-margin-mobile md:px-gutter"}>
+    <section className={"px-margin-mobile pb-12 pt-10 sm:pb-16 sm:pt-12 md:px-gutter"}>
+      <div className={"mx-auto max-w-4xl"}>
         <div className={"flex flex-col items-center gap-6 md:gap-8 mb-8 md:mb-12 text-center mx-auto max-w-3xl"}>
           <div className={"w-full"}>
             <h2 className={"font-headline-lg text-4xl md:text-5xl lg:text-6xl mb-6 font-black leading-tight"}>Common <br /><span className={"text-primary italic"}>Questions</span></h2>
@@ -647,11 +647,11 @@ function HomeFaqSection() {
         <div className={"space-y-6"}>
           {faqItems.map((item, index) => (
             <details className={"group bg-white rounded-[2rem] border border-outline-variant/30 overflow-hidden shadow-md"} key={item.question} open={index === 0}>
-              <summary className={"flex justify-between items-center p-8 cursor-pointer font-black text-xl list-none group-open:text-primary transition-colors"}>
+              <summary className={"flex cursor-pointer list-none items-center justify-between gap-4 p-5 text-base font-black transition-colors group-open:text-primary sm:p-8 sm:text-xl"}>
                 {` ${item.question} `}
                 <span className={"material-symbols-outlined group-open:rotate-180 transition-transform bg-primary/10 p-2 rounded-full"}>expand_more</span>
               </summary>
-              <div className={"px-8 pb-8 text-lg text-on-surface-variant leading-relaxed border-t border-outline-variant/10 pt-6"}>{` ${item.answer} `}</div>
+              <div className={"border-t border-outline-variant/10 px-5 pb-6 pt-5 text-base leading-relaxed text-on-surface-variant sm:px-8 sm:pb-8 sm:pt-6 sm:text-lg"}>{` ${item.answer} `}</div>
             </details>
           ))}
         </div>
