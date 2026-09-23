@@ -236,8 +236,8 @@ export function SiteFooter() {
                   </li>
                 ))}
                 <li>
-                  <Link className="transition-colors hover:text-white" to="/projects/azure-horizon-villa">
-                    Azure Horizon Villa
+                  <Link className="transition-colors hover:text-white" to="/projects/sobana">
+                    Sobana
                   </Link>
                 </li>
                 <li>

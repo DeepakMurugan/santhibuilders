@@ -17,7 +17,6 @@ import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as ProjectsIndexRouteImport } from './routes/projects.index'
 import { Route as ProjectsProjectSlugRouteImport } from './routes/projects.$projectSlug'
-import { Route as ProjectsAzureHorizonVillaRouteImport } from './routes/projects.azure-horizon-villa'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesDesignDrawingsRouteImport } from './routes/services.design-drawings'
 import { Route as ServicesInteriorDesignRouteImport } from './routes/services.interior-design'
@@ -68,12 +67,6 @@ const ProjectsProjectSlugRoute = ProjectsProjectSlugRouteImport.update({
   path: '/projects/$projectSlug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ProjectsAzureHorizonVillaRoute =
-  ProjectsAzureHorizonVillaRouteImport.update({
-    id: '/projects/azure-horizon-villa',
-    path: '/projects/azure-horizon-villa',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/services/',
   path: '/services/',
@@ -130,7 +123,6 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/projects/$projectSlug': typeof ProjectsProjectSlugRoute
-  '/projects/azure-horizon-villa': typeof ProjectsAzureHorizonVillaRoute
   '/services/design-drawings': typeof ServicesDesignDrawingsRoute
   '/services/interior-design': typeof ServicesInteriorDesignRoute
   '/services/project-management': typeof ServicesProjectManagementRoute
@@ -150,7 +142,6 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/projects/$projectSlug': typeof ProjectsProjectSlugRoute
-  '/projects/azure-horizon-villa': typeof ProjectsAzureHorizonVillaRoute
   '/services/design-drawings': typeof ServicesDesignDrawingsRoute
   '/services/interior-design': typeof ServicesInteriorDesignRoute
   '/services/project-management': typeof ServicesProjectManagementRoute
@@ -171,7 +162,6 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/projects/$projectSlug': typeof ProjectsProjectSlugRoute
-  '/projects/azure-horizon-villa': typeof ProjectsAzureHorizonVillaRoute
   '/services/design-drawings': typeof ServicesDesignDrawingsRoute
   '/services/interior-design': typeof ServicesInteriorDesignRoute
   '/services/project-management': typeof ServicesProjectManagementRoute
@@ -193,7 +183,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/terms-and-conditions'
     | '/projects/$projectSlug'
-    | '/projects/azure-horizon-villa'
     | '/services/design-drawings'
     | '/services/interior-design'
     | '/services/project-management'
@@ -213,7 +202,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/terms-and-conditions'
     | '/projects/$projectSlug'
-    | '/projects/azure-horizon-villa'
     | '/services/design-drawings'
     | '/services/interior-design'
     | '/services/project-management'
@@ -233,7 +221,6 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/terms-and-conditions'
     | '/projects/$projectSlug'
-    | '/projects/azure-horizon-villa'
     | '/services/design-drawings'
     | '/services/interior-design'
     | '/services/project-management'
@@ -254,7 +241,6 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ProjectsProjectSlugRoute: typeof ProjectsProjectSlugRoute
-  ProjectsAzureHorizonVillaRoute: typeof ProjectsAzureHorizonVillaRoute
   ServicesDesignDrawingsRoute: typeof ServicesDesignDrawingsRoute
   ServicesInteriorDesignRoute: typeof ServicesInteriorDesignRoute
   ServicesProjectManagementRoute: typeof ServicesProjectManagementRoute
@@ -323,13 +309,6 @@ declare module '@tanstack/react-router' {
       path: '/projects/$projectSlug'
       fullPath: '/projects/$projectSlug'
       preLoaderRoute: typeof ProjectsProjectSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/projects/azure-horizon-villa': {
-      id: '/projects/azure-horizon-villa'
-      path: '/projects/azure-horizon-villa'
-      fullPath: '/projects/azure-horizon-villa'
-      preLoaderRoute: typeof ProjectsAzureHorizonVillaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/': {
@@ -406,7 +385,6 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   ProjectsProjectSlugRoute: ProjectsProjectSlugRoute,
-  ProjectsAzureHorizonVillaRoute: ProjectsAzureHorizonVillaRoute,
   ServicesDesignDrawingsRoute: ServicesDesignDrawingsRoute,
   ServicesInteriorDesignRoute: ServicesInteriorDesignRoute,
   ServicesProjectManagementRoute: ServicesProjectManagementRoute,
