@@ -21,29 +21,30 @@ function ProjectManagement() {
   return (
     <>
       <header className={"bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 sticky z-50"}></header>
-      <section className={"relative min-h-[819px] flex items-center overflow-hidden bg-on-surface"}>
+      <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
         <div className={"absolute inset-0 z-0"}>
-          <div className={"w-full h-full bg-cover bg-center opacity-40 mix-blend-overlay"} data-alt={"A professional civil engineer in a white hard hat and high-visibility vest stands on a modern architectural construction site. He is holding a digital tablet and gesturing toward a reinforced concrete structure under a clear blue sky. The scene is crisp and high-contrast, conveying structural authority and technical precision in a bright light-mode aesthetic with Tech Blue accents."} style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeXx9HPgP3ruoB0pFYCeZgEQQhVUhzvmmUzTFhiMF6DLOiQZOlKiXFoXyg8BDDIb3rzt4b-oqKo34VvhEjUwdE6q-IpNtyMLZdPTyF-N4IUD1_wG4PiXKwZq4roidH6-3o7L3Ws9l0E0REkIxNYSvAjdFVD1fvdrmHIJabo1Z5tuYtWaTEQA666pt0RnlQhuxDuLYVdZZAYkPgPOBv7samCFA1wC9eIU70sxXqYWdMK6X3elBicT4ZO1dKZWHBqcKr2K-jLzM7RrWi')"}}></div>
+          <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+          <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} style={{backgroundImage: "url('/images/highrise.jpg')"}}></div>
         </div>
-        <div className={"relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
-          <div className={"max-w-3xl"}>
-            <span className={"inline-block px-4 py-1 bg-primary text-white font-label-sm text-label-sm mb-6 rounded-full tracking-widest uppercase"}>
+        <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
+          <div className={"max-w-2xl reveal active"}>
+            <span className={"inline-block py-1.5 px-4 bg-primary text-on-primary font-label-sm rounded mb-6 uppercase tracking-[0.1em]"}>
               Operational Excellence
             </span>
-            <h1 className={"font-display-lg text-4xl md:text-display-lg text-white mb-6"}>
+            <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
               Precision Management, Uncompromising Quality
             </h1>
-            <p className={"font-body-lg text-body-lg text-surface-variant mb-10 leading-relaxed max-w-2xl"}>
+            <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
               {" "}Beyond construction, we engineer certainty. Our project management framework ensures every weld, pour, and joint meets international benchmarks for structural integrity.{" "}
             </p>
-            <div className={"flex flex-wrap gap-4"}>
-              <button className={"bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-bold text-lg hover:shadow-lg transition-all flex items-center gap-2"}>
+            <div className={"flex flex-col sm:flex-row gap-4"}>
+              <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
                 {" "}View Quality Protocol{" "}
                 <span className={"material-symbols-outlined"}>
                   arrow_forward
                 </span>
               </button>
-              <button className={"border border-outline-variant text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/10 transition-all"}>
+              <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
                 {" "}Download Portfolio{" "}
               </button>
             </div>

@@ -27,7 +27,40 @@ function QuantitySurveying() {
 
 
       <main>
-              <section className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-8 md:pt-12"}>
+
+
+            
+        <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+          <div className={"absolute inset-0 z-0"}>
+            <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+            <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} data-alt={"A high-rise construction project representing precise quantity surveying, budgeting, and cost control."} style={{backgroundImage: "url('/images/highrise.jpg')"}}></div>
+          </div>
+          <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
+            <div className={"max-w-2xl reveal active"}>
+              <span className={"inline-block py-1.5 px-4 bg-primary text-on-primary font-label-sm rounded mb-6 uppercase tracking-[0.1em]"}>
+                Quantity Surveying Expert
+              </span>
+              <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
+                Financial Precision in Construction
+              </h1>
+              <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
+                {" "}Optimizing costs without compromising structural integrity. We bridge the gap between architectural ambition and fiscal reality through rigorous data analysis.{" "}
+              </p>
+              <div className={"flex flex-col sm:flex-row gap-4"}>
+                <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
+                  {" "}Request Audit{" "}
+                </button>
+                <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
+                  {" "}View Case Studies{" "}
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+          <section className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-8 md:pt-12"}>
                 <div className={"service-highlight-banner rounded-3xl p-6 sm:p-8 md:p-10"}>
                   <div className={"service-highlight-content grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-center"}>
                     <div>
@@ -75,79 +108,9 @@ function QuantitySurveying() {
                 </div>
               </section>
 
-        <section className={"relative min-h-[819px] flex items-center overflow-hidden py-section-gap"}>
-          <div className={"absolute inset-0 z-0"}>
-            <div className={"w-full h-full opacity-20"} data-alt={"A macro close-up photograph of architectural blueprints spread across a dark mahogany table, with a precision silver digital caliper and a high-end calculator resting on detailed budget spreadsheets. The lighting is cold, professional blue-white, casting sharp shadows that emphasize the texture of the paper and the metallic sheen of the tools. The composition is clean and focused, reflecting a high-tech engineering aesthetic."} style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA52WobuMqx_JzH3wlXcsMH7Eth0EtbCbqdXnEhmtSUXJ7b_VsP4cI0GNEoNNq5nrZVa77Beyx_n3_ED6lIYEdyJM9l28kTrmgMu7kCN9XHTw2jSUCFMbFnKYw9YsGraDLiktAquYN-T9S-5zp0neh1JsvTWLLfauFHQdvCtmIc7T_EweomeEWFnRuuy903ciUtNfffCrDVXGGmXSnMkzKC_nqOzYBiDeaLKkkrAcJ8rEa5LVL0x6knxCMgSPmgrrrPVV6W5oQn1fEU')"}}></div>
-            <div className={"absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-transparent"}></div>
-          </div>
-          <div className={"container-max mx-auto px-margin-mobile md:px-gutter relative z-10 grid md:grid-cols-2 gap-12 items-center"}>
-            <div>
-              <span className={"inline-block px-3 py-1 bg-primary/10 text-primary font-label-sm uppercase tracking-widest rounded-sm mb-6"}>
-                Quantity Surveying Expert
-              </span>
-              <h1 className={"font-display-lg text-headline-lg-mobile md:text-display-lg text-on-surface mb-6"}>
-                {" "}Financial Precision in{" "}
-                <span className={"text-primary"}>
-                  Construction
-                </span>
-              </h1>
-              <p className={"font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg"}>
-                {" "}Optimizing costs without compromising structural integrity. We bridge the gap between architectural ambition and fiscal reality through rigorous data analysis.{" "}
-              </p>
-              <div className={"flex flex-wrap gap-4"}>
-                <button className={"bg-primary text-on-primary px-8 py-4 font-bold rounded-lg hover:shadow-lg transition-all active:scale-95"}>
-                  {" "}Request Audit{" "}
-                </button>
-                <button className={"border border-outline text-on-surface px-8 py-4 font-bold rounded-lg hover:bg-surface-container-low transition-all"}>
-                  {" "}View Case Studies{" "}
-                </button>
-              </div>
-            </div>
-            <div className={"hidden md:block relative"}>
-              <div className={"absolute -top-12 -right-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl"}></div>
-              <div className={"relative z-10 glass-card p-8 border border-outline-variant rounded-xl shadow-2xl"}>
-                <div className={"flex items-center justify-between mb-8"}>
-                  <span className={"text-label-sm font-bold text-on-surface-variant"}>
-                    COST DISTRIBUTION ANALYSIS
-                  </span>
-                  <span className={"material-symbols-outlined text-primary"}>
-                    analytics
-                  </span>
-                </div>
-                <div className={"space-y-6"}>
-                  <div className={"h-4 w-full bg-surface-container rounded-full overflow-hidden"}>
-                    <div className={"h-full bg-primary w-[65%]"} id={"bar-1"}></div>
-                  </div>
-                  <div className={"h-4 w-full bg-surface-container rounded-full overflow-hidden"}>
-                    <div className={"h-full bg-secondary-container w-[45%]"} id={"bar-2"}></div>
-                  </div>
-                  <div className={"h-4 w-full bg-surface-container rounded-full overflow-hidden"}>
-                    <div className={"h-full bg-tertiary-container w-[85%]"} id={"bar-3"}></div>
-                  </div>
-                </div>
-                <div className={"mt-8 pt-8 border-t border-outline-variant flex justify-around"}>
-                  <div className={"text-center"}>
-                    <div className={"font-headline-md text-primary"}>
-                      98%
-                    </div>
-                    <div className={"text-label-sm text-on-surface-variant"}>
-                      ACCURACY
-                    </div>
-                  </div>
-                  <div className={"text-center"}>
-                    <div className={"font-headline-md text-secondary"}>
-                      15%
-                    </div>
-                    <div className={"text-label-sm text-on-surface-variant"}>
-                      SAVINGS
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section className={"py-section-gap bg-surface-container-lowest"}>
+
+
+        <section className={"p-section-gap bg-surface-container-lowest"}>
           <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
             <div className={"text-center mb-16"}>
               <h2 className={"font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-4"}>

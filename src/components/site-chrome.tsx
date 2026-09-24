@@ -236,9 +236,7 @@ export function SiteFooter() {
                   </li>
                 ))}
                 <li>
-                  <Link className="transition-colors hover:text-white" to="/projects/sobana">
-                    Sobana
-                  </Link>
+                 
                 </li>
                 <li>
                   <a className="transition-colors hover:text-white" href={CLIENT_PORTAL_LINK} rel="noreferrer" target="_blank">

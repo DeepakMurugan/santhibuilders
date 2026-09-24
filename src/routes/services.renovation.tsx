@@ -20,37 +20,29 @@ function Renovation() {
   useReveal();
   return (
     <>
-      <header className={"bg-surface sticky top-0 z-50 border-b border-outline-variant shadow-sm"}>
-        <div className={"flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto py-4"}>
-          <a className={"font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-on-surface tracking-tighter"} href={"#"}>
-            {" "}Santhi Builders{" "}
-          </a>
-          <button className={"bg-primary hover:bg-primary-container text-on-primary px-6 py-2 rounded-lg font-semibold transition-all active:scale-95"}>
-            {" "}Get a Free Quote{" "}
-          </button>
-        </div>
-      </header>
+     
       <main>
-        <section className={"relative h-[870px] flex items-center overflow-hidden"}>
+        <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
           <div className={"absolute inset-0 z-0"}>
-            <img className={"w-full h-full object-cover brightness-50"} data-alt={"A cinematic, wide-angle shot of a classic heritage Chennai building transitioning into a sleek, modern architectural masterpiece. The lighting is golden hour, highlighting the intricate old stone textures on one side and clean glass and steel on the other. The aesthetic is professional, high-end architectural photography with deep blues and warm sunlit oranges."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuC-28KA8oj7y05IxxKPVuFplNSNmef93tZhWQjqKx2XF-5QTliVljFXVVV8zUI--I0pdW8FF9VLC-Rl-MJzda0Ddu9LLBJ8VdyaUwbfzW90WcXV8_ULOkqXgIQIQOPP8dAhHT7yOYch9fCv8wTQzsdikuz6Y0Dx-MlMXJ2MO2QkqrV196fOSyoaLz6MbK_kaA90ytp2mEsV1UQj5PQTYPKKZ2CfjswqgrNkFplXK-TqQyAX7pmtxp-XsYKaYo0QRmO25F5HUtPwXbNH"} />
+            <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+            <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} data-alt={"Structural renovation and restoration work showing detailed steel reinforcement, precise craftsmanship, and renewed architectural strength."} style={{backgroundImage: "url('/images/steel-detail.jpg')"}}></div>
           </div>
-          <div className={"relative z-10 w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto"}>
-            <div className={"max-w-3xl"}>
-              <span className={"inline-block bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-4 py-1 mb-6 rounded-full"}>
+          <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
+            <div className={"max-w-2xl reveal active"}>
+              <span className={"inline-block py-1.5 px-4 bg-primary text-on-primary font-label-sm rounded mb-6 uppercase tracking-[0.1em]"}>
                 RENOVATION & RESTORATION
               </span>
-              <h1 className={"font-display-lg text-[40px] md:text-display-lg text-white mb-6"}>
+              <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
                 Reimagining Spaces, Preserving Legacies
               </h1>
-              <p className={"font-body-lg text-body-lg text-white/90 mb-10 leading-relaxed max-w-2xl"}>
+              <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
                 Modernizing Chennai's structures with architectural sensitivity. We combine heritage structural integrity with 21st-century technology to breathe new life into existing foundations.
               </p>
-              <div className={"flex flex-col md:flex-row gap-4"}>
-                <a className={"bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-bold text-center hover:shadow-lg transition-all"} href={"#quote"}>
+              <div className={"flex flex-col sm:flex-row gap-4"}>
+                <a className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold text-center hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"} href={"#quote"}>
                   Request a Structural Evaluation
                 </a>
-                <a className={"bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-bold text-center hover:bg-white/20 transition-all"} href={"#gallery"}>
+                <a className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold text-center hover:bg-white/10 transition-all"} href={"#gallery"}>
                   View Our Work
                 </a>
               </div>

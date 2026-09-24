@@ -20,63 +20,32 @@ function SiteSupervision() {
   useReveal();
   return (
     <>
-      <section className={"relative overflow-hidden pt-20 pb-32 md:pt-32 md:pb-48 blueprint-bg"}>
-        <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row items-center gap-16"}>
-          <div className={"w-full md:w-1/2 z-10"}>
-            <div className={"inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-6"}>
-              <span className={"material-symbols-outlined text-[18px]"} style={{fontVariationSettings: "'FILL' 1"}}>
-                verified_user
-              </span>
-              <span className={"font-label-sm text-label-sm uppercase tracking-widest"}>
-                Premium Site Supervision
-              </span>
-            </div>
-            <h1 className={"font-display-lg text-[40px] md:text-display-lg leading-tight mb-6"}>
-              {" "}On-Site Vigilance,{" "}
-              <br />
-              <span className={"text-primary"}>
-                Zero-Deviation
-              </span>
-              {" "}Execution{" "}
+      <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+        <div className={"absolute inset-0 z-0"}>
+          <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+          <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} style={{backgroundImage: "url('/images/steel-detail.jpg')"}}></div>
+        </div>
+        <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
+          <div className={"max-w-2xl reveal active"}>
+            <span className={"inline-block py-1.5 px-4 bg-primary text-on-primary font-label-sm rounded mb-6 uppercase tracking-[0.1em]"}>
+              Premium Site Supervision
+            </span>
+            <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
+              On-Site Vigilance, Zero-Deviation Execution
             </h1>
-            <p className={"font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-10"}>
+            <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
               {" "}Expert oversight for every square foot of your dream project. We ensure architectural integrity through rigorous structural verification and absolute safety compliance.{" "}
             </p>
-            <div className={"flex flex-wrap gap-4"}>
-              <button className={"bg-primary text-on-primary px-8 py-4 font-bold rounded-lg shadow-lg hover:shadow-primary/20 transition-all flex items-center gap-2 group"}>
+            <div className={"flex flex-col sm:flex-row gap-4"}>
+              <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
                 {" "}Hire Expert Supervision{" "}
-                <span className={"material-symbols-outlined group-hover:translate-x-1 transition-transform"}>
+                <span className={"material-symbols-outlined"}>
                   arrow_forward
                 </span>
               </button>
-              <button className={"border-2 border-outline text-on-surface px-8 py-4 font-bold rounded-lg hover:bg-surface-container transition-all"}>
+              <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
                 {" "}View Methodology{" "}
               </button>
-            </div>
-          </div>
-          <div className={"w-full md:w-1/2 relative"}>
-            <div className={"relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white aspect-square"}>
-              <img className={"w-full h-full object-cover"} data-alt={"A professional site supervisor in a white hard hat and high-visibility vest standing in front of a modern construction site. He is holding a digital tablet displaying architectural blueprints with a focused, diligent expression. The background shows steel scaffolding and a clear blue sky, capturing a sense of architectural precision and safety-focused oversight."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuDnNk9jejbOxAO-WymziDDYpW0nEPyzqwFSCx7LlFxUdGzvCoE_i5UTgn4tdBBFUFnV3dl2lFWEl7HgtYNcpE_d98CEHohRvy_JPoF_58x9fggbDdK2fIreEcVm2f0nBC6_z5NOrBUiZVtymFILTMKOTMWohYILSrNH6LPg0xcHQ_WQAmzBps8OQ639E--kdKkXLSXNhBpjDFEdHvmqgdY8yyJSZHgCL_oEiCJ_y7dJP6dp1fOPoerd8ls4RfzYYjKLBqxYXww_eWSQ"} />
-            </div>
-            <div className={"absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-xl border border-outline-variant max-w-[240px] hidden md:block"}>
-              <div className={"flex items-center gap-4 mb-3"}>
-                <div className={"w-12 h-12 bg-secondary-fixed flex items-center justify-center rounded-full"}>
-                  <span className={"material-symbols-outlined text-secondary"} style={{fontVariationSettings: "'FILL' 1"}}>
-                    timer
-                  </span>
-                </div>
-                <div>
-                  <p className={"font-label-sm text-label-sm text-on-surface-variant"}>
-                    Active Monitor
-                  </p>
-                  <p className={"font-bold text-primary"}>
-                    24/7 Precision
-                  </p>
-                </div>
-              </div>
-              <div className={"w-full bg-surface-variant h-1.5 rounded-full overflow-hidden"}>
-                <div className={"bg-primary w-3/4 h-full"}></div>
-              </div>
             </div>
           </div>
         </div>
