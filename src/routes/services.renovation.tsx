@@ -22,10 +22,15 @@ function Renovation() {
     <>
      
       <main>
+
+
         <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
           <div className={"absolute inset-0 z-0"}>
             <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
-            <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} data-alt={"Structural renovation and restoration work showing detailed steel reinforcement, precise craftsmanship, and renewed architectural strength."} style={{backgroundImage: "url('/images/steel-detail.jpg')"}}></div>
+            <div
+              className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"}
+              style={{ backgroundImage: "url('/images/renova.png')" }}
+            ></div>
           </div>
           <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
             <div className={"max-w-2xl reveal active"}>
@@ -35,7 +40,7 @@ function Renovation() {
               <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
                 Reimagining Spaces, Preserving Legacies
               </h1>
-              <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
+              <p className={"font-body-lg text-body-lg text-white mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
                 Modernizing Chennai's structures with architectural sensitivity. We combine heritage structural integrity with 21st-century technology to breathe new life into existing foundations.
               </p>
               <div className={"flex flex-col sm:flex-row gap-4"}>
@@ -49,6 +54,9 @@ function Renovation() {
             </div>
           </div>
         </section>
+
+
+
         <section className={"py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto"}>
           <div className={"flex flex-col md:flex-row justify-between items-end mb-16 gap-6"}>
             <div className={"max-w-2xl"}>
@@ -261,21 +269,6 @@ function Renovation() {
               </div>
             </div>
             <div className={"space-y-6"}>
-              <div className={"before-after-container aspect-[16/9] rounded-2xl group shadow-lg"}>
-                <div className={"absolute inset-0"}>
-                  <img className={"w-full h-full object-cover"} data-alt={"Interior shot of an outdated apartment with cramped rooms, small windows, and yellowed tiling. The space feels dark and claustrophobic. Real estate photography style."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuCIubyZCioXljt7y1F7gVkfpqeb-6iKniFpZ3ms2lSXgSbBVGxctk0B-2598CO8D5f57rjETJOINE5RRXehTqp6LDXBtx2VbJtgSJYZ3bsZ3P8HPjYtBH9vPYd_VrxGo8k9NDvqc5IZ978XyEZ40r78RGTays3vFC6MUkyhNMcFqooefwiDijIIDGVlQPRyUZ5xp4l4Zm_oJu3gx5SJIkpKqgE02WYFRPtuYseaS8nCgs0Vc4TFxV_8Tl9ZuvGi8hbYf_Q3Y1aBiNhu"} />
-                  <div className={"absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md text-xs font-bold backdrop-blur-sm"}>
-                    BEFORE
-                  </div>
-                </div>
-                <div className={"absolute inset-0 w-1/2 overflow-hidden after-image"} style={{width: "50%"}}>
-                  <img className={"absolute inset-0 w-[200%] h-full object-cover max-w-none"} data-alt={"The same interior space transformed into a bright, open-plan luxury apartment. Walls have been removed, replaced with glass partitions and large floor-to-ceiling windows. Sleek marble flooring and minimalist furniture dominate. High-key, airy lighting."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuCuVWvN2j4zhjIN80F55wD7_Yo3T56t2SMGuXNHfoEhRpSdQB0hIwpvbY0DH-ikSF9lHJbUqQq-92RPHuGLq1VpCaMbDsmd8kPcbwaWKcsR9NbnFmANwd2x82c-PTy7PPpalUP9ZnZci3YbZFQ-fE2nidFbJirOPJmZAsRcNZux3ln0ROsmSqeNCDL1ukPL4N6bJsZU5w6ryhHh6OLPQZw0nwQjBOkwSJTujaWRN0fqBbi61CgF7In4TYZ6d0grPKaaVqG8L6wi0h1Q"} />
-                  <div className={"absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-md text-xs font-bold"}>
-                    AFTER
-                  </div>
-                </div>
-                <div className={"comparison-slider"} style={{left: "50%"}}></div>
-              </div>
               <div>
                 <h4 className={"font-headline-md text-headline-md"}>
                   Adyar Luxury Apartment
