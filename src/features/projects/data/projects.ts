@@ -88,7 +88,7 @@ export const PROJECT_LISTING_ITEMS: ProjectListingItem[] = [
   {
     title: "Ms. Lucy Mathews",
     type: "Residential",
-    image: "/images/living-room.jpg",
+    image: "/images/lucy.png",
     to: "/projects/ms-lucy-mathews",
     slug: "ms-lucy-mathews",
     size: "square",

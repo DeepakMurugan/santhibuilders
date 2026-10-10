@@ -18,9 +18,9 @@ const heroSlides = [
 ] as const;
 
 const residentialMeta: Record<string, { status: string; location: string; builtUp: string }> = {
-  "azure-horizon-villa": { status: "Completed", location: "pondicherry", builtUp: "2,400 sq.ft" },
-  "monolith-residences": { status: "Ongoing", location: "Thiruvanmiyur", builtUp: "3,100 sq.ft" },
-  "sea-crest-villas": { status: "Completed", location: "OMR, Chennai", builtUp: "2,150 sq.ft" },
+  "azure-horizon-villa": { status: "Completed", location: "Puducherry", builtUp: "2,400 sq.ft" },
+  "monolith-residences": { status: "Ongoing", location: "Puducherry", builtUp: "3,100 sq.ft" },
+  "sea-crest-villas": { status: "Completed", location: " Puducherry", builtUp: "2,150 sq.ft" },
 };
 
 const complianceItems = [
@@ -34,36 +34,35 @@ const complianceItems = [
 const trustedClientLogos = [
   {
     alt: "Partner 1",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDhyHbHAmf6mwHpV-RAB13n-FzQnpwZEeadHHa0UU0NVsN0YDiahnr8anPYTjZ_qUugtYJoxk_jeUO5ORDxDKW7tpwSk5iqdH7EEK-PzzPb1Ki90U0PMHzg8lA4KpulP9KwDD2YwKWKuKNQ9S3h-bzG9HsqaJCGg17cB60U9s84eFwjeBCEmTVBv0ir3KMt7Ka0GgntP5K37ivdwBB2EZ1r2oWOKwppLYtBwxZz4dBPi5BLudW-t7iEzejDMlXSlH7HEWqKqsFr5Jxo",
+    src: "../images/lo1.png",
     heightClass: "h-16 md:h-20",
   },
   {
     alt: "Partner 2",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDS2LhfRko6HnH8pBiE3FS6swE_3cOQcKQDKmVxvyERf1ZlJoeaa77nAaoI5pWe5ZJY7jntXEgLIRw0No8j5wCiUiEGFK9wQ_P-J-D2snwLji8p1e3b4M4-94SDKRC7RS_3389BGW_TulQWg3_f8zsBHS4EIspvO2-eseRQnV5vSML8ELnIZByE7APs2hf0Zt6fQXHOXR6BLdQo2dRMF5hJUSdLnK3Z3LZtZ9CMoBEI5lfkaIwng1yP0iiZP7mItsFF-xGhQbPSuXaf",
+    src: "../images/cc2.webp",
     heightClass: "h-16 md:h-20",
   },
-  {
-    alt: "Partner 3",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBtqg4DUrvXJT7ARubXR29Agkw4DMvHHoktJf5qQHOXxfdpZefvnAzq1JPrT1Qh6UvZz55r_jNmDWxF9MLaLp9NteZROUYUPin66OU4th0Brm3ZjpO1ZxPZPBFFfMpXDmqulj1nbqVY9ViYqouft9YX4EDAqSO4FFTkk4gtp3M6VDntOOMbUBPldXW6yddZ4KBoVCcN99w6t2ZfFhygk36qYYLNdputNeeysVymmLSoA5g8-RO8G-ruLCAa0ANMTeS3sI5X5jg37UMC",
+  {   alt: "Partner 3",
+    src: "../images/lo2.png",
     heightClass: "h-14 md:h-16",
   },
   {
     alt: "Partner 4",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuAOUzSZdwajr3tlxxz8IAauVR71XAn7wOuwe-Z6jLBgVdPRuSdneJKUjOiyYev4zXGwO02YMlk3Zkq5numdl-6JxInUoqWJayE6zutcQ4BPT81ca-oW6raJJSeZa7tiwNwsF_JEjp9N6NHC3hV3IjBOvJXskFFVg7c03QdVa9_XO6mQANFBJcVT6F38i8c3oPDHuEr4eAcH5jlsNJOorN7Ml435jK52hZW0HGE67RFmGi33CUn62nizdEZ1ewPFh6AV3n6WM56KizVo",
+    src: "../images/c4.jpeg",
     heightClass: "h-16 md:h-20",
   },
   {
     alt: "Partner 5",
-    src: "https://lh3.googleusercontent.com/aida-public/AB6AXuA2eNLZPR-ON6KpDtmU_iAWvJzI3hQu4c6l4T4xNgzeCC5ShTjnDhkSgpMYwSG2hjdPZk6plW-MZHpP_C6C-8o096WdZpFFOhxWHZ1mJVLIrHJ0p5Ngh2leHpeTkS8CGSWbSGbl5yLmUmaz4nDbxMVb9NLYZK7dwdWTdZWVJkfQqsvim7TMKJSutK3Ut2QQzBE6fWNIopNfImKb_zy8b4Ab6SKiS1U7e8E4g0VDdPN1UgsEHen-4n842TvdkP-cUSqlng03UhgU03Ks",
+    src: "../images/log.webp",
     heightClass: "h-14 md:h-16",
   },
 ] as const;
 
 const faqItems = [
   {
-    question: "Average construction cost per sq ft in Chennai?",
+    question: "Average construction cost per sq ft in Puducherry ?",
     answer:
-      "Our premium construction packages start from ₹1899 per sq ft, varying with material specifications and soil conditions. We provide detailed bills of quantities (BOQ) for total transparency.",
+      "Our premium construction packages start from ₹2,549 per sq ft, varying with material specifications and soil conditions. We provide detailed bills of quantities (BOQ) for total transparency.",
   },
   {
     question: "Timeline for a 1500 sq ft house?",
@@ -144,8 +143,8 @@ function HomeHeroSection({
               {" "}Masterpieces{" "}
             </h1>
             <p className={"font-body-lg mb-8 max-w-lg border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-10 sm:pl-8 sm:text-lg md:text-body-lg"}>
-              {" "}Engineering structural excellence in Chennai starting at{" "}
-              <span className={"text-white font-black underline decoration-secondary-container decoration-4 underline-offset-8"}>₹1899/Sq.Ft</span>
+              {" "}Engineering structural excellence in Puducherry starting at{" "}
+              <span className={"text-white font-black underline decoration-secondary-container decoration-4 underline-offset-8"}>₹2,549/Sq.Ft</span>
               .{" "}
             </p>
             <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:gap-6"}>
@@ -338,7 +337,7 @@ function HomeProjectsSection({
               {residentialProjects.map((project) => {
                 const meta = residentialMeta[project.slug] ?? {
                   status: "Completed",
-                  location: "Chennai",
+                  location: "Puducherry",
                   builtUp: "2,600 sq.ft",
                 };
 
@@ -415,13 +414,12 @@ function HomeTestimonialsSection({
                         </div>
                       </div>
                     </div>
-                    <div className={"relative flex w-full flex-col justify-center bg-surface-container-low/20 p-6 md:p-10 lg:w-2/5 lg:p-12"}>
+                    <div className={"relative flex w-full flex-col justify-center bg-surface-container-white p-6 md:p-10 lg:w-2/5 lg:p-12"}>
                       <span className={"material-symbols-outlined text-primary/10 text-7xl md:text-9xl absolute -top-3 right-4 md:right-8 leading-none -z-10"}>format_quote</span>
                       <p className={"relative mb-8 text-base font-medium italic leading-normal text-on-surface sm:text-lg md:text-xl"}>{`"${item.quote}"`}</p>
                       <div className={"flex items-center gap-4 md:gap-5"}>
-                        <div className={"w-14 h-14 md:w-20 md:h-20 rounded-2xl bg-white border-2 border-primary/20 overflow-hidden shadow-lg rotate-3"}>
-                          <img alt={item.name} className={"w-full h-full object-cover"} src={item.avatar} />
-                        </div>
+                      
+
                         <div>
                           <h5 className={"font-black text-lg md:text-xl text-on-surface leading-tight"}>{item.name}</h5>
                           <p className={"text-on-surface-variant text-[11px] md:text-sm mt-1 font-black opacity-60 uppercase tracking-widest"}>{item.role}</p>
@@ -544,13 +542,13 @@ function HomeTrustedClientsSection() {
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-5 md:mb-7 relative z-10"}>
         <span className={"text-primary font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-3 block"}>Our Trusted Clients</span>
         <h2 className={"font-headline-lg mb-2 text-2xl font-black leading-tight text-on-surface sm:text-3xl md:mb-3 md:text-4xl lg:text-[2.75rem]"}>Brands That Build <span className={"text-primary italic"}>With Us</span></h2>
-        <p className={"text-sm sm:text-base md:text-lg text-on-surface-variant max-w-xl mx-auto"}>We are proud to partner with homeowners, businesses, and institutions across Tamil Nadu.</p>
+        <p className={"text-sm sm:text-base md:text-lg text-on-surface-variant max-w-xl mx-auto"}>We are proud to partner with these Brands across India.</p>
       </div>
       <div className={"relative overflow-hidden max-w-container-max mx-auto px-margin-mobile md:px-gutter z-10"}>
         <div>
           <div className={"logo-scroll"}>
             {[...trustedClientLogos, ...trustedClientLogos].map((logo, index) => (
-              <div aria-hidden={index >= trustedClientLogos.length} className={"flex w-36 cursor-pointer items-center justify-center border-x border-outline-variant/10 px-4 grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 sm:w-52 sm:px-8 lg:w-72 lg:px-12"} key={`${logo.alt}-${index}`}>
+              <div aria-hidden={index >= trustedClientLogos.length} className={"flex w-36 items-center justify-center border-x border-outline-variant/10 px-4 sm:w-52 sm:px-8 lg:w-72 lg:px-12"} key={`${logo.alt}-${index}`}>
                 <img alt={logo.alt} className={`${logo.heightClass} w-auto object-contain`} src={logo.src} />
               </div>
             ))}
@@ -581,7 +579,7 @@ function HomeEstimatorSection() {
                 Launch Calculator
                 <span className={"material-symbols-outlined font-black"}>calculate</span>
               </Link>
-              <span className={"text-xs md:text-sm text-white/80 font-semibold"}>Starts from Rs.1899/sq.ft</span>
+              <span className={"text-xs md:text-sm text-white/80 font-semibold"}>Starts from Rs.2,549/sq.ft</span>
             </div>
           </div>
 
