@@ -39,7 +39,6 @@ function buildWhatsappUrl(fields: Record<string, string>) {
     `Project Type: ${fields.projectType || "-"}`,
     `Location: ${fields.location || "-"}`,
     `Plot Area: ${fields.plotArea || "-"}`,
-    `Budget: ${fields.budget || "-"}`,
     `Timeline: ${fields.timeline || "-"}`,
     `Message: ${fields.message || "-"}`,
     `Source: ${fields.source || "Website"}`,
@@ -64,7 +63,6 @@ export function ConstructionEnquiryForm({
     projectType: projectTypes[0],
     location: "",
     plotArea: "",
-    budget: "",
     timeline: "",
     message: "",
   });
@@ -135,7 +133,7 @@ export function ConstructionEnquiryForm({
             </select>
           </FormField>
         </div>
-        <div className={compact ? "grid grid-cols-1 gap-4" : "grid grid-cols-1 md:grid-cols-3 gap-4"}>
+        <div className={compact ? "grid grid-cols-1 gap-4" : "grid grid-cols-1 md:grid-cols-2 gap-4"}>
           <FormField label="Project Location" labelClass={labelClass}>
             <input
               className={`w-full rounded-xl border px-4 py-3 outline-none transition-all focus:border-primary ${fieldClass}`}
@@ -152,15 +150,6 @@ export function ConstructionEnquiryForm({
               placeholder="Sq.ft"
               type="text"
               value={formState.plotArea}
-            />
-          </FormField>
-          <FormField label="Budget Range" labelClass={labelClass}>
-            <input
-              className={`w-full rounded-xl border px-4 py-3 outline-none transition-all focus:border-primary ${fieldClass}`}
-              onChange={(event) => setFormState((current) => ({ ...current, budget: event.target.value }))}
-              placeholder="Approx budget"
-              type="text"
-              value={formState.budget}
             />
           </FormField>
         </div>
