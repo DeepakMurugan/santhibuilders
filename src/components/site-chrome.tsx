@@ -8,8 +8,7 @@ import {
   WHATSAPP_LINK,
 } from "@/lib/company-info";
 
-const LOGO =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBtqg4DUrvXJT7ARubXR29Agkw4DMvHHoktJf5qQHOXxfdpZefvnAzq1JPrT1Qh6UvZz55r_jNmDWxF9MLaLp9NteZROUYUPin66OU4th0Brm3ZjpO1ZxPZPBFFfMpXDmqulj1nbqVY9ViYqouft9YX4EDAqSO4FFTkk4gtp3M6VDntOOMbUBPldXW6yddZ4KBoVCcN99w6t2ZfFhygk36qYYLNdputNeeysVymmLSoA5g8-RO8G-ruLCAa0ANMTeS3sI5X5jg37UMC";
+const LOGO = "/images/santhi%20logo.png";
 
 const CLIENT_PORTAL_LINK = "https://portal.santhibuilders.com/";
 
@@ -42,7 +41,7 @@ export function SiteNav() {
         <Link to="/" className="min-w-0 shrink-0" onClick={() => setOpen(false)}>
           <img
             alt="Santhi Builders Logo"
-            className="h-8 sm:h-9 md:h-11 w-auto object-contain"
+            className="h-8 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[170px] md:h-12 md:max-w-[200px]"
             src={LOGO}
           />
         </Link>

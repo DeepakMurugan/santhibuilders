@@ -56,6 +56,19 @@ const trustedClientLogos = [
     src: "../images/log.webp",
     heightClass: "h-14 md:h-16",
   },
+
+  {
+    alt: "Partner 6",
+    src: "../images/clg.png",
+    heightClass: "h-30 md:h-30",
+  },
+
+  {
+    alt: "Partner 7",
+    src: "../images/mah.png",
+    heightClass: "h-30 md:h-30",
+  },
+
 ] as const;
 
 const faqItems = [
