@@ -8,7 +8,9 @@ import {
   WHATSAPP_LINK,
 } from "@/lib/company-info";
 
-const LOGO = "/images/logofooter.png";
+const LOGO = "/images/santhi%20logo.png";
+const FLOGO = "/images/logofooter.png";
+
 
 const CLIENT_PORTAL_LINK = "https://portal.santhibuilders.com/";
 
@@ -194,7 +196,7 @@ export function SiteFooter() {
 
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4 space-y-6">
-            <img alt="Santhi Builders" className="h-12 w-auto object-contain" src={LOGO} />
+            <img alt="Santhi Builders" className="h-12 w-auto object-contain" src={FLOGO} />
             <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed max-w-md">
               Building spaces that reflect your vision, lifestyle, and aspirations. From concept
               to completion, we deliver quality construction with professional expertise and
