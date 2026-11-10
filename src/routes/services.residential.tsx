@@ -269,7 +269,7 @@ function Residential() {
               <div className={"reveal"}>
                 <div className={"relative"}>
                   <div className={"w-full aspect-[4/5] bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden"} style={{backgroundImage: "url('/images/living-room.jpg')"}}></div>
-                  <div className={"absolute -bottom-10 -right-6 bg-tertiary p-10 rounded-xl shadow-2xl text-center min-w-[200px]"}>
+                  <div className={"absolute -bottom-10 right-2 sm:right-0 lg:-right-6 bg-tertiary p-10 rounded-xl shadow-2xl text-center min-w-[200px]"}>
                     <p className={"text-white font-display-lg text-[64px] mb-0 leading-none"}>
                       100%
                     </p>

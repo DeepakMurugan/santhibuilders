@@ -8,7 +8,7 @@ import {
   WHATSAPP_LINK,
 } from "@/lib/company-info";
 
-const LOGO = "/images/santhi%20logo.png";
+const LOGO = "/images/logofooter.png";
 
 const CLIENT_PORTAL_LINK = "https://portal.santhibuilders.com/";
 
@@ -46,7 +46,7 @@ export function SiteNav() {
           />
         </Link>
 
-        <div className="hidden lg:flex gap-6 xl:gap-8 items-center">
+        <div className="hidden xl:flex gap-6 xl:gap-8 items-center">
           {MAIN.map((item) => (
             <div key={item.to} className="relative">
               <Link
@@ -99,7 +99,7 @@ export function SiteNav() {
           </Link>
           <button
             aria-label="Toggle navigation"
-            className="lg:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container"
+            className="xl:hidden p-2 rounded-lg text-on-surface hover:bg-surface-container"
             onClick={() => setOpen((v) => !v)}
           >
             <span className="material-symbols-outlined">{open ? "close" : "menu"}</span>
@@ -108,7 +108,7 @@ export function SiteNav() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-outline-variant/30 bg-surface px-margin-mobile py-4 space-y-1 max-h-[calc(100vh-72px)] overflow-y-auto">
+        <div className="xl:hidden border-t border-outline-variant/30 bg-surface px-margin-mobile py-4 space-y-1 max-h-[calc(100vh-72px)] overflow-y-auto">
           {MAIN.map((item) => (
             <Link
               key={item.to}

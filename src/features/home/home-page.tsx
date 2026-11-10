@@ -134,8 +134,8 @@ function HomeHeroSection({
   onSelectSlide: (index: number | ((current: number) => number)) => void;
 }) {
   return (
-    <header className={"relative mx-auto mt-4 w-full max-w-container-max px-margin-mobile sm:mt-6 md:px-gutter"}>
-      <div className={"relative min-h-155 overflow-hidden rounded-[1.5rem] border border-outline-variant/20 shadow-2xl sm:min-h-170 sm:rounded-[2rem] md:min-h-195"}>
+    <header className={"relative w-full"}>
+      <div className={"relative min-h-155 overflow-hidden border-y border-outline-variant/20 shadow-2xl sm:min-h-170 md:min-h-195"}>
         <div className={"absolute inset-0"} id={"hero-slider"}>
           {heroSlides.map((image, index) => (
             <div className={`hero-slide absolute inset-0 ${index === activeHeroSlide ? "opacity-100 z-0" : "opacity-0 z-0"}`} key={image}>
@@ -245,7 +245,7 @@ function HomeStatsSection() {
   ] as const;
 
   return (
-    <section className={"relative z-10 mx-margin-mobile rounded-[2rem] border-y border-outline-variant/20 bg-surface-container-lowest py-8 shadow-sm sm:rounded-[3rem] md:mx-gutter md:py-12"}>
+    <section className={"relative z-10 w-full border-y border-outline-variant/20 bg-surface-container-lowest py-8 shadow-sm sm:py-12"}>
       <div className={"mx-auto grid max-w-container-max grid-cols-2 gap-6 px-5 sm:gap-10 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12"}>
         {stats.map((stat) => (
           <div className={"text-left border-l-4 border-primary pl-6"} key={stat.label}>
@@ -574,7 +574,7 @@ function HomeTrustedClientsSection() {
 
 function HomeEstimatorSection() {
   return (
-    <section className={"relative mx-margin-mobile my-2 overflow-hidden rounded-[2rem] border border-white/10 bg-primary py-10 shadow-2xl backdrop-blur-sm sm:my-4 sm:rounded-[3rem] sm:py-14 md:mx-gutter"}>
+    <section className={"relative my-2 w-full overflow-hidden border-y border-white/10 bg-primary py-10 shadow-2xl backdrop-blur-sm sm:my-4 sm:py-14"}>
       <div className={"absolute inset-0 opacity-20"} style={{ backgroundImage: "radial-gradient(#fff 1.5px, transparent 1.5px)", backgroundSize: "40px 40px" }}></div>
       <div className={"absolute -top-24 -right-24 md:-top-32 md:-right-32 w-72 h-72 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"}></div>
       <div className={"absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"}></div>

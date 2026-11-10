@@ -248,7 +248,7 @@ function QualityControl() {
             <div className={"aspect-square bg-surface-container relative overflow-hidden rounded-lg"}>
               <div className={"w-full h-full bg-cover bg-center"} data-alt={"A detailed macro shot of high-quality construction materials, focusing on the texture of reinforced steel bars and high-grade concrete samples in a technical laboratory setting. The lighting is crisp and sterile, emphasizing the silver-grey metallics and industrial textures. A subtle blue overlay adds a professional, architectural feel consistent with the Santhi Builders brand."} style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3FAnIWCoEiKKo01JDMWdCQ6I_QT-nkGr2-P90w6ulKU0rwA4QuJSAxLLeRqGL-XdPq3QGdHM1pM7n5M5Bgf3pQ4vEoxpUOepE-V7TOavV5OSdMcUIIZo5jQKD46owf1-LiD7alOQyHPOwFayEa6jTuKOphT5pty7fFr8GMIkmZsfMfYrsgKs2Jgl68om_ij6G2_NqXOZHuA8T7jXbY1vHrPVCacjsNzWy7LFvSzD7qTS8VUKN_d1mN24_bmjO7J11DYRuGMk7l1oC')"}}></div>
             </div>
-            <div className={"absolute -bottom-10 -right-10 bg-white border border-outline-variant p-8 hidden md:block max-w-[240px] shadow-xl"}>
+            <div className={"absolute -bottom-10 right-3 xl:-right-10 bg-white border border-outline-variant p-8 hidden md:block max-w-[240px] shadow-xl"}>
               <p className={"text-headline-md font-bold text-primary mb-2"}>
                 100%
               </p>
