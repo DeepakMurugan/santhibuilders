@@ -24,9 +24,9 @@ function Renovation() {
       <main>
 
 
-        <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+        <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
           <div className={"absolute inset-0 z-0"}>
-            <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+            <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
             <div
               className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"}
               style={{ backgroundImage: "url('/images/renova.png')" }}
@@ -221,12 +221,12 @@ function Renovation() {
                 <div className={"rounded-3xl overflow-hidden border-8 border-white/5 shadow-2xl"}>
                   <img className={"w-full aspect-[4/5] object-cover"} data-alt={"A split screen image showing an architectural technical blueprint overlaying a high-detail close-up of a construction site. On the left, a weathered brick wall is being reinforced with modern metal beams. On the right, the completed version features smooth white plaster and warm wooden slats. The lighting is bright and clean, emphasizing technical precision."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuC1uP7k4NScGMXchgx3hzwlctiAsYdhDuYlYxm_YQmY2O1_urV3Qo1fcy6Bg6-33yT9ly_0j7ZvDLj9J9tGgcLlbs5r2jJFslZLs7xYMlLu77svPDZcf5ADDblLxD19RJq2D-IFP3o9gKVpvqjoCIhis1WNCF1-JI3JzjSm8eOF-sLazokHNWSlvoYwN4gYcGNfW5g6jPjhbgB0hUf93iTlKBpo_ZDsv7mAJ-pkkGLWEcDn1GLXGSCEShW4OhdyoDmc6LTKbwhrwODE"} />
                 </div>
-                <div className={"absolute -bottom-10 -right-10 bg-primary p-8 rounded-2xl shadow-2xl hidden md:block"}>
+                <div className={"absolute -bottom-10 right-0 bg-primary p-5 rounded-2xl shadow-2xl hidden md:block sm:p-8"}>
                   <p className={"font-display-lg text-[48px] text-white leading-none"}>
-                    25+
+                    Plan
                   </p>
                   <p className={"font-label-sm text-label-sm text-on-primary-container tracking-widest mt-2 uppercase"}>
-                    Years Experience
+                    Project review
                   </p>
                 </div>
               </div>

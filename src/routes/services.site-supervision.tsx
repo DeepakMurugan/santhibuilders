@@ -20,9 +20,9 @@ function SiteSupervision() {
   useReveal();
   return (
     <>
-      <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+      <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
         <div className={"absolute inset-0 z-0"}>
-          <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+          <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
           <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} style={{backgroundImage: "url('/images/steel-detail.jpg')"}}></div>
         </div>
         <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
@@ -31,21 +31,21 @@ function SiteSupervision() {
               Premium Site Supervision
             </span>
             <h1 className={"font-display-lg text-[42px] md:text-display-lg text-white mb-6 leading-[1.1]"}>
-              On-Site Vigilance, Zero-Deviation Execution
+              Site supervision for the details that matter
             </h1>
             <p className={"font-body-lg text-body-lg text-white/80 mb-10 border-l-4 border-primary pl-6 max-w-xl"}>
-              {" "}Expert oversight for every square foot of your dream project. We ensure architectural integrity through rigorous structural verification and absolute safety compliance.{" "}
+              {" "}Coordinate site activities, review work against the agreed drawings and keep project observations visible to the team.{" "}
             </p>
             <div className={"flex flex-col sm:flex-row gap-4"}>
-              <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
+              <a className={"bg-secondary-container text-on-secondary-container px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"} href={"/contact"}>
                 {" "}Hire Expert Supervision{" "}
                 <span className={"material-symbols-outlined"}>
                   arrow_forward
                 </span>
-              </button>
-              <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
-                {" "}View Methodology{" "}
-              </button>
+              </a>
+              <a className={"border-2 border-white/30 text-white backdrop-blur-md px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-white/10 transition-all"} href={"/projects"}>
+                {" "}View Projects{" "}
+              </a>
             </div>
           </div>
         </div>
@@ -100,14 +100,14 @@ function SiteSupervision() {
                   Safety Compliance
                 </h3>
                 <p className={"font-body-md opacity-90 mb-6 max-w-md"}>
-                  Strict adherence to IS codes and OSHA standards. We maintain a zero-accident record across all premium projects.
+                  Site teams coordinate work with attention to the project drawings, site conditions and applicable safety requirements.
                 </p>
                 <div className={"flex gap-4"}>
                   <span className={"bg-white/20 px-3 py-1 rounded text-label-sm"}>
-                    ISO Certified
+                    Site safety
                   </span>
                   <span className={"bg-white/20 px-3 py-1 rounded text-label-sm"}>
-                    OSHA Compliant
+                    Work coordination
                   </span>
                 </div>
               </div>
@@ -155,28 +155,28 @@ function SiteSupervision() {
             </div>
             <div className={"w-full md:w-1/2"}>
               <h2 className={"font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-8"}>
-                Veterans of the Field
+                On-site coordination
               </h2>
               <div className={"space-y-8"}>
                 <div className={"flex gap-6"}>
                   <div className={"text-display-lg text-primary font-black opacity-20 leading-none"}>
-                    15+
+                    Site
                   </div>
                   <div>
                     <h4 className={"font-headline-md text-xl font-bold mb-2"}>
-                      Years on On-Site Experience
+                      reviews and work planning
                     </h4>
                     <p className={"font-body-md text-on-surface-variant"}>
-                      Our senior engineers aren't just managers; they are masters of structural integrity with over 1.5 million square feet supervised collectively.
+                      Site observations and work progress are reviewed against the agreed project scope and shared with the relevant team.
                     </p>
                   </div>
                 </div>
                 <div className={"p-6 bg-surface-container-low rounded-lg border-l-4 border-secondary"}>
                   <p className={"italic text-on-surface-variant"}>
-                    "Construction is 10% design and 90% supervision. We ensure that 90% is handled with absolute architectural honesty."
+                    Site communication helps keep priorities, observations and next steps clear.
                   </p>
                   <p className={"font-bold mt-4"}>
-                    — Lead Site Supervisor, Santhi Builders
+                    Site coordination
                   </p>
                 </div>
               </div>
@@ -189,16 +189,16 @@ function SiteSupervision() {
           <div className={"flex flex-col md:flex-row justify-between items-end mb-12 gap-6"}>
             <div className={"max-w-xl"}>
               <h2 className={"font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-4"}>
-                Transparent Progress
+                Progress and site communication
               </h2>
               <p className={"font-body-lg text-surface-variant"}>
-                Access your project's heartbeat from anywhere in the world. Our digital-first approach brings the site to your screen.
+                Share agreed milestones, site observations and upcoming work with the project team.
               </p>
             </div>
             <div className={"flex items-center gap-4 bg-white/10 px-6 py-3 rounded-full border border-white/20"}>
               <div className={"w-3 h-3 bg-red-500 rounded-full animate-pulse"}></div>
               <span className={"font-label-sm text-white uppercase tracking-widest"}>
-                Live Portal Active
+                Project updates
               </span>
             </div>
           </div>
@@ -210,7 +210,7 @@ function SiteSupervision() {
                     videocam
                   </span>
                   <span className={"font-bold"}>
-                    Live Feed: North Tower Slab
+                    Site activity
                   </span>
                 </div>
                 <div className={"flex gap-2"}>
@@ -220,17 +220,17 @@ function SiteSupervision() {
                 </div>
               </div>
               <div className={"relative aspect-video rounded-lg overflow-hidden group"}>
-                <img className={"w-full h-full object-cover"} data-alt={"A wide-angle high-definition camera perspective of an active construction site during the golden hour. Workers are moving with purpose around a large structural framework. The image has a digital overlay interface with date, time, and camera labels, simulating a high-end client monitoring portal. The scene is clean, organized, and technologically advanced."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuDzndN9GR7SalxIiBgm3BIceJO6elmRg2JKbp7AOiIfBxOXhfAYJwUvNddhpaLn2ynOowK_ktHuFa6_RLK_aEiCUVTsvjIn0krj7vj9j-_udM8G9_loHQWQjG2PTuiQ-wVcOiORtHPPsSjxVvVXAdfQiThPJEalGfkpotWRf6T_lBt5JsOz_EFn4DTHKiZNSDwRSTvjs3j9AAsm5PdAc3rg_uC8qh_pGSNc5tc6CLPOg045u6oG56jwy7fzeNFZzrdSK9A6Ft-MdD7t"} />
+                <img className={"w-full h-full object-cover"} data-alt={"Active construction site with structural work in progress."} src={"/images/steel-detail.jpg"} />
                 <div className={"absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6"}>
                   <div className={"flex gap-6 text-xs text-white uppercase tracking-tighter"}>
                     <span>
-                      CAM 01: EXTERIOR
+                      Site observation
                     </span>
                     <span>
-                      1080P | 60FPS
+                      Work in progress
                     </span>
                     <span>
-                      LAT: 13.0827° N
+                      Santhi Builders
                     </span>
                   </div>
                 </div>
@@ -240,17 +240,17 @@ function SiteSupervision() {
               <div className={"bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all cursor-pointer"}>
                 <div className={"flex justify-between items-start mb-4"}>
                   <span className={"font-label-sm text-primary-fixed"}>
-                    TODAY, 09:15 AM
+                    Project update
                   </span>
                   <span className={"material-symbols-outlined text-green-400"}>
                     check_circle
                   </span>
                 </div>
                 <h4 className={"font-bold mb-2"}>
-                  Concrete Pour Analysis
+                  Site observations
                 </h4>
                 <p className={"text-sm text-surface-variant"}>
-                  Batch M35 verified. Temperature and slump tests passed within parameters.
+                  Record relevant checks, open questions and follow-up items for the project team.
                 </p>
               </div>
               <div className={"bg-white/5 p-6 rounded-xl border border-white/10 hover:bg-white/10 transition-all cursor-pointer"}>

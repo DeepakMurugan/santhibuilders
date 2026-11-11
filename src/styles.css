@@ -143,6 +143,53 @@
   }
 }
 
+/* Shared construction-led service hero treatment. */
+.construction-service-hero {
+  min-height: max(540px, min(760px, 88svh));
+  background-color: #08111f;
+}
+
+.construction-service-hero__overlay {
+  background:
+    linear-gradient(90deg, rgb(8 17 31 / 96%) 0%, rgb(8 17 31 / 82%) 48%, rgb(8 17 31 / 35%) 100%),
+    linear-gradient(0deg, rgb(8 17 31 / 18%), transparent 48%);
+}
+
+.construction-service-hero h1 {
+  max-width: 16ch;
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.construction-service-hero p {
+  text-wrap: pretty;
+}
+
+.construction-design-hero {
+  background:
+    linear-gradient(135deg, rgb(242 243 255 / 96%), rgb(234 241 248 / 92%) 58%, rgb(255 245 235 / 88%)),
+    #f2f3ff;
+}
+
+.construction-design-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .construction-service-hero {
+    min-height: max(540px, min(700px, 82svh));
+  }
+
+  .construction-service-hero__overlay {
+    background:
+      linear-gradient(90deg, rgb(8 17 31 / 94%) 0%, rgb(8 17 31 / 75%) 100%),
+      linear-gradient(0deg, rgb(8 17 31 / 30%), transparent 55%);
+  }
+}
+
 /* ---------------- Santhi Builders design system ---------------- */
 @theme {
   --color-surface: #f8f9ff;
@@ -489,4 +536,102 @@ p {
 
 .project-card:hover img {
   transform: scale(1.06);
+}
+
+.construction-service-hero__overlay {
+  background:
+    repeating-linear-gradient(90deg, transparent 0 47px, rgb(255 255 255 / 0.045) 48px 49px),
+    repeating-linear-gradient(0deg, transparent 0 47px, rgb(255 255 255 / 0.035) 48px 49px),
+    linear-gradient(90deg, rgb(8 17 31 / 96%) 0%, rgb(8 17 31 / 82%) 48%, rgb(8 17 31 / 35%) 100%),
+    linear-gradient(0deg, rgb(8 17 31 / 18%), transparent 48%);
+}
+
+.construction-home-hero__overlay {
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 55px, rgb(255 255 255 / 0.04) 56px 57px),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgb(255 255 255 / 0.03) 56px 57px),
+    linear-gradient(35deg, rgb(0 29 51 / 92%) 0%, rgb(0 29 51 / 45%) 58%, transparent 100%);
+}
+
+.construction-contact-hero__grid {
+  background-image:
+    linear-gradient(90deg, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    linear-gradient(0deg, rgb(255 255 255 / 0.035) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgb(0 120 189 / 0.3), transparent 32%),
+    radial-gradient(circle at bottom right, rgb(254 147 44 / 0.22), transparent 28%);
+  background-size: 56px 56px, 56px 56px, auto, auto;
+  pointer-events: none;
+}
+
+.construction-services-index-overlay {
+  background-image:
+    linear-gradient(90deg, rgb(8 17 31 / 0.96) 0%, rgb(8 17 31 / 0.82) 52%, rgb(8 17 31 / 0.45) 100%),
+    repeating-linear-gradient(90deg, transparent 0 55px, rgb(255 255 255 / 0.04) 56px 57px),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgb(255 255 255 / 0.03) 56px 57px);
+  pointer-events: none;
+}
+
+.construction-site-footer::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgb(255 255 255 / 0.025) 1px, transparent 1px),
+    linear-gradient(0deg, rgb(255 255 255 / 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  content: "";
+  pointer-events: none;
+}
+
+.card-interactive,
+.bento-item,
+.project-card {
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.project-card img {
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+a[href],
+button:not(:disabled) {
+  transition-timing-function: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-secondary-container);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: rgb(254 147 44 / 0.28);
+  color: #08111f;
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+  max-width: 1.15em;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+@media (hover: hover) {
+  .card-interactive:hover,
+  .bento-item:hover,
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px -24px rgb(8 17 31 / 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-interactive,
+  .bento-item,
+  .project-card,
+  .project-card img {
+    transition: none;
+  }
 }

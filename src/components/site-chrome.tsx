@@ -158,7 +158,7 @@ export function SiteNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="relative mt-16 md:mt-24 overflow-hidden bg-[#08111f] text-white text-[15px] md:text-[16px]">
+    <footer className="construction-site-footer relative mt-16 overflow-hidden bg-[#08111f] text-white text-[15px] md:mt-24 md:text-[16px]">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,120,189,0.24),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(254,147,44,0.16),transparent_34%)]" />
       <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#7dd3fc] to-transparent opacity-60" />
 
@@ -170,10 +170,14 @@ export function SiteFooter() {
                 Start a project
               </p>
               <h3 className="text-3xl md:text-5xl font-extrabold text-[#0f1f36] leading-tight mb-3">
-                Build with clarity, precision, and a cleaner process.
+                From the first site visit to the final finish.
               </h3>
               <p className="text-[#0f1f36]/75 text-[15px] md:text-[16px] max-w-xl leading-relaxed">
-                Share your project vision and we will help shape it into a practical, modern space.
+                Share what you are planning and explore the right services and next steps for your build.
+              </p>
+              <p className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f1f36]/65">
+                <span className="material-symbols-outlined text-base text-primary">calendar_month</span>
+                Established 29 July 2019
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -198,23 +202,20 @@ export function SiteFooter() {
           <div className="lg:col-span-4 space-y-6">
             <img alt="Santhi Builders" className="h-12 w-auto object-contain" src={FLOGO} />
             <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed max-w-md">
-              Building spaces that reflect your vision, lifestyle, and aspirations. From concept
-              to completion, we deliver quality construction with professional expertise and
-              attention to detail.
+              Planning, design, construction and project support for residential and commercial spaces.
             </p>
             <div className="flex gap-3">
               {[
-                { icon: "share", label: "Share" },
-                { icon: "public", label: "Website" },
-                { icon: "call", label: "Call" },
-                { icon: "chat", label: "WhatsApp" },
+                { icon: "call", label: "Call", href: CONTACT_PHONE_HREF, external: false },
+                { icon: "mail", label: "Email", href: `mailto:${CONTACT_EMAIL}`, external: false },
+                { icon: "chat", label: "WhatsApp", href: WHATSAPP_LINK, external: true },
               ].map((item) => (
                 <a
-                  key={item.icon}
+                  key={item.label}
                   aria-label={item.label}
-                  href={item.icon === "call" ? CONTACT_PHONE_HREF : WHATSAPP_LINK}
-                  target={item.icon === "call" ? undefined : "_blank"}
-                  rel={item.icon === "call" ? undefined : "noreferrer"}
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
                   className="h-11 w-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/80 transition-all duration-300 hover:bg-white hover:text-[#0f1f36] hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
@@ -236,9 +237,6 @@ export function SiteFooter() {
                     </Link>
                   </li>
                 ))}
-                <li>
-                 
-                </li>
                 <li>
                   <a className="transition-colors hover:text-white" href={CLIENT_PORTAL_LINK} rel="noreferrer" target="_blank">
                     Client Portal Login
@@ -267,22 +265,15 @@ export function SiteFooter() {
                 Contact
               </h4>
               <address className="not-italic space-y-4 text-white/70 text-[13px] sm:text-[14px] md:text-[15px]">
-                <div>
-                  <p className="text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px]">Office Addresses</p>
-                </div>
                 <div className="space-y-3 leading-relaxed">
-                  <div>
-                    <p className="text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px]">Branch 1</p>
-                    {OFFICE_LOCATIONS[0].address.map((line) => (
-                      <p className="text-[13px] md:text-[14px]" key={line}>{line}</p>
-                    ))}
-                  </div>
-                  <div>
-                    <p className="text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px]">Branch 2</p>
-                    {OFFICE_LOCATIONS[1].address.map((line) => (
-                      <p className="text-[13px] md:text-[14px]" key={line}>{line}</p>
-                    ))}
-                  </div>
+                  {OFFICE_LOCATIONS.map((office) => (
+                    <div key={office.label}>
+                      <p className="text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px]">{office.label}</p>
+                      {office.address.map((line) => (
+                        <p className="text-[13px] md:text-[14px]" key={line}>{line}</p>
+                      ))}
+                    </div>
+                  ))}
                 </div>
                 <a className="block text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px] hover:text-[#7dd3fc]" href={CONTACT_PHONE_HREF}>
                   {CONTACT_PHONE_DISPLAY}

@@ -22,9 +22,9 @@ function InteriorDesign() {
     <>
       <header className={"bg-surface sticky top-0 z-50 shadow-sm border-b border-outline-variant"}></header>
       <main>
-        <section className={"relative h-[85vh] min-h-[600px] flex items-center overflow-hidden"}>
+        <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
           <div className={"absolute inset-0 z-0"}>
-            <div className={"absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent z-10"}></div>
+            <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
             <img alt={"Luxurious living room design by Santhi Builders"} className={"w-full h-full object-cover"} src={"/images/living-room.jpg"} />
           </div>
           <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
@@ -42,7 +42,7 @@ function InteriorDesign() {
                 <a className={"bg-primary text-white px-8 py-4 rounded-lg font-bold hover:bg-primary-container transition-all"} href={"#contact"}>
                   Start Your Project
                 </a>
-                <a className={"flex items-center gap-2 px-8 py-4 text-white font-bold border border-white/30 rounded-lg hover:bg-white/10 transition-all"} href={"#"}>
+                <a className={"flex items-center gap-2 px-8 py-4 text-white font-bold border border-white/30 rounded-lg hover:bg-white/10 transition-all"} href={"/projects"}>
                   {" "}View Portfolio{" "}
                   <span className={"material-symbols-outlined"}>
                     arrow_forward
@@ -201,12 +201,12 @@ function InteriorDesign() {
                 <div className={"flex gap-4"}>
                   <div className={"w-24 h-24 rounded-full border-4 border-primary p-1"}>
                     <div className={"w-full h-full rounded-full bg-primary flex items-center justify-center text-white font-bold"}>
-                      100+
+                      Curated
                     </div>
                   </div>
                   <div className={"pt-4"}>
                     <p className={"font-bold text-lg"}>
-                      Finishes
+                      Materials
                     </p>
                     <p className={"text-surface-variant text-sm"}>
                       Curated Library

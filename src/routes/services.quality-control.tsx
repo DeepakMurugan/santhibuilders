@@ -20,10 +20,11 @@ function QualityControl() {
   useReveal();
   return (
     <>
-      <header className={"relative min-h-[80vh] flex items-center overflow-hidden bg-inverse-surface"}>
+      <header className={"construction-service-hero relative flex items-center overflow-hidden bg-inverse-surface"}>
         <div className={"absolute inset-0 z-0 opacity-40"}>
           <div className={"w-full h-full bg-cover bg-center"} data-alt={"A high-angle architectural photograph of a massive construction site at dusk, featuring towering cranes and steel frameworks glowing under warm industrial lights. The scene is shot with a shallow depth of field, highlighting the intricate engineering details. The overall color palette is dominated by deep tech blues and vibrant orange light streaks, conveying a sense of rigorous structural integrity and modern innovation."} style={{backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAweTfPNvaLY8g__DiMJwVYy6n0CFMXD7GvGNCXZaJdS2D8lATa4aLtA-8wnwp8v1u4rwprxg7LLL8G8QIqSQC48kKTZFx3OBdjwU5qAqw5hQ_itosua2uLqZmZ8rZ6dB5WmIvRLToeAgSXqxP3KSGgiIwdnybRFjCvI5exEOUjBA9tJCQWO3yks02C8-5YS_akK_aKNmt6eDi_I-cskYubU9pIaIfA9L5J2IITcZs_bGUZ4kFv_SK1EbEeHZ7YNLC4LLEVPyi-Om51')"}}></div>
         </div>
+        <div className={"construction-service-hero__overlay absolute inset-0 z-0"}></div>
         <div className={"relative z-10 w-full px-gutter max-w-container-max mx-auto py-section-gap"}>
           <div className={"max-w-3xl"}>
             <span className={"inline-block py-1 px-3 bg-primary-container text-on-primary-container text-label-sm font-label-sm uppercase mb-6 tracking-widest"}>
@@ -33,20 +34,20 @@ function QualityControl() {
               {" "}Engineering Precision: Our Quality & Management Framework{" "}
             </h1>
             <p className={"text-body-lg font-body-lg text-surface-variant max-w-2xl mb-10"}>
-              {" "}At Santhi Builders, quality is not a checklist—it’s our structural foundation. We integrate advanced technological tracking with rigorous engineering audits to ensure every millimetre meets global standards.{" "}
+              {" "}At Santhi Builders, quality is built through careful material selection, stage-by-stage reviews and clear documentation of the work.{" "}
             </p>
             <div className={"flex flex-wrap gap-4"}>
-              <button className={"bg-primary text-white px-8 py-4 rounded-DEFAULT font-semibold flex items-center gap-2 hover:translate-y-[-2px] transition-transform"}>
+              <a className={"bg-primary text-white px-8 py-4 rounded-DEFAULT font-semibold flex items-center gap-2 hover:translate-y-[-2px] transition-transform"} href={"#framework"}>
                 {" "}Explore Framework{" "}
                 <span className={"material-symbols-outlined"}>
                   arrow_downward
                 </span>
-              </button>
+              </a>
             </div>
           </div>
         </div>
       </header>
-      <section className={"py-section-gap bg-surface"}>
+      <section className={"py-section-gap bg-surface"} id={"framework"}>
         <div className={"px-gutter max-w-container-max mx-auto"}>
           <div className={"flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"}>
             <div className={"max-w-2xl"}>
@@ -68,10 +69,10 @@ function QualityControl() {
                   </span>
                 </div>
                 <h3 className={"font-headline-md text-headline-md mb-4"}>
-                  ISO 9001:2015 Compliance
+                  Consistent Quality Practices
                 </h3>
                 <p className={"text-on-surface-variant"}>
-                  Adhering to international quality management systems to ensure consistency and continuous improvement in every project phase.
+                  Agreed project specifications guide reviews throughout each phase, with observations recorded for follow-up.
                 </p>
               </div>
             </div>
@@ -83,10 +84,10 @@ function QualityControl() {
                   </span>
                 </div>
                 <h3 className={"font-headline-md text-headline-md mb-4"}>
-                  350+ Quality Checkpoints
+                  Stage-by-Stage Quality Checks
                 </h3>
                 <p className={"text-on-surface-variant mb-6"}>
-                  From soil testing to final electrical insulation, our comprehensive audit trail covers every critical structural and aesthetic detail.
+                  From groundwork to finishing, review key work against the project scope and applicable requirements.
                 </p>
                 <ul className={"grid grid-cols-2 gap-2 text-label-sm font-label-sm text-primary uppercase tracking-tighter"}>
                   <li className={"flex items-center gap-2"}>
@@ -114,10 +115,10 @@ function QualityControl() {
                   </span>
                 </div>
                 <p className={"text-display-lg text-primary font-bold mb-0"}>
-                  350
+                  Stage by Stage
                 </p>
                 <p className={"text-label-sm font-label-sm text-on-surface-variant uppercase"}>
-                  Critical Checks
+                  Work Reviewed
                 </p>
               </div>
             </div>
@@ -129,10 +130,10 @@ function QualityControl() {
                   </span>
                 </div>
                 <h3 className={"font-headline-md text-headline-md mb-4"}>
-                  Real-time Project Tracking
+                  Clear Progress Updates
                 </h3>
                 <p className={"text-surface-variant mb-8"}>
-                  Our proprietary ERP systems allow stakeholders to monitor construction milestones, material arrivals, and site progress with minute-by-minute updates.
+                  Progress updates can cover agreed milestones, material planning and site observations, helping stakeholders stay informed.
                 </p>
                 <button className={"text-secondary-fixed-dim flex items-center gap-2 font-bold hover:gap-4 transition-all"}>
                   {" "}View Dashboard Features{" "}
@@ -157,7 +158,7 @@ function QualityControl() {
                 Material Testing & Validation
               </h3>
               <p className={"text-on-surface-variant"}>
-                Every bag of cement and ton of steel is batch-tested in NABL accredited labs before it enters our sites. No compromises.
+                Material testing can be arranged where required by the project scope and applicable technical specifications.
               </p>
             </div>
           </div>
@@ -235,7 +236,7 @@ function QualityControl() {
                   Final Handover
                 </h4>
                 <p className={"text-on-surface-variant text-body-md"}>
-                  Comprehensive snagging, testing of all utilities, and handover of quality certifications.
+                  Snagging, relevant utility checks and handover of project documentation.
                 </p>
               </div>
             </div>
@@ -250,16 +251,16 @@ function QualityControl() {
             </div>
             <div className={"absolute -bottom-10 right-3 xl:-right-10 bg-white border border-outline-variant p-8 hidden md:block max-w-[240px] shadow-xl"}>
               <p className={"text-headline-md font-bold text-primary mb-2"}>
-                100%
+                Project requirements
               </p>
               <p className={"text-body-md text-on-surface-variant"}>
-                Compliance with BIS & National Building Codes.
+                Applicable building requirements guide project reviews.
               </p>
             </div>
           </div>
           <div>
             <h2 className={"font-headline-lg text-headline-lg text-on-surface mb-8 md:text-headline-lg text-headline-lg-mobile"}>
-              Zero Compromise on Safety & Standards
+              Safety and specification reviews
             </h2>
             <div className={"space-y-8"}>
               <div className={"flex gap-6"}>
@@ -332,7 +333,7 @@ function QualityControl() {
                     </span>
                   </div>
                   <span className={"font-bold text-on-surface"}>
-                    Client Portal v2.0
+                    Project quality reviews
                   </span>
                 </div>
                 <div className={"flex gap-2"}>
@@ -345,14 +346,11 @@ function QualityControl() {
                 <div className={"space-y-6"}>
                   <div className={"p-4 bg-surface-container rounded-lg"}>
                     <p className={"text-label-sm font-label-sm text-on-surface-variant uppercase mb-1"}>
-                      Project Status
+                      Review approach
                     </p>
                     <p className={"text-headline-md text-primary"}>
-                      84% Complete
+                      Stage by stage
                     </p>
-                    <div className={"w-full bg-white h-2 rounded-full mt-2"}>
-                      <div className={"bg-primary h-full rounded-full"} style={{width: "84%"}}></div>
-                    </div>
                   </div>
                   <div className={"p-4 bg-surface-container rounded-lg"}>
                     <p className={"text-label-sm font-label-sm text-on-surface-variant uppercase mb-1"}>
@@ -363,7 +361,7 @@ function QualityControl() {
                         check_circle
                       </span>
                       <span>
-                        Verified
+                        Reviewed against scope
                       </span>
                     </div>
                   </div>
@@ -371,10 +369,10 @@ function QualityControl() {
                 <div className={"md:col-span-2 bg-surface rounded-lg border border-outline-variant p-6"}>
                   <div className={"flex justify-between items-center mb-6"}>
                     <h5 className={"font-bold text-on-surface"}>
-                      Construction Velocity
+                      Review stages
                     </h5>
                     <span className={"text-label-sm text-primary"}>
-                      +12% vs Schedule
+                      Plan · Build · Finish
                     </span>
                   </div>
                   <div className={"flex items-end gap-2 h-40"}>
@@ -387,13 +385,13 @@ function QualityControl() {
                   </div>
                   <div className={"flex justify-between mt-4 text-[10px] text-outline uppercase font-bold"}>
                     <span>
-                      Jan
+                      Plan
                     </span>
                     <span>
-                      Feb
+                      Build
                     </span>
                     <span>
-                      Mar
+                      Finish
                     </span>
                     <span>
                       Apr

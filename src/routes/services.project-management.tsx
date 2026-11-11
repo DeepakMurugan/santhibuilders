@@ -6,9 +6,9 @@ export const Route = createFileRoute("/services/project-management")({
   head: () => ({
     meta: [
       { title: "Project Management Services | Santhi Builders" },
-      { name: "description", content: "Cost, schedule and quality control managed end to end by certified construction project managers in Chennai." },
+      { name: "description", content: "Construction project coordination, scheduling and progress communication for projects in Chennai." },
       { property: "og:title", content: "Project Management Services | Santhi Builders" },
-      { property: "og:description", content: "Cost, schedule and quality control managed end to end by certified construction project managers in Chennai." },
+      { property: "og:description", content: "Construction project coordination, scheduling and progress communication for projects in Chennai." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -21,9 +21,9 @@ function ProjectManagement() {
   return (
     <>
       <header className={"bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 sticky z-50"}></header>
-      <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+      <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
         <div className={"absolute inset-0 z-0"}>
-          <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+          <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
           <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} style={{backgroundImage: "url('/images/highrise.jpg')"}}></div>
         </div>
         <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
@@ -38,15 +38,15 @@ function ProjectManagement() {
               {" "}Beyond construction, we engineer certainty. Our project management framework ensures every weld, pour, and joint meets international benchmarks for structural integrity.{" "}
             </p>
             <div className={"flex flex-col sm:flex-row gap-4"}>
-              <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
+              <a className={"bg-secondary-container text-on-secondary-container px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"} href={"/contact"}>
                 {" "}View Quality Protocol{" "}
                 <span className={"material-symbols-outlined"}>
                   arrow_forward
                 </span>
-              </button>
-              <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
-                {" "}Download Portfolio{" "}
-              </button>
+              </a>
+              <a className={"border-2 border-white/30 text-white backdrop-blur-md px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-white/10 transition-all"} href={"/projects"}>
+                {" "}View Projects{" "}
+              </a>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ function ProjectManagement() {
                 Site Inspections
               </h3>
               <p className={"font-body-md text-body-md text-primary-fixed mb-8"}>
-                Continuous 24/7 onsite supervision by Grade-A certified engineers ensures adherence to architectural blueprints.
+                Site coordination and regular reviews help align construction work with the agreed drawings and project scope.
               </p>
               <div className={"bg-white/10 p-4 rounded-lg border border-white/20"}>
                 <div className={"flex justify-between text-label-sm font-label-sm mb-2"}>
@@ -123,11 +123,11 @@ function ProjectManagement() {
                     Inspection Accuracy
                   </span>
                   <span>
-                    99.8%
+                    Site notes
                   </span>
                 </div>
                 <div className={"w-full bg-white/20 h-2 rounded-full overflow-hidden"}>
-                  <div className={"bg-secondary-fixed w-[99.8%] h-full"}></div>
+                  <div className={"bg-secondary-fixed w-3/4 h-full"}></div>
                 </div>
               </div>
             </div>
@@ -220,7 +220,7 @@ function ProjectManagement() {
                       Cost Control
                     </h4>
                     <p className={"font-body-md text-body-md text-on-surface-variant"}>
-                      Real-time expenditure tracking against estimates to ensure 0% budget overruns for our clients.
+                      Review project costs against estimates and discuss changes as the scope develops.
                     </p>
                   </div>
                 </div>
@@ -232,10 +232,10 @@ function ProjectManagement() {
               </div>
               <div className={"absolute -bottom-10 -left-10 bg-secondary-container p-8 rounded-xl shadow-xl floating-action hidden md:block"}>
                 <div className={"text-white font-headline-lg text-4xl mb-1"}>
-                  15%
+                  Clear
                 </div>
                 <div className={"text-on-secondary-container font-label-sm uppercase tracking-wider"}>
-                  Avg. Faster Delivery
+                  Project coordination
                 </div>
               </div>
             </div>
@@ -248,7 +248,7 @@ function ProjectManagement() {
             Transparency In Your Pocket
           </h2>
           <p className={"font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto"}>
-            Track your dream home's progress like a pizza delivery. Our proprietary app provides 24/7 visibility into your investment.
+            Regular project updates help keep you informed about agreed milestones, current work and upcoming decisions.
           </p>
         </div>
         <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-3 gap-12 items-center"}>
@@ -298,7 +298,7 @@ function ProjectManagement() {
                     </div>
                   </div>
                   <div className={"w-full h-32 bg-surface-container rounded-lg mb-4 overflow-hidden"}>
-                    <img className={"w-full h-full object-cover"} data-alt={"A smartphone screen mockup showing a modern construction tracking app interface with a blue and white color scheme. It displays a progress bar at 65 percent, a 'Live Feed' button, and a list of completed milestones like Foundation and Framing. The design is clean, intuitive, and high-energy."} src={"https://lh3.googleusercontent.com/aida-public/AB6AXuDAsnRAp-8qD8ltHrnmzOvJ5h87qPxXajBLDz9gLWxZvwiA9yQCKBUJ3qkz8NTNETFHwP0mWNb_M9FOPYY_Etqi4QMWQu6QTCXmJQrkXnXSpJLXJzxT_ulnfmWenqLQQP9ZZVOuRosv2cksncVjN6X1OzdJS0HqCQHlce_4GkaphANSh1_uIqk4doRBcGTQhKW2qQW170EEVeh3ZwcwK9Qq43iH4dyJzUQeGmZurnOqS1-gonPnbvZ0E8GryOtaINp-XO-1PjiUS2yR"} />
+                    <img className={"w-full h-full object-cover"} data-alt={"Construction work in progress at a building site."} src={"/images/highrise.jpg"} />
                   </div>
                   <div className={"space-y-2"}>
                     <div className={"h-4 w-full bg-surface-container rounded"}></div>

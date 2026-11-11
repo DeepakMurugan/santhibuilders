@@ -30,9 +30,9 @@ function QuantitySurveying() {
 
 
             
-        <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+        <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
           <div className={"absolute inset-0 z-0"}>
-            <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+            <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
             <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} data-alt={"A high-rise construction project representing precise quantity surveying, budgeting, and cost control."} style={{backgroundImage: "url('/images/highrise.jpg')"}}></div>
           </div>
           <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
@@ -47,12 +47,12 @@ function QuantitySurveying() {
                 {" "}Optimizing costs without compromising structural integrity. We bridge the gap between architectural ambition and fiscal reality through rigorous data analysis.{" "}
               </p>
               <div className={"flex flex-col sm:flex-row gap-4"}>
-                <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
+                <a className={"bg-secondary-container text-on-secondary-container px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"} href={"/contact"}>
                   {" "}Request Audit{" "}
-                </button>
-                <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
+                </a>
+                <a className={"border-2 border-white/30 text-white backdrop-blur-md px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-white/10 transition-all"} href={"/projects"}>
                   {" "}View Case Studies{" "}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -71,28 +71,28 @@ function QuantitySurveying() {
                         Budget Intelligence
                       </span>
                       <h2 className={"mt-5 text-headline-lg-mobile md:text-headline-lg text-on-surface"}>
-                        Cost certainty from concept to completion.
+                        Cost clarity from concept to completion.
                       </h2>
                       <p className={"mt-4 text-on-surface-variant max-w-2xl"}>
-                        Our quantity surveying framework combines BOQ discipline, market-rate validation,
-                        and live spend tracking so every project decision remains financially controlled.
+                        Our quantity surveying support combines BOQ preparation, market-rate review
+                        and budget discussions to help inform project decisions.
                       </p>
                     </div>
                     <div className={"grid grid-cols-2 gap-4"}>
                       <div className={"rounded-2xl bg-white/90 border border-primary/20 p-5"}>
                         <p className={"text-3xl font-extrabold text-primary"}>
-                          98%
+                          BOQ
                         </p>
                         <p className={"text-body-md text-on-surface-variant mt-1"}>
-                          Estimate accuracy
+                          Quantity take-offs
                         </p>
                       </div>
                       <div className={"rounded-2xl bg-white/90 border border-primary/20 p-5"}>
                         <p className={"text-3xl font-extrabold text-primary"}>
-                          10-15%
+                          Scope-based
                         </p>
                         <p className={"text-body-md text-on-surface-variant mt-1"}>
-                          Cost savings range
+                          Estimates
                         </p>
                       </div>
                       <div className={"col-span-2 rounded-2xl bg-[#131b2e] text-white p-5"}>
@@ -232,7 +232,7 @@ function QuantitySurveying() {
                       Zero-Tolerance for Waste
                     </h4>
                     <p className={"text-on-surface-variant text-body-md"}>
-                      We identify inefficiencies in material procurement that account for up to 5% of total waste.
+                      We review material quantities and discuss procurement options against the project specifications.
                     </p>
                   </div>
                 </div>
@@ -267,15 +267,15 @@ function QuantitySurveying() {
                 </p>
                 <div className={"bg-surface/10 p-8 rounded-xl border border-white/10"}>
                   <div className={"flex items-baseline gap-2 mb-2"}>
-                    <span className={"text-5xl font-black text-secondary-fixed-dim"}>
-                      10-15%
+                    <span className={"text-2xl font-black text-secondary-fixed-dim sm:text-3xl"}>
+                      Cost
                     </span>
                     <span className={"text-xl font-semibold uppercase"}>
-                      Savings
+                      Planning
                     </span>
                   </div>
                   <p className={"text-surface-variant font-body-md"}>
-                    Average project cost reduction achieved through our Tender Management and Budget Auditing services.
+                    Review quantities, specifications and project priorities to build a clearer cost plan.
                   </p>
                 </div>
               </div>
@@ -288,7 +288,7 @@ function QuantitySurveying() {
                     {" "}Optimized Procurement{" "}
                   </h4>
                   <p className={"text-sm text-surface-variant"}>
-                    We leverage our network to secure materials at 3-5% below market retail through bulk adjudication.
+                    Compare supplier quotes against quantities, specifications and current market rates.
                   </p>
                 </div>
                 <div className={"bg-white/5 p-6 rounded-lg hover:bg-white/10 transition-colors"}>
@@ -331,13 +331,13 @@ function QuantitySurveying() {
               Stop Guessing. Start Measuring.
             </h2>
             <p className={"text-body-lg text-on-surface-variant mb-12"}>
-              Every large-scale construction failure begins with a miscalculated budget. Let our certified surveyors build the financial foundation your vision deserves.
+              A clear project scope and measured quantities help create a more useful budget baseline. Discuss your plans with the Santhi Builders team.
             </p>
             <div className={"flex flex-col sm:flex-row gap-6 justify-center"}>
-              <a className={"bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg hover:shadow-2xl transition-all hover:-translate-y-1"} href={"#"}>
+              <a className={"bg-primary text-on-primary px-10 py-5 rounded-lg font-bold text-lg hover:shadow-2xl transition-all hover:-translate-y-1"} href={"/contact"}>
                 {" "}Get a Detailed Cost Audit{" "}
               </a>
-              <a className={"border-2 border-outline-variant px-10 py-5 rounded-lg font-bold text-lg hover:bg-surface-container transition-all"} href={"#"}>
+              <a className={"border-2 border-outline-variant px-10 py-5 rounded-lg font-bold text-lg hover:bg-surface-container transition-all"} href={"/services"}>
                 {" "}Download Sample Report{" "}
               </a>
             </div>

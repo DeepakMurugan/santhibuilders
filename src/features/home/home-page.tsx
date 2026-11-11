@@ -12,9 +12,9 @@ import {
 import { testimonials } from "@/features/testimonials/testimonials";
 
 const heroSlides = [
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuBuJkUxMSDrRQ37YlhHmlYGb0azVpYLFObzVksyH3CAqGDPfkZ-XpcJPz3wjw4cSrcAMnW9j2AjzP7GhhNGIe0CvjoTt5zF7mmm7gKdoaEnf3Gjr085l0e-GOa78xwXQ_hOwC9ZQUdTIQLU7sATxzGh4b-nrdlJ1oc-pByqKSP0Etd9lbVVhoiTAIn8D5KOP_mO_OUA9Mx5UeELTWj36rO23rbkojRh-1AVsaIj-sXv54a4nNz3tCz50T7mWroTjDsXBU31_OHI1sok",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAhW9ynUfHU4LLvFwmJADMSM7OGgGatIMtJRRtfGCMiVHja6ZgxJYZyNEXISXIF0nNu7bp-skvU6zzxpZ12IvZVxpChP4FBaLamWntT8YhBugIl7dT8Vmho_LooZ0vWxjG9feOQr6WcjKrJ8zYWgrmosXQMxf3PMkxaPR90qdGgnOFnt4dg0Se4ytILotuKBQuCxNV-F5ZrKorI0NfNSNlR1KyEl8X68AC3bGFpAqMGOZSOKGIT-_WETmSR0IKxTKs-qV10e8u1aK_E",
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuAX7rnUnWsIPiY4wASpzn207-ilxML0hVzGfTd_d5ERjcxHOBDd7763Ly9ETPat6rQHmJxlW_hqqnNOZbF5KH0yRzMmw-qDGxHY7G6lXeIsJlA-pQJbI9hMQ03W5HbQulpgLiFcwR9CGGWOCSQMGR452FhBa4SL9y1pnEfvLTplT50ZlEMsxmyIqgbpupUkjnQGUq8lLHVr_J5POarf4lessfzyCylfUgkCszav2tl2O3oFOYkafF5KB0Kikir6HW7SzofsgDOjgtOX",
+  "/images/excellence.jpg",
+  "/images/highrise.jpg",
+  "/images/steel-detail.jpg",
 ] as const;
 
 const residentialMeta: Record<string, { status: string; location: string; builtUp: string }> = {
@@ -22,14 +22,6 @@ const residentialMeta: Record<string, { status: string; location: string; builtU
   "monolith-residences": { status: "Ongoing", location: "Puducherry", builtUp: "3,100 sq.ft" },
   "sea-crest-villas": { status: "Completed", location: " Puducherry", builtUp: "2,150 sq.ft" },
 };
-
-const complianceItems = [
-  { icon: "verified_user", label: "ISO 9001:2015" },
-  { icon: "eco", label: "LEED Certified" },
-  { icon: "apartment", label: "CREDAI Member" },
-  { icon: "award_star", label: "BAI Award 2023" },
-  { icon: "verified_user", label: "Quality Assured" },
-] as const;
 
 const trustedClientLogos = [
   {
@@ -93,7 +85,6 @@ export function HomePage() {
   const [activeHeroSlide, setActiveHeroSlide] = useState(0);
   const [portfolioApi, setPortfolioApi] = useState<CarouselApi>();
   const [testimonialApi, setTestimonialApi] = useState<CarouselApi>();
-  const [partnersApi, setPartnersApi] = useState<CarouselApi>();
 
   const residentialProjects = PROJECT_LISTING_ITEMS.filter((project) => project.type === "Residential").slice(0, 6);
 
@@ -118,7 +109,7 @@ export function HomePage() {
       <HomeProjectsSection portfolioApi={portfolioApi} residentialProjects={residentialProjects} setPortfolioApi={setPortfolioApi} />
       <HomeTestimonialsSection setTestimonialApi={setTestimonialApi} testimonialApi={testimonialApi} />
       <HomeWhySection />
-      <HomeComplianceSection partnersApi={partnersApi} setPartnersApi={setPartnersApi} />
+      <HomeComplianceSection />
       <HomeTrustedClientsSection />
       <HomeEstimatorSection />
       <HomeFaqSection />
@@ -143,22 +134,19 @@ function HomeHeroSection({
             </div>
           ))}
         </div>
-        <div className={"absolute inset-0 z-10 bg-linear-to-tr from-on-primary-fixed/90 via-on-primary-fixed/40 to-transparent"}></div>
+        <div className={"construction-home-hero__overlay absolute inset-0 z-10"}></div>
         <div className={"absolute inset-0 z-20 flex items-center px-5 py-12 sm:px-8 md:px-16"}>
           <div className={"max-w-3xl text-white"}>
             <div className={"mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-md sm:mb-8 sm:px-4"}>
-              <span className={"material-symbols-outlined text-secondary-container text-xs"}>verified</span>
-              <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>ISO 9001:2015 Certified</span>
+              <span className={"material-symbols-outlined text-secondary-container text-xs"}>calendar_month</span>
+              <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>Established 29 July 2019</span>
             </div>
             <h1 className={"font-display-lg text-3xl leading-[1.08] font-extrabold tracking-tight sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl"}>
-              {" "}Crafting{" "}
-              <span className={"text-primary italic"}>Architectural</span>
-              {" "}Masterpieces{" "}
+              {" "}A better build{" "}
+              <span className={"text-primary italic"}>starts with a plan.</span>
             </h1>
             <p className={"font-body-lg mb-8 max-w-lg border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-10 sm:pl-8 sm:text-lg md:text-body-lg"}>
-              {" "}Engineering structural excellence in Puducherry starting at{" "}
-              <span className={"text-white font-black underline decoration-secondary-container decoration-4 underline-offset-8"}>₹2,549/Sq.Ft</span>
-              .{" "}
+              {" "}From design and planning to construction, we help bring your home or building project together with a clear, practical process.{" "}
             </p>
             <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:gap-6"}>
               <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-10 sm:py-5 sm:text-base md:text-lg"} to={"/estimate-calculator"}>
@@ -205,23 +193,23 @@ function HomeLegacySection() {
           <div className={"lg:col-span-7 relative group"}>
             <div className={"absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"}></div>
             <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-cover shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-137.5"} src={"/images/excellence.jpg"} />
-            <div className={"absolute -bottom-8 -right-8 bg-white p-10 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
-              <p className={"text-primary font-black text-4xl leading-none sm:text-5xl"}>15+</p>
-              <p className={"text-xs uppercase tracking-[0.3em] font-black text-on-surface-variant mt-2"}>Years of Trust</p>
+            <div className={"absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
+              <p className={"text-primary font-black text-2xl leading-none"}>29 July 2019</p>
+              <p className={"text-xs uppercase tracking-[0.2em] font-black text-on-surface-variant mt-2"}>Company established</p>
             </div>
           </div>
           <div className={"space-y-6 lg:col-span-5 lg:space-y-8 lg:pl-12"}>
             <div className={"inline-flex items-center gap-3 text-primary font-black tracking-[0.3em] uppercase text-xs"}>
               <span className={"h-1 w-12 bg-primary rounded-full"}></span>
-              {" "}Our Legacy{" "}
+              {" "}Built with purpose{" "}
             </div>
             <h2 className={"font-headline-lg text-3xl font-black leading-tight text-on-surface sm:text-4xl lg:text-[2.75rem]"}>
-              {" "}Engineering the Future,{" "}
+              {" "}From the first plan{" "}
               <br />
-              <span className={"text-primary italic"}>Honoring Foundations</span>
+              <span className={"text-primary italic"}>to the final finish.</span>
             </h2>
             <p className={"text-body-lg text-base text-on-surface-variant leading-relaxed sm:text-lg"}>
-              {" "}With over 15 years of commitment, Santhi Builders has redefined Chennai's skyline. We don't just build; we craft legacies using cutting-edge engineering and refined traditional craftsmanship.{" "}
+              {" "}Santhi Builders was established on 29 July 2019. We bring planning, design and construction services together to help clients move from an idea to a finished space with clear communication at every stage.{" "}
             </p>
             <div className={"pt-6"}>
               <Link className={"inline-flex w-fit items-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-black text-white transition-all hover:-translate-y-1 hover:shadow-2xl sm:px-10 sm:py-5 sm:text-base md:text-lg"} to={"/about"}>
@@ -238,10 +226,10 @@ function HomeLegacySection() {
 
 function HomeStatsSection() {
   const stats = [
-    { value: "220+", label: "Homes Built" },
-    { value: "350+", label: "Quality Checks" },
-    { value: "2.5L+", label: "Sq.Ft Delivered" },
-    { value: "15+", label: "Years Trust" },
+    { value: "01", label: "Plan the project" },
+    { value: "02", label: "Design the space" },
+    { value: "03", label: "Build with care" },
+    { value: "04", label: "Review and hand over" },
   ] as const;
 
   return (
@@ -264,28 +252,28 @@ function HomeExpertiseSection() {
       title: "Residential",
       icon: "home_work",
       body: "Luxury villas, premium apartments, and homes designed for modern living with uncompromised quality.",
-      className: "md:col-span-7 -rotate-1 lg:translate-y-8",
+      className: "md:col-span-7",
       maxWidth: "max-w-md",
     },
     {
       title: "Commercial",
       icon: "architecture",
       body: "State-of-the-art office spaces and retail hubs built for sustainable growth.",
-      className: "md:col-span-5 rotate-1",
+      className: "md:col-span-5",
       maxWidth: "",
     },
     {
       title: "Institutional",
       icon: "account_balance",
       body: "Educational campuses and healthcare facilities with functional precision.",
-      className: "md:col-span-5 -rotate-1",
+      className: "md:col-span-5",
       maxWidth: "",
     },
     {
       title: "Industrial",
       icon: "precision_manufacturing",
       body: "Robust warehouses and units engineered for heavy-duty operations and industrial longevity.",
-      className: "md:col-span-7 rotate-1 lg:-translate-y-8",
+      className: "md:col-span-7",
       maxWidth: "max-w-md",
     },
   ] as const;
@@ -508,40 +496,29 @@ function HomeWhySection() {
   );
 }
 
-function HomeComplianceSection({
-  partnersApi,
-  setPartnersApi,
-}: {
-  partnersApi: CarouselApi | undefined;
-  setPartnersApi: (api: CarouselApi) => void;
-}) {
+function HomeComplianceSection() {
+  const steps = [
+    { icon: "edit_document", title: "Plan", description: "Start with your site, scope, priorities and timeline." },
+    { icon: "architecture", title: "Design", description: "Shape the layout and details around how you will use the space." },
+    { icon: "construction", title: "Build", description: "Coordinate the work on site with attention to the agreed plan." },
+    { icon: "key", title: "Handover", description: "Review the completed work and prepare for the next chapter." },
+  ] as const;
+
   return (
-    <section className={"relative overflow-hidden border-y border-outline-variant/30 bg-surface-container-low py-10 sm:py-14"}>
+    <section className={"relative overflow-hidden border-y border-outline-variant/30 bg-surface-container-low py-12 sm:py-16"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-7 md:mb-10"}>
-        <span className={"text-primary font-black tracking-[0.5em] uppercase text-[10px] mb-4 block"}>Industry Compliance & Partners</span>
-        <h3 className={"text-xl sm:text-2xl md:text-3xl font-black text-on-surface"}>Recognized for Precision Built Quality</h3>
+        <span className={"text-primary font-black tracking-[0.3em] uppercase text-[10px] mb-4 block"}>A straightforward process</span>
+        <h3 className={"text-2xl sm:text-3xl md:text-4xl font-black text-on-surface"}>From your first idea to a finished build</h3>
       </div>
-      <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
-        <Carousel className={"w-full"} opts={{ align: "start", loop: true }} setApi={setPartnersApi}>
-          <CarouselContent>
-            {complianceItems.map((item, index) => (
-              <CarouselItem className={"basis-1/2 sm:basis-1/3 lg:basis-1/4 xl:basis-1/5"} key={`${item.label}-${index}`}>
-                <div className={"h-full rounded-2xl border border-outline-variant/30 bg-white/85 backdrop-blur-sm py-6 px-4 flex flex-col items-center justify-center gap-3 shadow-sm grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:-translate-y-1 transition-all duration-300"}>
-                  <span className={"material-symbols-outlined text-4xl text-primary"}>{item.icon}</span>
-                  <span className={"text-[10px] md:text-[11px] font-black uppercase tracking-widest text-on-surface text-center"}>{item.label}</span>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-        <div className={"flex justify-center gap-3 mt-6"}>
-          <button aria-label={"Slide partners right"} className={"w-11 h-11 rounded-full border border-primary/25 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center"} onClick={() => partnersApi?.scrollPrev()} type={"button"}>
-            <span className={"material-symbols-outlined text-xl"}>west</span>
-          </button>
-          <button aria-label={"Slide partners left"} className={"w-11 h-11 rounded-full border border-primary/25 text-primary hover:bg-primary hover:text-white transition-colors flex items-center justify-center"} onClick={() => partnersApi?.scrollNext()} type={"button"}>
-            <span className={"material-symbols-outlined text-xl"}>east</span>
-          </button>
-        </div>
+      <div className={"mx-auto grid max-w-container-max grid-cols-1 gap-4 px-margin-mobile sm:grid-cols-2 md:gap-6 md:px-gutter lg:grid-cols-4"}>
+        {steps.map((step, index) => (
+          <article className={"relative rounded-2xl border border-outline-variant/30 bg-white p-6 shadow-sm sm:p-7"} key={step.title}>
+            <span className={"text-xs font-black uppercase tracking-[0.2em] text-secondary"}>0{index + 1}</span>
+            <span className={"material-symbols-outlined mt-5 block text-3xl text-primary"}>{step.icon}</span>
+            <h4 className={"mt-4 text-xl font-black text-on-surface"}>{step.title}</h4>
+            <p className={"mt-2 text-sm text-on-surface-variant"}>{step.description}</p>
+          </article>
+        ))}
       </div>
     </section>
   );

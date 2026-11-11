@@ -20,7 +20,7 @@ function DesignDrawings() {
   useReveal();
   return (
     <>
-      <header className={"relative overflow-hidden bg-surface-container-low pt-12 md:pt-24 pb-32 md:pb-48 hero-clip blueprint-grid"}>
+      <header className={"construction-design-hero relative overflow-hidden bg-surface-container-low pt-12 md:pt-24 pb-20 md:pb-28 hero-clip blueprint-grid"}>
         <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center relative z-10"}>
           <div>
             <span className={"inline-block bg-primary-container text-on-primary-container px-4 py-1 rounded-full font-label-sm text-label-sm mb-6 uppercase tracking-widest"}>
@@ -40,15 +40,15 @@ function DesignDrawings() {
               {" "}Visualizing your vision before the first brick is laid. High-precision technical drawings and immersive 3D walkthroughs designed for the future of Chennai's skyline.{" "}
             </p>
             <div className={"flex flex-wrap gap-4"}>
-              <button className={"bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-container transition-colors"}>
+              <a className={"bg-primary text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-primary-container transition-colors"} href={"/projects"}>
                 {" "}Explore Our Portfolio{" "}
                 <span className={"material-symbols-outlined"}>
                   arrow_forward
                 </span>
-              </button>
-              <button className={"bg-surface border border-outline px-8 py-4 rounded-xl font-bold hover:bg-surface-variant transition-colors"}>
-                {" "}View Sample Plans{" "}
-              </button>
+              </a>
+              <a className={"bg-surface border border-outline px-8 py-4 rounded-xl font-bold hover:bg-surface-variant transition-colors"} href={"/contact-us"}>
+                {" "}Discuss a Design{" "}
+              </a>
             </div>
           </div>
           <div className={"relative mt-12 lg:mt-0"}>

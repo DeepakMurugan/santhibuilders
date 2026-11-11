@@ -22,9 +22,9 @@ function Residential() {
     <>
       <header className={"bg-surface sticky top-0 z-50 shadow-sm border-b border-outline-variant/30"}></header>
       <main>
-        <section className={"relative min-h-[90vh] flex items-center overflow-hidden py-20"}>
+        <section className={"construction-service-hero relative flex items-center overflow-hidden py-16 sm:py-20"}>
           <div className={"absolute inset-0 z-0"}>
-            <div className={"absolute inset-0 bg-gradient-to-r from-tertiary/95 via-tertiary/60 to-transparent z-10"}></div>
+            <div className={"construction-service-hero__overlay absolute inset-0 z-10"}></div>
             <div className={"w-full h-full bg-cover bg-center transition-transform duration-[20000ms] scale-105"} style={{backgroundImage: "url('/images/excellence.jpg')"}}></div>
           </div>
           <div className={"relative z-20 max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full"}>
@@ -39,12 +39,12 @@ function Residential() {
                 {" "}Building legacies, one home at a time. We blend engineering precision with aesthetic mastery to create homes that define the Chennai skyline.{" "}
               </p>
               <div className={"flex flex-col sm:flex-row gap-4"}>
-                <button className={"bg-secondary-container text-on-secondary-container px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"}>
+                <a className={"bg-secondary-container text-on-secondary-container px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-secondary hover:shadow-xl hover:-translate-y-1 transition-all"} href={"/contact"}>
                   {" "}Get a Free Estimate{" "}
-                </button>
-                <button className={"border-2 border-white/30 text-white backdrop-blur-md px-10 py-5 rounded font-headline-md text-[18px] font-bold hover:bg-white/10 transition-all"}>
+                </a>
+                <a className={"border-2 border-white/30 text-white backdrop-blur-md px-8 py-4 sm:px-10 sm:py-5 rounded font-headline-md text-base sm:text-[18px] font-bold text-center hover:bg-white/10 transition-all"} href={"/projects"}>
                   {" "}View Our Portfolio{" "}
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ function Residential() {
                     <span className={"material-symbols-outlined text-primary text-[18px]"}>
                       verified
                     </span>
-                    {" "}LEED GUIDELINES{" "}
+                    {" "}RESOURCE-CONSCIOUS DESIGN{" "}
                   </li>
                 </ul>
               </div>
@@ -271,10 +271,10 @@ function Residential() {
                   <div className={"w-full aspect-[4/5] bg-cover bg-center rounded-2xl shadow-2xl overflow-hidden"} style={{backgroundImage: "url('/images/living-room.jpg')"}}></div>
                   <div className={"absolute -bottom-10 right-2 sm:right-0 lg:-right-6 bg-tertiary p-10 rounded-xl shadow-2xl text-center min-w-[200px]"}>
                     <p className={"text-white font-display-lg text-[64px] mb-0 leading-none"}>
-                      100%
+                      Project
                     </p>
                     <p className={"text-primary font-label-sm tracking-widest mt-2 uppercase font-black"}>
-                      Transparency
+                      communication
                     </p>
                   </div>
                 </div>
