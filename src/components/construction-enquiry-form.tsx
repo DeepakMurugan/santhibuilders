@@ -175,7 +175,7 @@ export function ConstructionEnquiryForm({
           {submitLabel}
         </button>
         <p className={`text-xs md:text-sm ${isDark ? "text-white/70" : "text-on-surface-variant"}`}>
-          By submitting, you agree to our <Link className="font-bold text-primary" to="/privacy-policy">Privacy Policy</Link> and <Link className="font-bold text-primary" to="/terms-and-conditions">Terms & Conditions</Link>.
+          By submitting, you agree to our <Link className="font-bold text-primary" to="/privacy-policy">Privacy Policy</Link> & <Link className="font-bold text-primary" to="/terms-and-conditions">Terms & Conditions</Link>.
         </p>
       </form>
     </div>
