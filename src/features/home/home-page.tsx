@@ -587,11 +587,11 @@ function HomeEstimatorSection() {
               <span className={"material-symbols-outlined text-sm"}>calculate</span>
               Instant Cost Planning
             </span>
-            <h2 className={"font-headline-lg mb-4 text-3xl font-black leading-tight sm:text-4xl md:mb-5 md:text-5xl"}>Instant Precision <span className={"italic text-secondary-container"}>Estimator</span></h2>
-            <p className={"text-sm sm:text-base md:text-lg opacity-90 max-w-2xl leading-relaxed mx-auto lg:mx-0"}>Get an accurate sq.ft estimate based on market rates, premium materials, and execution standards tailored for your project.</p>
+            <h2 className={"font-headline-lg mb-4 text-3xl font-black leading-tight sm:text-4xl md:mb-5 md:text-5xl"}>Plan Your Home Construction Budget With        <span className={"italic text-secondary-container"}>Confidence</span></h2>
+            <p className={"text-sm sm:text-base md:text-lg opacity-90 max-w-2xl leading-relaxed mx-auto lg:mx-0"}>Get a quick estimate of your home construction cost based on your built-up area, material preferences and project requirements. Plan your budget before starting your construction journey.</p>
             <div className={"flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 mt-5 md:mt-6"}>
               <Link className={"bg-secondary-container text-on-secondary px-6 md:px-8 py-3.5 md:py-4 rounded-2xl font-black text-sm sm:text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all shadow-lg inline-flex items-center gap-3"} to={"/estimate-calculator"}>
-                Launch Calculator
+                Cost Calculator
                 <span className={"material-symbols-outlined font-black"}>calculate</span>
               </Link>
               <span className={"text-xs md:text-sm text-white/80 font-semibold"}>Starts from Rs.2,549/sq.ft</span>
@@ -600,11 +600,11 @@ function HomeEstimatorSection() {
 
           <div className={"lg:col-span-4"}>
             <div className={"rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-5 md:p-6 space-y-4"}>
-              <h3 className={"text-lg md:text-xl font-black text-white"}>Why this estimator?</h3>
+              <h3 className={"text-lg md:text-xl font-black text-white"}>Why Use Our Cost Calculator?</h3>
               <div className={"space-y-3 text-sm md:text-base text-white/90"}>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>Material-wise transparent costing</p>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>Accurate scope based estimation</p>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>Fast plan for budget decisions</p>
+                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>Get a clear breakdown of estimated construction costs</p>
+                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span> Understand costs based on your project requirements </p>
+                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>  Plan your budget with greater confidence </p>
               </div>
             </div>
           </div>

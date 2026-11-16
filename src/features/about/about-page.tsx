@@ -8,8 +8,8 @@ const supportWhatsapp = "https://wa.me/918838611658";
 
 const heroSlides = [
   {
-    image: "/images/excellence.jpg",
-    badge: "Established 29 July 2019",
+    image: "/images/hero1.jpeg",
+    badge: "Idea to Identity",
     titlePrimary: "Built around",
     titleAccent: "your plans.",
     titleSuffix: "",
@@ -26,7 +26,7 @@ const heroSlides = [
       "Explore a connected range of services for residential and commercial projects, with each stage shaped around your requirements.",
   },
   {
-    image: "/images/steel-detail.jpg",
+    image: "/images/hero3.jpeg",
     badge: "Made for real life",
     titlePrimary: "Good work",
     titleAccent: "starts on site.",
@@ -110,16 +110,18 @@ function AboutLegacySection() {
             <span className={"text-primary font-black uppercase tracking-[0.3em] text-[10px] block border-l-4 border-primary pl-4"}>Our story</span>
             <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Considered design. <span className={"text-primary"}>Careful construction.</span></h2>
             <div className={"space-y-4 text-base font-medium leading-relaxed text-on-surface-variant sm:text-lg"}>
-              <p>Santhi Builders was established on 29 July 2019. We work across planning, design, construction and project support to help turn building ideas into practical spaces.</p>
-              <p>Every project starts with understanding the brief and making the next steps clear, from early drawings through work on site.</p>
+              <p>Building your dream home should be a well-planned and hassle-free experience. At Santhi Builders, we follow a structured construction process that ensures every stage is handled with care, transparency and attention to detail.</p>
+              <p>200+ Homes, Commercial Buildings Delivered across Pondicherry, Santhi Builders combines thoughtful planning, reliable construction and quality craftsmanship to bring your dream home to life. </p>
             </div>
-            <div className={"flex flex-wrap items-center gap-4 border-t border-outline-variant/30 pt-6"}>
+           
+            {/* <div className={"flex flex-wrap items-center gap-4 border-t border-outline-variant/30 pt-6"}>
               <span className={"material-symbols-outlined flex size-12 items-center justify-center rounded-xl bg-primary/10 text-2xl text-primary"}>calendar_month</span>
               <div>
                 <p className={"text-xl font-black text-on-surface"}>29 July 2019</p>
                 <p className={"text-xs font-bold uppercase tracking-[0.18em] text-on-surface-variant"}>The day Santhi Builders began</p>
               </div>
-            </div>
+            </div> */}
+
           </div>
           <div className={"relative overflow-hidden rounded-3xl shadow-2xl"}>
             <img alt={"Contemporary home built with considered architectural details"} className={"aspect-[4/3] w-full object-cover"} src={"/images/excellence.jpg"} />
@@ -134,11 +136,10 @@ function AboutLegacySection() {
 
 function AboutBlueprintSection() {
   const steps = [
-    { step: "Step 01", icon: "forum", title: "Consultation", body: "Deep dive into requirements, budget analysis, and feasibility studies." },
-    { step: "Step 02", icon: "architecture", title: "Design", body: "Architectural blueprints, 3D visualizations, and interior planning." },
-    { step: "Step 03", icon: "construction", title: "Execution", body: "Civil works, structural erection, and systematic site development." },
-    { step: "Step 04", icon: "fact_check", title: "Quality Review", body: "Review key work stages and finishes against the agreed project details." },
-    { step: "Step 05", icon: "key", title: "Delivery", body: "Final walkthrough, documents handover, and aftercare onboarding." },
+    { step: "Step 01", icon: "forum", title: "Plan", body: "We begin by understanding your requirements, budget, plot details and expectations to create a clear construction plan." },
+    { step: "Step 02", icon: "architecture", title: "Design", body: "Our team develops functional layouts and thoughtful designs that reflect your lifestyle, preferences and space requirements." },
+    { step: "Step 03", icon: "construction", title: "Build", body: "From foundation to finishing, we manage every stage of construction with quality materials, skilled workmanship and proper supervision." },
+    { step: "Step 04", icon: "fact_check", title: "Handover", body: "We conduct a final inspection, review the completed work and hand over your home, ready for a new beginning." },
   ] as const;
 
   return (
@@ -148,11 +149,11 @@ function AboutBlueprintSection() {
         <div className={"flex flex-col lg:flex-row lg:items-end justify-between mb-12 md:mb-20 gap-8 md:gap-10"}>
           <div className={"max-w-2xl"}>
             <span className={"text-primary font-black uppercase tracking-[0.5em] text-[10px] mb-6 block border-l-4 border-primary pl-4"}>Execution Framework</span>
-            <h2 className={"text-5xl md:text-6xl font-black text-on-surface leading-tight"}>The Santhi <br /><span className={"text-primary"}>Blueprint.</span></h2>
+            <h2 className={"text-5xl md:text-6xl font-black text-on-surface leading-tight"}>Santhi Builders Construction Process <br /><span className={"text-primary"}>From Vision to Reality.</span></h2>
           </div>
           <p className={"text-on-surface-variant font-medium md:max-w-sm text-lg leading-relaxed"}>{" "}A clear sequence for moving from your project brief through design, construction and handover.{" "}</p>
         </div>
-        <div className={"grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"}>
+        <div className={"grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6"}>
           {steps.map((item) => (
             <div className={"card-advanced rounded-2xl border border-outline-variant/30 bg-white p-6 shadow-sm transition-shadow hover:shadow-xl sm:p-8 lg:p-7"} key={item.title}>
               <div className={"text-[10px] font-black text-primary tracking-[0.3em] mb-8 block uppercase"}>{item.step}</div>
@@ -208,7 +209,16 @@ function AboutTeamSection() {
   );
 }
 
-function AboutPeopleSection() { 
+function AboutPeopleSection() {
+  const teamMembers = [
+    { name: "Yogesh", designation: "Founder & CEO", image: "/images/team/founder.png" },
+    { name: "Boobalan G", designation: "Quantity Surveyor & CAD Engineer", image: "/images/team/t1.png" },
+    { name: "Vasanthakumar M", designation: "Supervisor", image: "/images/team/t2.png" },
+    { name: "Shanthapriya H", designation: "Front Office & Admin Executive", image: "/images/team/t3.png" },
+    { name: "Ravikumar S", designation: "Senior Site Engineer", image: "/images/team/t4.png" },
+    { name: "Prakash T", designation: "Site Engineer", image: "/images/team/t5.png" },
+  ] as const;
+
   return (
     <section className={"bg-white py-section-gap"}>
       <div className={"mx-auto max-w-container-max px-margin-mobile md:px-gutter"}>
@@ -217,23 +227,27 @@ function AboutPeopleSection() {
             <span className={"mb-5 block border-l-4 border-primary pl-4 text-[10px] font-black uppercase tracking-[0.3em] text-primary"}>The people behind the work</span>
             <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Meet our <span className={"text-primary"}>team.</span></h2>
           </div>
-          <p className={"max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg"}>We look forward to introducing the people who help bring each project together. Team photos will be added here.</p>
+          <p className={"max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg"}>Meet the people who bring every project together with expertise, care and commitment.</p>
         </div>
-        <div className={"grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5"}>
-          {Array.from({ length: 8 }, (_, index) => (
-            <div
-              aria-label={`Team photo placeholder ${index + 1}`}
-              className={"group relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl border border-outline-variant/50 bg-[linear-gradient(145deg,#e9f1f6,#dce7ed_52%,#edf1f3)]"}
-              key={index}
-              role={"img"}
-            >
-              <div className={"absolute inset-0 opacity-30"} style={{ backgroundImage: "linear-gradient(rgba(15,31,54,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(15,31,54,.12) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-              <div className={"relative flex flex-col items-center gap-3 text-center text-on-surface-variant"}>
-                <span className={"material-symbols-outlined text-4xl text-primary/70 sm:text-5xl"}>person</span>
-                <span className={"text-[9px] font-bold uppercase tracking-[0.14em] sm:text-[10px]"}>Team photo {String(index + 1).padStart(2, "0")}</span>
+        <div className={"grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:gap-6"}>
+          {teamMembers.map((member) => (
+            <article className={"group overflow-hidden rounded-2xl border border-outline-variant/30 bg-white shadow-sm transition-shadow hover:shadow-xl"} key={member.name}>
+              <div className={"aspect-[4/5] overflow-hidden bg-surface-container-low"}>
+                <img
+                  alt={`${member.name}, ${member.designation}`}
+                  className={"h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"}
+                  decoding={"async"}
+                  height={950}
+                  loading={"lazy"}
+                  src={member.image}
+                  width={1080}
+                />
               </div>
-              <span className={"absolute bottom-3 left-3 right-3 h-1 rounded-full bg-primary/20 transition-colors group-hover:bg-secondary-container sm:bottom-4 sm:left-4 sm:right-4"} />
-            </div>
+              <div className={"p-3 sm:p-5"}>
+                <h3 className={"text-sm font-black text-on-surface sm:text-lg"}>{member.name}</h3>
+                <p className={"mt-1 text-xs leading-relaxed text-on-surface-variant sm:text-sm"}>{member.designation}</p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
