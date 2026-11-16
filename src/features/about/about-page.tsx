@@ -211,7 +211,7 @@ function AboutTeamSection() {
 
 function AboutPeopleSection() {
   const teamMembers = [
-    { name: "Yogesh", designation: "Founder & CEO", image: "/images/team/founder.png" },
+    { name: "Logesh Raj", designation: "Founder & CEO", image: "/images/team/founder.png" },
     { name: "Boobalan G", designation: "Quantity Surveyor & CAD Engineer", image: "/images/team/t1.png" },
     { name: "Vasanthakumar M", designation: "Supervisor", image: "/images/team/t2.png" },
     { name: "Shanthapriya H", designation: "Front Office & Admin Executive", image: "/images/team/t3.png" },
