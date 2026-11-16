@@ -224,7 +224,7 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
             <div>
               <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.16em] text-[#7dd3fc]">
                 Company
@@ -261,8 +261,8 @@ export function SiteFooter() {
             </div>
 
             <div>
-              <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.16em] text-[#7dd3fc]">
-                Contact
+              <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.12em] text-[#7dd3fc]">
+                Get in Touch
               </h4>
               <address className="not-italic space-y-4 text-white/70 text-[13px] sm:text-[14px] md:text-[15px]">
                 <div className="space-y-3 leading-relaxed">

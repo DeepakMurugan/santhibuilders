@@ -49,6 +49,7 @@ export function AboutPage() {
       <AboutLegacySection />
       <AboutBlueprintSection />
       <AboutTeamSection />
+      <AboutPeopleSection />
       <AboutCtaSection />
     </>
   );
@@ -201,6 +202,39 @@ function AboutTeamSection() {
             Explore our services
             <span className={"material-symbols-outlined text-lg"}>arrow_forward</span>
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function AboutPeopleSection() { 
+  return (
+    <section className={"bg-white py-section-gap"}>
+      <div className={"mx-auto max-w-container-max px-margin-mobile md:px-gutter"}>
+        <div className={"mb-10 flex flex-col gap-5 md:mb-14 md:flex-row md:items-end md:justify-between"}>
+          <div className={"max-w-2xl"}>
+            <span className={"mb-5 block border-l-4 border-primary pl-4 text-[10px] font-black uppercase tracking-[0.3em] text-primary"}>The people behind the work</span>
+            <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Meet our <span className={"text-primary"}>team.</span></h2>
+          </div>
+          <p className={"max-w-xl text-base leading-relaxed text-on-surface-variant sm:text-lg"}>We look forward to introducing the people who help bring each project together. Team photos will be added here.</p>
+        </div>
+        <div className={"grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5"}>
+          {Array.from({ length: 8 }, (_, index) => (
+            <div
+              aria-label={`Team photo placeholder ${index + 1}`}
+              className={"group relative flex aspect-[4/5] items-center justify-center overflow-hidden rounded-2xl border border-outline-variant/50 bg-[linear-gradient(145deg,#e9f1f6,#dce7ed_52%,#edf1f3)]"}
+              key={index}
+              role={"img"}
+            >
+              <div className={"absolute inset-0 opacity-30"} style={{ backgroundImage: "linear-gradient(rgba(15,31,54,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(15,31,54,.12) 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+              <div className={"relative flex flex-col items-center gap-3 text-center text-on-surface-variant"}>
+                <span className={"material-symbols-outlined text-4xl text-primary/70 sm:text-5xl"}>person</span>
+                <span className={"text-[9px] font-bold uppercase tracking-[0.14em] sm:text-[10px]"}>Team photo {String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <span className={"absolute bottom-3 left-3 right-3 h-1 rounded-full bg-primary/20 transition-colors group-hover:bg-secondary-container sm:bottom-4 sm:left-4 sm:right-4"} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

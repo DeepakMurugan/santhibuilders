@@ -4,6 +4,7 @@ export const testimonials = [
       "Santhi Builders transformed our vision into a structural masterpiece. Truly impressive attention to detail.",
     name: "Mr. Vigneshwar",
     role: "Industrialist, Puducherry",
+    location: "Puducherry",
     image:
           "https://lh3.googleusercontent.com/aida-public/AB6AXuBuJkUxMSDrRQ37YlhHmlYGb0azVpYLFObzVksyH3CAqGDPfkZ-XpcJPz3wjw4cSrcAMnW9j2AjzP7GhhNGIe0CvjoTt5zF7mmm7gKdoaEnf3Gjr085l0e-GOa78xwXQ_hOwC9ZQUdTIQLU7sATxzGh4b-nrdlJ1oc-pByqKSP0Etd9lbVVhoiTAIn8D5KOP_mO_OUA9Mx5UeELTWj36rO23rbkojRh-1AVsaIj-sXv54a4nNz3tCz50T7mWroTjDsXBU31_OHI1sok",
 
@@ -16,6 +17,7 @@ export const testimonials = [
       "Our project timeline stayed transparent from day one. Weekly updates and quality checks gave us complete confidence.",
     name: "Mrs. Priyadarshini",
     role: "Home Owner, OMR",
+    location: "OMR",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuBuJkUxMSDrRQ37YlhHmlYGb0azVpYLFObzVksyH3CAqGDPfkZ-XpcJPz3wjw4cSrcAMnW9j2AjzP7GhhNGIe0CvjoTt5zF7mmm7gKdoaEnf3Gjr085l0e-GOa78xwXQ_hOwC9ZQUdTIQLU7sATxzGh4b-nrdlJ1oc-pByqKSP0Etd9lbVVhoiTAIn8D5KOP_mO_OUA9Mx5UeELTWj36rO23rbkojRh-1AVsaIj-sXv54a4nNz3tCz50T7mWroTjDsXBU31_OHI1sok",
   
@@ -29,6 +31,7 @@ export const testimonials = [
       "From civil work to final finishes, the team delivered exactly what was promised. The overall coordination was excellent.",
     name: "Mr. Arun Kumar",
     role: "Business Owner, ECR",
+    location: "ECR",
     image:
       "https://lh3.googleusercontent.com/aida-public/AB6AXuAhW9ynUfHU4LLvFwmJADMSM7OGgGatIMtJRRtfGCMiVHja6ZgxJYZyNEXISXIF0nNu7bp-skvU6zzxpZ12IvZVxpChP4FBaLamWntT8YhBugIl7dT8Vmho_LooZ0vWxjG9feOQr6WcjKrJ8zYWgrmosXQMxf3PMkxaPR90qdGgnOFnt4dg0Se4ytILotuKBQuCxNV-F5ZrKorI0NfNSNlR1KyEl8X68AC3bGFpAqMGOZSOKGIT-_WETmSR0IKxTKs-qV10e8u1aK_E",
 

@@ -12,9 +12,27 @@ import {
 import { testimonials } from "@/features/testimonials/testimonials";
 
 const heroSlides = [
-  "/images/excellence.jpg",
-  "/images/highrise.jpg",
-  "/images/steel-detail.jpg",
+  "/images/hero1.jpeg",
+  "/images/hero2.jpeg",
+  "/images/hero3.jpeg",
+] as const;
+
+const testimonialHighlights = [
+  {
+    title: "Transparent Communication",
+    description:
+      "Stay informed at every stage with clear updates on project progress, costs and timelines.",
+  },
+  {
+    title: "Quality That Lasts",
+    description:
+      "We focus on quality materials, skilled workmanship and careful execution to build homes that stand the test of time.",
+  },
+  {
+    title: "Support From Start to Finish",
+    description:
+      "Our team guides you through every stage of construction, ensuring a smooth experience from planning to handover.",
+  },
 ] as const;
 
 const residentialMeta: Record<string, { status: string; location: string; builtUp: string }> = {
@@ -106,11 +124,13 @@ export function HomePage() {
       <HomeLegacySection />
       <HomeStatsSection />
       <HomeExpertiseSection />
-      <HomeProjectsSection portfolioApi={portfolioApi} residentialProjects={residentialProjects} setPortfolioApi={setPortfolioApi} />
       <HomeTestimonialsSection setTestimonialApi={setTestimonialApi} testimonialApi={testimonialApi} />
+            <HomeProjectsSection portfolioApi={portfolioApi} residentialProjects={residentialProjects} setPortfolioApi={setPortfolioApi} />
+            <HomeTrustedClientsSection />
+
       <HomeWhySection />
+
       <HomeComplianceSection />
-      <HomeTrustedClientsSection />
       <HomeEstimatorSection />
       <HomeFaqSection />
     </>
@@ -126,7 +146,7 @@ function HomeHeroSection({
 }) {
   return (
     <header className={"relative w-full"}>
-      <div className={"relative min-h-155 overflow-hidden border-y border-outline-variant/20 shadow-2xl sm:min-h-170 md:min-h-195"}>
+      <div className={"construction-home-hero relative overflow-hidden border-y border-outline-variant/20 shadow-2xl"}>
         <div className={"absolute inset-0"} id={"hero-slider"}>
           {heroSlides.map((image, index) => (
             <div className={`hero-slide absolute inset-0 ${index === activeHeroSlide ? "opacity-100 z-0" : "opacity-0 z-0"}`} key={image}>
@@ -135,27 +155,34 @@ function HomeHeroSection({
           ))}
         </div>
         <div className={"construction-home-hero__overlay absolute inset-0 z-10"}></div>
-        <div className={"absolute inset-0 z-20 flex items-center px-5 py-12 sm:px-8 md:px-16"}>
+        <div className={"absolute inset-0 z-20 flex items-center px-5 py-14 sm:px-8 sm:py-16 md:px-16"}>
           <div className={"max-w-3xl text-white"}>
-            <div className={"mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 backdrop-blur-md sm:mb-8 sm:px-4"}>
-              <span className={"material-symbols-outlined text-secondary-container text-xs"}>calendar_month</span>
-              <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>Established 29 July 2019</span>
+            <div className={"mb-4 inline-flex items-center gap-2 rounded-full border border-white/20  px-3 py-1.5  sm:mb-5 sm:px-4"}>
+              <span className={"material-symbols-outlined text-secondary-container text-xs"}></span>
+              <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>Idea To Identity</span>
             </div>
-            <h1 className={"font-display-lg text-3xl leading-[1.08] font-extrabold tracking-tight sm:text-5xl md:mb-6 md:text-6xl lg:text-7xl"}>
-              {" "}A better build{" "}
-              <span className={"text-primary italic"}>starts with a plan.</span>
+            <h1 className={"mb-4 max-w-3xl font-display-lg text-2xl leading-[1.08] font-extrabold tracking-tight sm:mb-5 sm:text-5xl lg:text-6xl"}>
+              Best Construction Company in Pondicherry -{" "}
+              <span className={" text-[#fe932c] "}>Your Trusted Partner in Home Construction</span>
             </h1>
-            <p className={"font-body-lg mb-8 max-w-lg border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-10 sm:pl-8 sm:text-lg md:text-body-lg"}>
-              {" "}From design and planning to construction, we help bring your home or building project together with a clear, practical process.{" "}
+            <p className={"font-body-lg mb-4 max-w-2xl border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-5 sm:pl-6 sm:text-base md:text-body-lg"}>
+              {"Santhi Builders is a construction company in Pondicherry, offering quality residential construction solutions. From planning and design to execution, we focus on reliable workmanship, transparent processes and well-designed homes that match your requirements, lifestyle and budget."}
             </p>
-            <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4 md:gap-6"}>
-              <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-10 sm:py-5 sm:text-base md:text-lg"} to={"/estimate-calculator"}>
+            <p className={"mb-5 text-lg font-extrabold text-white sm:mb-6 sm:text-xl"}>
+              Our Construction Packages Start at <span className={"text-primary"}>₹2,549/Sq.Ft</span>
+            </p>
+            <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3"}>
+              <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-5 py-3 text-sm font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-6 sm:py-3.5 sm:text-base"} to={"/estimate-calculator"}>
                 {" "}Calculate Cost Now{" "}
                 <span className={"material-symbols-outlined"}>arrow_forward</span>
               </Link>
-              <Link className={"flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-6 py-4 font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-on-surface sm:px-10 sm:py-5"} to={"/projects"}>
+              <Link className={"flex items-center justify-center rounded-lg border border-white/30 bg-white/10 px-5 py-3 font-bold text-white backdrop-blur-md transition-all hover:bg-white hover:text-on-surface sm:px-6 sm:py-3.5"} to={"/projects"}>
                 {" "}View Projects{" "}
               </Link>
+              <a className={"flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 font-bold text-white transition-colors hover:bg-white/10 sm:px-6 sm:py-3.5"} href={"tel:+918838611658"}>
+                <span className={"material-symbols-outlined"}>call</span>
+                Call us +91 8838611658
+              </a>
             </div>
           </div>
         </div>
@@ -172,7 +199,7 @@ function HomeHeroSection({
           {heroSlides.map((slide, index) => (
             <button
               aria-label={`Go to slide ${index + 1}`}
-              className={`slider-dot h-3 rounded-full bg-white/30 transition-all ${index === activeHeroSlide ? "active w-8" : "w-3"}`}
+              className={`slider-dot h-0 rounded-full bg-white/5 transition-all ${index === activeHeroSlide ? "active w-8" : "w-3"}`}
               key={slide}
               onClick={() => onSelectSlide(index)}
               type={"button"}
@@ -192,10 +219,10 @@ function HomeLegacySection() {
         <div className={"grid lg:grid-cols-12 gap-12 items-center"}>
           <div className={"lg:col-span-7 relative group"}>
             <div className={"absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"}></div>
-            <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-cover shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-137.5"} src={"/images/excellence.jpg"} />
+            <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-contain shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-96"} src={"/images/hero2.jpeg"} />
             <div className={"absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
-              <p className={"text-primary font-black text-2xl leading-none"}>29 July 2019</p>
-              <p className={"text-xs uppercase tracking-[0.2em] font-black text-on-surface-variant mt-2"}>Company established</p>
+              <p className={"text-primary font-black text-2xl leading-none"}>15+</p>
+              <p className={"text-xs uppercase tracking-[0.2em] font-black text-on-surface-variant mt-2"}>Years Of Trust</p>
             </div>
           </div>
           <div className={"space-y-6 lg:col-span-5 lg:space-y-8 lg:pl-12"}>
@@ -204,12 +231,10 @@ function HomeLegacySection() {
               {" "}Built with purpose{" "}
             </div>
             <h2 className={"font-headline-lg text-3xl font-black leading-tight text-on-surface sm:text-4xl lg:text-[2.75rem]"}>
-              {" "}From the first plan{" "}
-              <br />
-              <span className={"text-primary italic"}>to the final finish.</span>
-            </h2>
+              {" "} Why SanthiBuilders?  {" "}
+                 </h2>
             <p className={"text-body-lg text-base text-on-surface-variant leading-relaxed sm:text-lg"}>
-              {" "}Santhi Builders was established on 29 July 2019. We bring planning, design and construction services together to help clients move from an idea to a finished space with clear communication at every stage.{" "}
+              {" "}At Santhi Builders, we combine engineering expertise, quality materials and skilled workmanship to deliver homes built to last. From initial planning to final handover, we focus on transparent pricing, thoughtful designs and dependable construction practices. Our approach ensures every project is handled with care, keeping your requirements, budget and expectations at the centre. {" "}
             </p>
             <div className={"pt-6"}>
               <Link className={"inline-flex w-fit items-center gap-3 rounded-lg bg-primary px-6 py-4 text-sm font-black text-white transition-all hover:-translate-y-1 hover:shadow-2xl sm:px-10 sm:py-5 sm:text-base md:text-lg"} to={"/about"}>
@@ -226,10 +251,10 @@ function HomeLegacySection() {
 
 function HomeStatsSection() {
   const stats = [
-    { value: "01", label: "Plan the project" },
-    { value: "02", label: "Design the space" },
-    { value: "03", label: "Build with care" },
-    { value: "04", label: "Review and hand over" },
+    { value: "200+", label: "Homes Built" },
+    { value: "300+", label: "Quality Checks" },
+    { value: "2.5L+", label: "SQ.FT Delivered" },
+    { value: "15+", label: "Years Trust" },
   ] as const;
 
   return (
@@ -399,32 +424,27 @@ function HomeTestimonialsSection({
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"mb-16"}>
           <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Testimonials</span>
-          <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>Client Satisfaction <span className={"text-primary italic"}>Stories</span></h2>
+          <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>Client Real <span className={"text-primary italic"}>Stories</span></h2>
         </div>
         <div className={"relative"}>
           <Carousel className={"testimonial-video-container"} opts={{ align: "start", loop: true }} setApi={setTestimonialApi}>
             <CarouselContent className={"ml-0"}>
-              {testimonials.map((item) => (
-                <CarouselItem key={item.name} className={"pl-0 md:pl-4 md:basis-[92%] lg:basis-[88%]"}>
+              {testimonialHighlights.map((item, index) => (
+                <CarouselItem key={item.title} className={"pl-0 md:pl-4 md:basis-[92%] lg:basis-[88%]"}>
                   <div className={"testimonial-slide flex flex-col items-stretch overflow-hidden rounded-[2rem] border border-outline-variant/20 bg-white shadow-2xl md:rounded-[3rem] lg:flex-row"}>
-                    <div className={"w-full lg:w-3/5 aspect-video lg:h-auto relative group cursor-pointer overflow-hidden"}>
-                      <img alt={item.name} className={"w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"} src={item.image} />
-                      <div className={"absolute inset-0 bg-on-surface/20 flex items-center justify-center transition-colors group-hover:bg-on-surface/40"}>
-                        <div className={"flex size-16 items-center justify-center rounded-full bg-primary text-white shadow-2xl backdrop-blur-sm transition-transform group-hover:scale-110 md:size-24"}>
-                          <span className={"material-symbols-outlined text-4xl md:text-5xl fill-1"}>play_arrow</span>
-                        </div>
-                      </div>
+                    <div className={"w-full lg:w-3/5 aspect-video lg:h-auto relative group overflow-hidden"}>
+                      <img alt={item.title} className={"w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"} src={testimonials[index].image} />
                     </div>
                     <div className={"relative flex w-full flex-col justify-center bg-surface-container-white p-6 md:p-10 lg:w-2/5 lg:p-12"}>
                       <span className={"material-symbols-outlined text-primary/10 text-7xl md:text-9xl absolute -top-3 right-4 md:right-8 leading-none -z-10"}>format_quote</span>
-                      <p className={"relative mb-8 text-base font-medium italic leading-normal text-on-surface sm:text-lg md:text-xl"}>{`"${item.quote}"`}</p>
-                      <div className={"flex items-center gap-4 md:gap-5"}>
-                      
-
-                        <div>
-                          <h5 className={"font-black text-lg md:text-xl text-on-surface leading-tight"}>{item.name}</h5>
-                          <p className={"text-on-surface-variant text-[11px] md:text-sm mt-1 font-black opacity-60 uppercase tracking-widest"}>{item.role}</p>
-                        </div>
+                      <h3 className={"relative mb-4 text-xl font-black leading-tight text-on-surface sm:text-2xl"}>{item.title}</h3>
+                      <p className={"relative text-base font-medium leading-relaxed text-on-surface-variant sm:text-lg"}>{item.description}</p>
+                      <div className={"relative mt-6 border-t border-outline-variant/20 pt-4"}>
+                        <p className={"font-black text-on-surface"}>{testimonials[index].name}</p>
+                        <p className={"mt-1 flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-on-surface-variant"}>
+                          <span className={"material-symbols-outlined text-sm"}>location_on</span>
+                          {testimonials[index].location}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -441,6 +461,11 @@ function HomeTestimonialsSection({
             </button>
           </div>
         </div>
+
+
+
+
+
       </div>
     </section>
   );
@@ -530,7 +555,7 @@ function HomeTrustedClientsSection() {
       <div className={"absolute -left-12 top-1/2 -translate-y-1/2 w-44 h-44 bg-primary/5 rounded-full blur-3xl"}></div>
       <div className={"absolute -right-12 top-1/2 -translate-y-1/2 w-44 h-44 bg-secondary-container/10 rounded-full blur-3xl"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center mb-5 md:mb-7 relative z-10"}>
-        <span className={"text-primary font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-3 block"}>Our Trusted Clients</span>
+        <span className={"text-primary font-black tracking-[0.3em] uppercase text-[10px] md:text-xs mb-3 block"}>Our Vendors</span>
         <h2 className={"font-headline-lg mb-2 text-2xl font-black leading-tight text-on-surface sm:text-3xl md:mb-3 md:text-4xl lg:text-[2.75rem]"}>Brands That Build <span className={"text-primary italic"}>With Us</span></h2>
         <p className={"text-sm sm:text-base md:text-lg text-on-surface-variant max-w-xl mx-auto"}>We are proud to partner with these Brands across India.</p>
       </div>
