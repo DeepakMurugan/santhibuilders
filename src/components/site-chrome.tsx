@@ -175,10 +175,10 @@ export function SiteFooter() {
               <p className="text-[#0f1f36]/75 text-[15px] md:text-[16px] max-w-xl leading-relaxed">
                 Share what you are planning and explore the right services and next steps for your build.
               </p>
-              <p className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f1f36]/65">
+              {/* <p className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f1f36]/65">
                 <span className="material-symbols-outlined text-base text-primary">calendar_month</span>
                 Established 29 July 2019
-              </p>
+              </p> */}
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Link
