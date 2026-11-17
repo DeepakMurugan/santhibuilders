@@ -129,8 +129,8 @@ export function HomePage() {
             <HomeTrustedClientsSection />
 
       <HomeWhySection />
-
-      <HomeComplianceSection />
+{/* 
+      <HomeComplianceSection /> */}
       <HomeEstimatorSection />
       <HomeFaqSection />
     </>
@@ -146,7 +146,7 @@ function HomeHeroSection({
 }) {
   return (
     <header className={"relative w-full"}>
-      <div className={"construction-home-hero relative overflow-hidden border-y border-outline-variant/20 shadow-2xl"}>
+      <div className={"construction-home-hero relative overflow-hidden border-y border-outline-variant/20 shadow-1xl"}>
         <div className={"absolute inset-0"} id={"hero-slider"}>
           {heroSlides.map((image, index) => (
             <div className={`hero-slide absolute inset-0 ${index === activeHeroSlide ? "opacity-100 z-0" : "opacity-0 z-0"}`} key={image}>
@@ -181,7 +181,7 @@ function HomeHeroSection({
               </Link>
               <a className={"flex items-center justify-center gap-2 rounded-lg border border-white/30 px-5 py-3 font-bold text-white transition-colors hover:bg-white/10 sm:px-6 sm:py-3.5"} href={"tel:+918838611658"}>
                 <span className={"material-symbols-outlined"}>call</span>
-                Call us +91 8838611658
+                Call us
               </a>
             </div>
           </div>
@@ -221,7 +221,7 @@ function HomeLegacySection() {
             <div className={"absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"}></div>
             <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-contain shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-96"} src={"/images/hero2.jpeg"} />
             <div className={"absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
-              <p className={"text-primary font-black text-2xl leading-none"}>15+</p>
+              <p className={"text-primary font-black text-2xl leading-none"}>9+</p>
               <p className={"text-xs uppercase tracking-[0.2em] font-black text-on-surface-variant mt-2"}>Years Of Trust</p>
             </div>
           </div>
@@ -230,9 +230,12 @@ function HomeLegacySection() {
               <span className={"h-1 w-12 bg-primary rounded-full"}></span>
               {" "}Built with purpose{" "}
             </div>
-            <h2 className={"font-headline-lg text-3xl font-black leading-tight text-on-surface sm:text-4xl lg:text-[2.75rem]"}>
-              {" "} Why SanthiBuilders?  {" "}
-                 </h2>
+           <h2 className="font-headline-lg text-3xl font-black leading-tight sm:text-4xl lg:text-[2.75rem]">
+  <span className="text-black">Why </span>
+  <span className="text-primary">Santhi Builders?</span>
+</h2>
+
+
             <p className={"text-body-lg text-base text-on-surface-variant leading-relaxed sm:text-lg"}>
               {" "}At Santhi Builders, we combine engineering expertise, quality materials and skilled workmanship to deliver homes built to last. From initial planning to final handover, we focus on transparent pricing, thoughtful designs and dependable construction practices. Our approach ensures every project is handled with care, keeping your requirements, budget and expectations at the centre. {" "}
             </p>
@@ -254,7 +257,7 @@ function HomeStatsSection() {
     { value: "200+", label: "Homes Built" },
     { value: "300+", label: "Quality Checks" },
     { value: "2.5L+", label: "SQ.FT Delivered" },
-    { value: "15+", label: "Years Trust" },
+    { value: "9+", label: "Years Trust" },
   ] as const;
 
   return (
@@ -310,14 +313,14 @@ function HomeExpertiseSection() {
           <div className={"max-w-2xl"}>
             <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Specializations</span>
             <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>
-              Our Core <span className={"text-primary italic"}>Expertise</span>
+              Our Core <span className={"text-primary "}>Expertise</span>
             </h2>
           </div>
           <div className={"w-full lg:w-1/3 h-px bg-outline-variant/30 mb-4 hidden lg:block"}></div>
         </div>
         <div className={"grid grid-cols-1 gap-5 sm:gap-8 md:grid-cols-12"}>
           {items.map((item) => (
-            <div className={`card-interactive group relative overflow-hidden rounded-3xl border border-outline-variant/30 bg-white p-7 transform sm:p-10 lg:p-12 ${item.className}`} key={item.title}>
+            <div className={`card-interactive group relative overflow-hidden rounded-3xl border border-outline-variant/10 hover:active:bg-primary hover:border-primary hover:active:border-outline-variant bg-white p-7 transform sm:p-10 lg:p-12 ${item.className}`} key={item.title}>
               {item.title === "Residential" && <div className={"absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -z-10 transition-all group-hover:w-full group-hover:h-full group-hover:rounded-none"}></div>}
               <div className={"w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors"}>
                 <span className={"material-symbols-outlined text-4xl text-primary group-hover:text-white"}>{item.icon}</span>
@@ -349,7 +352,7 @@ function HomeProjectsSection({
           <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Portfolio</span>
           <div className={"flex flex-col md:flex-row justify-between items-start md:items-end gap-8"}>
             <h2 className={"font-headline-lg max-w-3xl text-3xl font-black leading-tight sm:text-4xl lg:text-[2.75rem]"}>
-              Our Residential Construction <span className={"text-primary italic"}>Projects</span>
+              Our Construction <span className={"text-primary "}>Projects</span>
             </h2>
             <Link className={"group flex items-center gap-3 text-primary font-black text-sm md:text-base hover:gap-5 transition-all bg-white px-6 md:px-8 py-3.5 md:py-4 rounded-full shadow-md"} to={"/projects"}>
               Explore All
@@ -424,7 +427,7 @@ function HomeTestimonialsSection({
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"mb-16"}>
           <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Testimonials</span>
-          <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>Client Real <span className={"text-primary italic"}>Stories</span></h2>
+          <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>Client Real <span className={"text-primary "}>Stories</span></h2>
         </div>
         <div className={"relative"}>
           <Carousel className={"testimonial-video-container"} opts={{ align: "start", loop: true }} setApi={setTestimonialApi}>
@@ -546,6 +549,10 @@ function HomeComplianceSection() {
         ))}
       </div>
     </section>
+
+
+
+
   );
 }
 
@@ -576,41 +583,64 @@ function HomeTrustedClientsSection() {
 
 function HomeEstimatorSection() {
   return (
-    <section className={"relative my-2 w-full overflow-hidden border-y border-white/10 bg-primary py-10 shadow-2xl backdrop-blur-sm sm:my-4 sm:py-14"}>
-      <div className={"absolute inset-0 opacity-20"} style={{ backgroundImage: "radial-gradient(#fff 1.5px, transparent 1.5px)", backgroundSize: "40px 40px" }}></div>
-      <div className={"absolute -top-24 -right-24 md:-top-32 md:-right-32 w-72 h-72 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"}></div>
-      <div className={"absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"}></div>
-      <div className={"max-w-container-max mx-auto px-5 md:px-8 lg:px-12 relative z-10 text-white"}>
-        <div className={"grid items-center gap-6 md:gap-8 lg:grid-cols-12 lg:gap-10"}>
-          <div className={"lg:col-span-8 text-center lg:text-left"}>
-            <span className={"inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-4 md:mb-5"}>
-              <span className={"material-symbols-outlined text-sm"}>calculate</span>
-              Instant Cost Planning
-            </span>
-            <h2 className={"font-headline-lg mb-4 text-3xl font-black leading-tight sm:text-4xl md:mb-5 md:text-5xl"}>Plan Your Home Construction Budget With        <span className={"italic text-secondary-container"}>Confidence</span></h2>
-            <p className={"text-sm sm:text-base md:text-lg opacity-90 max-w-2xl leading-relaxed mx-auto lg:mx-0"}>Get a quick estimate of your home construction cost based on your built-up area, material preferences and project requirements. Plan your budget before starting your construction journey.</p>
-            <div className={"flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 mt-5 md:mt-6"}>
-              <Link className={"bg-secondary-container text-on-secondary px-6 md:px-8 py-3.5 md:py-4 rounded-2xl font-black text-sm sm:text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all shadow-lg inline-flex items-center gap-3"} to={"/estimate-calculator"}>
-                Cost Calculator
-                <span className={"material-symbols-outlined font-black"}>calculate</span>
-              </Link>
-              <span className={"text-xs md:text-sm text-white/80 font-semibold"}>Starts from Rs.2,549/sq.ft</span>
-            </div>
-          </div>
+<section className="relative my-2 w-full overflow-hidden border-y border-white/10 py-10 shadow-2xl sm:my-4 sm:py-14">
 
-          <div className={"lg:col-span-4"}>
-            <div className={"rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-5 md:p-6 space-y-4"}>
-              <h3 className={"text-lg md:text-xl font-black text-white"}>Why Use Our Cost Calculator?</h3>
-              <div className={"space-y-3 text-sm md:text-base text-white/90"}>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>Get a clear breakdown of estimated construction costs</p>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span> Understand costs based on your project requirements </p>
-                <p className={"flex items-start gap-2"}><span className={"material-symbols-outlined text-sm mt-0.5 text-secondary-container"}>done</span>  Plan your budget with greater confidence </p>
-              </div>
-            </div>
-          </div>
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="../images/pondy.png"
+      alt="Pondicherry coastline"
+      className="h-full w-full object-cover object-center"
+    />
+  </div>
+
+  {/* Dark Overlay */}
+  {/* <div className="absolute inset-0 bg-primary/70"></div> */}
+
+  {/* Decorative Effects */}
+  <div className="absolute -top-24 -right-24 md:-top-32 md:-right-32 w-72 h-72 md:w-96 md:h-96 bg-white/10 rounded-full blur-3xl"></div>
+  <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+
+  {/* Content */}
+  <div className="max-w-container-max mx-auto px-5 md:px-8 lg:px-12 relative z-10 text-white">
+    <div className="grid items-center gap-6 md:gap-8 lg:grid-cols-12 lg:gap-10">
+
+      <div className="lg:col-span-8 text-center lg:text-left">
+
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/20 px-4 py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-4 md:mb-5">
+          <span className="material-symbols-outlined text-sm">calculate</span>
+          Instant Cost Planning
+        </span>
+
+        <h2 className="font-headline-lg mb-4 text-3xl font-black leading-tight sm:text-4xl md:mb-5 md:text-5xl">
+          Plan Your Home Construction Budget With
+          <span className="italic text-primary-container"> Confidence</span>
+        </h2>
+
+        <p className="text-sm sm:text-base md:text-lg opacity-90 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+          Get a quick estimate of your home construction cost based on your built-up area, material preferences and project requirements. Plan your budget before starting your construction journey.
+        </p>
+
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-4 mt-5 md:mt-6">
+
+          <Link
+            className="bg-secondary-container text-on-secondary px-6 md:px-8 py-3.5 md:py-4 rounded-2xl font-black text-sm sm:text-base md:text-lg hover:shadow-2xl hover:scale-105 transition-all shadow-lg inline-flex items-center gap-3"
+            to="/estimate-calculator"
+          >
+            Cost Calculator
+            <span className="material-symbols-outlined font-black">calculate</span>
+          </Link>
+
+          <span className="text-xs md:text-sm text-white/80 font-semibold">
+            Starts from Rs.2,549/sq.ft
+          </span>
+
         </div>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
   );
 }
 
@@ -620,7 +650,7 @@ function HomeFaqSection() {
       <div className={"mx-auto max-w-4xl"}>
         <div className={"flex flex-col items-center gap-6 md:gap-8 mb-8 md:mb-12 text-center mx-auto max-w-3xl"}>
           <div className={"w-full"}>
-            <h2 className={"font-headline-lg mb-5 text-3xl font-black leading-tight sm:text-4xl md:text-5xl lg:text-6xl"}>Common <br /><span className={"text-primary italic"}>Questions</span></h2>
+            <h2 className={"font-headline-lg mb-5 text-3xl font-black leading-tight sm:text-4xl md:text-5xl lg:text-6xl"}>FAQ <br /><span className={"text-primary italic"}>Questions</span></h2>
             <div className={"w-24 h-2 bg-primary mb-6 mx-auto rounded-full"}></div>
             <p className={"text-base sm:text-lg text-on-surface-variant font-medium"}>Clear answers for your construction journey.</p>
           </div>
