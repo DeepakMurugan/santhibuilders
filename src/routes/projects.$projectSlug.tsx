@@ -15,7 +15,7 @@ type ProjectSlug = keyof typeof projects;
 
 export const Route = createFileRoute("/projects/$projectSlug")({
   head: ({ params }) => {
-    const project = projects[params.projectSlug as ProjectSlug] ?? projects.sobana;
+    const project = projects[params.projectSlug as ProjectSlug] ?? projects["shobana-residency"];
 
     return {
       meta: [

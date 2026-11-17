@@ -36,9 +36,11 @@ const testimonialHighlights = [
 ] as const;
 
 const residentialMeta: Record<string, { status: string; location: string; builtUp: string }> = {
-  "azure-horizon-villa": { status: "Completed", location: "Puducherry", builtUp: "2,400 sq.ft" },
-  "monolith-residences": { status: "Ongoing", location: "Puducherry", builtUp: "3,100 sq.ft" },
-  "sea-crest-villas": { status: "Completed", location: " Puducherry", builtUp: "2,150 sq.ft" },
+  "shanthi-residency": { status: "Completed", location: "Puducherry", builtUp: "To be confirmed" },
+  "shobana-residency": { status: "Completed", location: "Pinnachikuppam, Puducherry", builtUp: "2,467 sq.ft" },
+  "velmurugan-residency": { status: "Completed", location: "Puducherry", builtUp: "To be confirmed" },
+  "kannan-residency": { status: "Completed", location: "Puducherry", builtUp: "To be confirmed" },
+  "arumugam-residency": { status: "Ongoing", location: "Puthukuppam, Puducherry", builtUp: "1,273 sq.ft" },
 };
 
 const trustedClientLogos = [
@@ -365,9 +367,9 @@ function HomeProjectsSection({
             <CarouselContent className={"ml-0"}>
               {residentialProjects.map((project) => {
                 const meta = residentialMeta[project.slug] ?? {
-                  status: "Completed",
+                  status: project.status,
                   location: "Puducherry",
-                  builtUp: "2,600 sq.ft",
+                  builtUp: "To be confirmed",
                 };
 
                 return (
