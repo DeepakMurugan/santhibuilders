@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import {
   CONTACT_EMAIL,
   CONTACT_PHONE_DISPLAY,
@@ -11,9 +12,7 @@ import {
 const LOGO = "/images/santhi%20logo.png";
 const FLOGO = "/images/logofooter.png";
 
-
 const CLIENT_PORTAL_LINK = "https://portal.santhibuilders.com/";
-
 export const SERVICES = [
   { to: "/services/residential", label: "Residential Construction", icon: "home_work" },
   { to: "/services/design-drawings", label: "Design & Drawings", icon: "architecture" },
@@ -43,7 +42,7 @@ export function SiteNav() {
         <Link to="/" className="min-w-0 shrink-0" onClick={() => setOpen(false)}>
           <img
             alt="Santhi Builders Logo"
-            className="h-8 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[170px] md:h-12 md:max-w-[200px]"
+            className="h-15 w-auto max-w-[140px] object-contain sm:h-10 sm:max-w-[170px] md:h-15 md:max-w-[200px]"
             src={LOGO}
           />
         </Link>
@@ -158,22 +157,23 @@ export function SiteNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="construction-site-footer relative mt-16 overflow-hidden bg-[#08111f] text-white text-[15px] md:mt-24 md:text-[16px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,120,189,0.24),transparent_38%),radial-gradient(circle_at_bottom_right,rgba(254,147,44,0.16),transparent_34%)]" />
-      <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#7dd3fc] to-transparent opacity-60" />
+    <footer className="construction-site-footer relative mt-16 overflow-hidden bg-[#111111] text-white text-sm md:mt-24">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(240,120,0,0.08),transparent_38%)]" />
+      <div className="absolute top-0 left-0 h-px w-full bg-linear-to-r from-transparent via-[#f07800] to-transparent opacity-60" />
 
-      <div className="relative mx-auto max-w-container-max px-margin-mobile md:px-gutter py-14 md:py-16">
-        <div className="service-highlight-banner rounded-[28px] p-6 md:p-10 mb-10 md:mb-14">
+      <div className="relative mx-auto max-w-container-max px-margin-mobile py-10 md:px-gutter md:py-12">
+        <div className="service-highlight-banner mb-8 rounded-[24px] p-5 sm:p-6 md:mb-10 md:p-8">
           <div className="service-highlight-content flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-[11px] uppercase tracking-[0.3em] text-[#0f1f36]/70 font-semibold mb-3">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-[#0f1f36]/70 font-semibold mb-2">
                 Start a project
               </p>
-              <h3 className="text-3xl md:text-5xl font-extrabold text-[#0f1f36] leading-tight mb-3">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#0f1f36] leading-tight mb-2">
                 From the first site visit to the final finish.
               </h3>
-              <p className="text-[#0f1f36]/75 text-[15px] md:text-[16px] max-w-xl leading-relaxed">
-                Share what you are planning and explore the right services and next steps for your build.
+              <p className="text-[#0f1f36]/75 text-[13px] sm:text-sm max-w-xl leading-relaxed">
+                Share what you are planning and explore the right services and next steps for your
+                build.
               </p>
               {/* <p className="mt-4 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.16em] text-[#0f1f36]/65">
                 <span className="material-symbols-outlined text-base text-primary">calendar_month</span>
@@ -183,14 +183,14 @@ export function SiteFooter() {
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
               <Link
                 to="/estimate-calculator"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f1f36] px-6 py-3.5 font-semibold text-white transition-all hover:bg-[#0f1f36]/90"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#0f1f36] px-5 py-3 text-sm font-semibold text-white transition-all hover:bg-[#0f1f36]/90"
               >
                 Get a Free Quote
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </Link>
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center rounded-full border border-[#0f1f36]/20 px-6 py-3.5 font-semibold text-[#0f1f36] transition-all hover:bg-white/70"
+                className="inline-flex items-center justify-center rounded-full border border-[#0f1f36]/20 px-5 py-3 text-sm font-semibold text-[#0f1f36] transition-all hover:bg-white/70"
               >
                 View Projects
               </Link>
@@ -198,102 +198,120 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-          <div className="lg:col-span-4 space-y-6">
-            <img alt="Santhi Builders" className="h-12 w-auto object-contain" src={FLOGO} />
-            <p className="text-white/70 text-[14px] md:text-[15px] leading-relaxed max-w-md">
-              Planning, design, construction and project support for residential and commercial spaces.
+        <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-6 sm:gap-x-8 lg:grid-cols-12 lg:gap-8">
+          <div className="col-span-2 space-y-4 sm:col-span-6 lg:col-span-4">
+            <img alt="Santhi Builders" className="h-10 w-auto object-contain sm:h-11" src={FLOGO} />
+            <p className="max-w-md text-xs leading-relaxed text-white/70">
+              Planning, design, construction and project support for residential and commercial
+              spaces.
             </p>
-            <div className="flex gap-3">
-              {[
-                { icon: "call", label: "Call", href: CONTACT_PHONE_HREF, external: false },
-                { icon: "mail", label: "Email", href: `mailto:${CONTACT_EMAIL}`, external: false },
-                { icon: "chat", label: "WhatsApp", href: WHATSAPP_LINK, external: true },
-              ].map((item) => (
+            <address className="not-italic space-y-3 text-sm leading-relaxed text-white/70">
+              {OFFICE_LOCATIONS.map((office) => (
+                <p key={office.label}>{office.address.join(" ")}</p>
+              ))}
+            </address>
+          </div>
+
+          <div className="col-span-1 sm:col-span-3 lg:col-span-3">
+            <h4 className="mb-4 w-fit border-b-2 border-[#f07800] pb-2 text-sm font-bold text-white">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-sm leading-relaxed text-white/70">
+              {SERVICES.map((item) => (
+                <li key={item.to}>
+                  <Link className="inline-flex transition-colors hover:text-white" to={item.to}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-1 sm:col-span-3 lg:col-span-2">
+            <h4 className="mb-4 w-fit border-b-2 border-[#f07800] pb-2 text-sm font-bold text-white">
+              Company
+            </h4>
+            <ul className="space-y-2.5 text-sm leading-relaxed text-white/70">
+              {MAIN.map((item) => (
+                <li key={item.to}>
+                  <Link className="inline-flex transition-colors hover:text-white" to={item.to}>
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
                 <a
-                  key={item.label}
-                  aria-label={item.label}
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noreferrer" : undefined}
-                  className="h-11 w-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-white/80 transition-all duration-300 hover:bg-white hover:text-[#0f1f36] hover:-translate-y-0.5 hover:shadow-lg"
+                  className="transition-colors hover:text-white"
+                  href={CLIENT_PORTAL_LINK}
+                  rel="noreferrer"
+                  target="_blank"
                 >
-                  <span className="material-symbols-outlined text-[20px]">{item.icon}</span>
+                  Client Portal Login
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="col-span-2 sm:col-span-6 lg:col-span-3">
+            <h4 className="mb-4 w-fit border-b-2 border-[#f07800] pb-2 text-sm font-bold text-white">
+              Get in Touch
+            </h4>
+            <address className="not-italic space-y-3.5 text-xs leading-relaxed text-white/75 sm:text-[13px]">
+              <a
+                className="flex items-center gap-3 transition-colors hover:text-white"
+                href={CONTACT_PHONE_HREF}
+              >
+                <Phone aria-hidden="true" className="size-4 shrink-0 text-[#f07800]" />
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+              <a
+                className="flex items-center gap-3 break-all transition-colors hover:text-white"
+                href={`mailto:${CONTACT_EMAIL}`}
+              >
+                <Mail aria-hidden="true" className="size-4 shrink-0 text-[#f07800]" />
+                {CONTACT_EMAIL}
+              </a>
+              <a
+                className="flex items-center gap-3 transition-colors hover:text-white"
+                href={WHATSAPP_LINK}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <MessageCircle aria-hidden="true" className="size-4 shrink-0 text-[#f07800]" />
+                WhatsApp Us
+              </a>
+            </address>
+            <div className="mt-5 flex gap-2.5">
+              {[
+                { label: "Call", href: CONTACT_PHONE_HREF, external: false, Icon: Phone },
+                { label: "Email", href: `mailto:${CONTACT_EMAIL}`, external: false, Icon: Mail },
+                { label: "WhatsApp", href: WHATSAPP_LINK, external: true, Icon: MessageCircle },
+              ].map(({ label, href, external, Icon }) => (
+                <a
+                  aria-label={label}
+                  className="flex size-10 items-center justify-center rounded-xl border border-white/10 text-white/80 transition-colors hover:border-[#f07800] hover:text-[#f07800]"
+                  href={href}
+                  key={label}
+                  rel={external ? "noreferrer" : undefined}
+                  target={external ? "_blank" : undefined}
+                >
+                  <Icon aria-hidden="true" className="size-4" />
                 </a>
               ))}
             </div>
           </div>
-
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8 lg:grid-cols-3">
-            <div>
-              <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.16em] text-[#7dd3fc]">
-                Company
-              </h4>
-              <ul className="space-y-3 text-white/70 text-[15px] md:text-[16px]">
-                {MAIN.map((item) => (
-                  <li key={item.to}>
-                    <Link className="transition-all duration-300 hover:text-white hover:translate-x-1 inline-flex" to={item.to}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <a className="transition-colors hover:text-white" href={CLIENT_PORTAL_LINK} rel="noreferrer" target="_blank">
-                    Client Portal Login
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.16em] text-[#7dd3fc]">
-                Services
-              </h4>
-              <ul className="space-y-3 text-white/70 text-[15px] md:text-[16px]">
-                {SERVICES.map((item) => (
-                  <li key={item.to}>
-                    <Link className="transition-all duration-300 hover:text-white hover:translate-x-1 inline-flex" to={item.to}>
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="mb-5 text-[15px] md:text-[16px] font-semibold uppercase tracking-[0.12em] text-[#7dd3fc]">
-                Get in Touch
-              </h4>
-              <address className="not-italic space-y-4 text-white/70 text-[13px] sm:text-[14px] md:text-[15px]">
-                <div className="space-y-3 leading-relaxed">
-                  {OFFICE_LOCATIONS.map((office) => (
-                    <div key={office.label}>
-                      <p className="text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px]">{office.label}</p>
-                      {office.address.map((line) => (
-                        <p className="text-[13px] md:text-[14px]" key={line}>{line}</p>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-                <a className="block text-white font-semibold text-[13px] sm:text-[14px] md:text-[15px] hover:text-[#7dd3fc]" href={CONTACT_PHONE_HREF}>
-                  {CONTACT_PHONE_DISPLAY}
-                </a>
-                <a className="block text-[13px] sm:text-[14px] md:text-[15px] hover:text-white" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-                <a className="inline-flex items-center gap-2 text-[#7dd3fc] text-[13px] sm:text-[14px] md:text-[15px] hover:text-white" href={WHATSAPP_LINK} rel="noreferrer" target="_blank">
-                  <span className="material-symbols-outlined text-[18px]">chat</span>
-                  WhatsApp Us
-                </a>
-              </address>
-            </div>
-          </div>
         </div>
 
-        <div className="mt-10 md:mt-14 flex flex-col gap-4 border-t border-white/10 pt-6 text-[13px] md:text-[14px] text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-9 flex flex-col gap-4 border-t border-white/10 pt-5 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} Santhi Builders. All rights reserved.</p>
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <div className="flex flex-wrap gap-6 uppercase tracking-[0.14em] text-white/45 text-[13px] md:text-[14px]">
-              <Link className="transition-colors hover:text-white" to="/privacy-policy">Privacy Policy</Link>
-              <Link className="transition-colors hover:text-white" to="/terms-and-conditions">Terms & Conditions</Link>
+            <div className="flex flex-wrap gap-5 text-white/45">
+              <Link className="transition-colors hover:text-white" to="/privacy-policy">
+                Privacy Policy
+              </Link>
+              <Link className="transition-colors hover:text-white" to="/terms-and-conditions">
+                Terms & Conditions
+              </Link>
             </div>
             <a
               className="inline-flex items-center gap-2 font-semibold text-[#7dd3fc] transition-all duration-300 hover:text-white hover:translate-x-1"
