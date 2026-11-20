@@ -642,6 +642,18 @@ p {
   min-height: 500px;
 }
 
+@media (max-width: 767px) {
+  .construction-home-hero {
+    height: auto;
+  }
+
+  .construction-home-hero__content {
+    position: relative;
+    min-height: max(72vh, 500px);
+    padding: 40px 20px 76px;
+  }
+}
+
 @media (min-width: 768px) {
   .construction-home-hero {
     height: 84vh;

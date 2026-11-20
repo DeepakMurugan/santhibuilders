@@ -194,7 +194,7 @@ function HomeHeroSection({
           ))}
         </div>
         <div className={"construction-home-hero__overlay absolute inset-0 z-10"}></div>
-        <div className={"absolute inset-0 z-20 flex items-center px-5 py-8 sm:px-8 sm:py-10 md:px-16 md:py-16"}>
+        <div className={"construction-home-hero__content absolute inset-0 z-20 flex items-center px-5 py-8 sm:px-8 sm:py-10 md:px-16 md:py-16"}>
           <div className={"max-w-3xl text-white"}>
             <div className={"mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 sm:mb-5 sm:px-4"}>
               <span className={"material-symbols-outlined text-secondary-container text-xs"}></span>
@@ -210,7 +210,7 @@ function HomeHeroSection({
             <p className={"mb-4 text-base font-extrabold text-white sm:mb-6 sm:text-xl"}>
               Our Construction Packages Start at <span className={"text-primary"}>₹2,549/Sq.Ft</span>
             </p>
-            <div className={"flex flex-wrap items-center gap-2 sm:gap-3"}>
+            <div className={"flex flex-wrap items-center gap-3"}>
               <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-5 py-3 text-sm font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-6 sm:py-3.5 sm:text-base"} to={"/estimate-calculator"}>
                 {" "}Calculate Cost Now{" "}
                 <span className={"material-symbols-outlined"}>arrow_forward</span>
