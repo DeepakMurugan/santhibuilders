@@ -6,8 +6,9 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { FloatingWhatsappButton } from "@/components/floating-whatsapp-button";
@@ -115,12 +116,14 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col bg-background text-on-surface">
+        <SiteScrollEffects pathname={pathname} />
         <SiteNav />
-        <div className="flex-1">
+        <div className="site-page-content flex-1">
           {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
           <Outlet />
         </div>
@@ -128,5 +131,72 @@ function RootComponent() {
         <FloatingWhatsappButton />
       </div>
     </QueryClientProvider>
+  );
+}
+
+function SiteScrollEffects({ pathname }: { pathname: string }) {
+  const progressRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const root = document.querySelector(".site-page-content");
+    if (!root || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const elements = Array.from(
+      root.querySelectorAll<HTMLElement>(
+        "section, article, .bento-item, .card-interactive, div.group[class*='rounded']",
+      ),
+    );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("site-scroll-reveal--visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.04, rootMargin: "0px 0px -32px 0px" },
+    );
+
+    elements.forEach((element) => {
+      if (!element.classList.contains("reveal")) {
+        element.classList.add("site-scroll-reveal");
+        observer.observe(element);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [pathname]);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateProgress = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollableHeight > 0 ? window.scrollY / scrollableHeight : 0;
+        if (progressRef.current) {
+          progressRef.current.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+        }
+        frame = 0;
+      });
+    };
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    return () => {
+      window.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  return (
+    <div aria-hidden="true" className="site-scroll-progress">
+      <span className="site-scroll-progress__bar" ref={progressRef} />
+    </div>
   );
 }

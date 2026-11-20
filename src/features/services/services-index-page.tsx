@@ -68,13 +68,16 @@ function ServicesHeroSection() {
 
 function ServicesGridSection() {
   return (
-    <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {SERVICES.map((s) => (
-        <Link className="reveal group rounded-xl border border-outline-variant/40 bg-surface-container-lowest p-7 hover:border-primary hover:shadow-soft transition-all" key={s.to} to={s.to}>
-          <span className="material-symbols-outlined text-[32px] text-primary">{s.icon}</span>
+        <Link className="reveal group rounded-2xl border border-outline-variant/40 bg-surface-container-lowest p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-xl" key={s.to} to={s.to}>
+          <span className="material-symbols-outlined text-[32px] text-primary transition-transform duration-300 group-hover:scale-110">{s.icon}</span>
           <h2 className="mt-5 text-headline-md font-headline-md">{s.label}</h2>
-          <p className="mt-3 text-body-md text-on-surface-variant">{COPY[s.to]}</p>
-          <span className="mt-5 inline-flex items-center gap-2 text-body-md font-bold text-primary">Explore<span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span></span>
+          <p className="mt-3 text-body-md leading-relaxed text-on-surface-variant">{COPY[s.to]}</p>
+          <span className="mt-5 inline-flex items-center gap-2 text-body-md font-bold text-primary">
+            Explore
+            <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </span>
         </Link>
       ))}
     </div>

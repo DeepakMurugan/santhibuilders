@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { Facebook, Instagram, Youtube } from "lucide-react";
 import { ConstructionEnquiryForm } from "@/components/construction-enquiry-form";
 import { useReveal } from "@/hooks/use-reveal";
 import { PROJECT_LISTING_ITEMS } from "@/features/projects";
@@ -15,6 +16,42 @@ const heroSlides = [
   "/images/hero1.jpeg",
   "/images/hero2.jpeg",
   "/images/hero3.jpeg",
+] as const;
+
+const constructionPackages = [
+  { name: "Standard", rate: 2549, accent: "standard", popular: false },
+  { name: "Premium", rate: 2649, accent: "premium", popular: true },
+  { name: "Luxury", rate: 2899, accent: "luxury", popular: false },
+] as const;
+
+const socialProfiles = [
+  {
+    name: "Instagram",
+    handle: "@santhibuilders",
+    href: "https://www.instagram.com/santhibuilders/",
+    action: "Follow Us",
+    description: "Follow along for project inspiration and updates.",
+    Icon: Instagram,
+    accent: "instagram",
+  },
+  {
+    name: "Facebook",
+    handle: "Santhi Builders",
+    href: "https://www.facebook.com/Santhi Builders/",
+    action: "Like Page",
+    description: "Connect with our community and see what we are building.",
+    Icon: Facebook,
+    accent: "facebook",
+  },
+  {
+    name: "YouTube",
+    handle: "@Santhi Builders",
+    href: "https://www.youtube.com/@Santhi Builders",
+    action: "Subscribe",
+    description: "Watch project stories and construction updates.",
+    Icon: Youtube,
+    accent: "youtube",
+  },
 ] as const;
 
 const testimonialHighlights = [
@@ -123,16 +160,16 @@ export function HomePage() {
   return (
     <>
       <HomeHeroSection activeHeroSlide={activeHeroSlide} onSelectSlide={setActiveHeroSlide} />
+      <HomePricingSection />
       <HomeLegacySection />
       <HomeStatsSection />
       <HomeExpertiseSection />
-      <HomeTestimonialsSection setTestimonialApi={setTestimonialApi} testimonialApi={testimonialApi} />
-            <HomeProjectsSection portfolioApi={portfolioApi} residentialProjects={residentialProjects} setPortfolioApi={setPortfolioApi} />
-            <HomeTrustedClientsSection />
-
       <HomeWhySection />
-{/* 
-      <HomeComplianceSection /> */}
+      <HomeProjectsSection portfolioApi={portfolioApi} residentialProjects={residentialProjects} setPortfolioApi={setPortfolioApi} />
+      <HomeTestimonialsSection setTestimonialApi={setTestimonialApi} testimonialApi={testimonialApi} />
+      <HomeTrustedClientsSection />
+      <HomeSocialSection />
+
       <HomeEstimatorSection />
       <HomeFaqSection />
     </>
@@ -157,23 +194,23 @@ function HomeHeroSection({
           ))}
         </div>
         <div className={"construction-home-hero__overlay absolute inset-0 z-10"}></div>
-        <div className={"absolute inset-0 z-20 flex items-center px-5 py-14 sm:px-8 sm:py-16 md:px-16"}>
+        <div className={"absolute inset-0 z-20 flex items-center px-5 py-8 sm:px-8 sm:py-10 md:px-16 md:py-16"}>
           <div className={"max-w-3xl text-white"}>
-            <div className={"mb-4 inline-flex items-center gap-2 rounded-full border border-white/20  px-3 py-1.5  sm:mb-5 sm:px-4"}>
+            <div className={"mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 px-3 py-1.5 sm:mb-5 sm:px-4"}>
               <span className={"material-symbols-outlined text-secondary-container text-xs"}></span>
               <span className={"text-[10px] uppercase tracking-[0.2em] font-bold"}>Idea To Identity</span>
             </div>
-            <h1 className={"mb-4 max-w-3xl font-display-lg text-2xl leading-[1.08] font-extrabold tracking-tight sm:mb-5 sm:text-5xl lg:text-6xl"}>
+            <h1 className={"mb-3 max-w-3xl font-display-lg text-2xl leading-[1.08] font-extrabold tracking-tight sm:mb-5 sm:text-5xl lg:text-6xl"}>
               Best Construction Company in Pondicherry -{" "}
               <span className={" text-[#fe932c] "}>Your Trusted Partner in Home Construction</span>
             </h1>
-            <p className={"font-body-lg mb-4 max-w-2xl border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-5 sm:pl-6 sm:text-base md:text-body-lg"}>
+            <p className={"font-body-lg mb-3 max-w-2xl border-l-4 border-primary pl-4 text-sm leading-relaxed opacity-90 sm:mb-5 sm:pl-6 sm:text-base md:text-body-lg"}>
               {"Santhi Builders is a construction company in Pondicherry, offering quality residential construction solutions. From planning and design to execution, we focus on reliable workmanship, transparent processes and well-designed homes that match your requirements, lifestyle and budget."}
             </p>
-            <p className={"mb-5 text-lg font-extrabold text-white sm:mb-6 sm:text-xl"}>
+            <p className={"mb-4 text-base font-extrabold text-white sm:mb-6 sm:text-xl"}>
               Our Construction Packages Start at <span className={"text-primary"}>₹2,549/Sq.Ft</span>
             </p>
-            <div className={"flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3"}>
+            <div className={"flex flex-wrap items-center gap-2 sm:gap-3"}>
               <Link className={"flex items-center justify-center gap-3 rounded-lg bg-primary px-5 py-3 text-sm font-black text-on-primary shadow-lg transition-all hover:shadow-2xl hover:translate-x-1 sm:px-6 sm:py-3.5 sm:text-base"} to={"/estimate-calculator"}>
                 {" "}Calculate Cost Now{" "}
                 <span className={"material-symbols-outlined"}>arrow_forward</span>
@@ -213,9 +250,106 @@ function HomeHeroSection({
   );
 }
 
+function HomePricingSection() {
+  const accentClasses = {
+    standard: {
+      label: "bg-slate-400 text-white",
+      title: "text-slate-700",
+      button: "border border-slate-300 text-slate-800 hover:bg-slate-50",
+    },
+    premium: {
+      label: "bg-gradient-to-r from-[#e65b00] to-[#ff7a1a] text-white",
+      title: "text-[#e65b00]",
+      button: "bg-[#e65b00] text-white hover:bg-[#ca4e00]",
+    },
+    luxury: {
+      label: "bg-[#c99a2e] text-white",
+      title: "text-[#a77b17]",
+      button: "border border-[#c99a2e]/50 text-[#805d10] hover:bg-[#fffaf0]",
+    },
+  } as const;
+
+  return (
+    <section className="home-pricing-section relative isolate overflow-hidden py-section-gap">
+      <div className="pointer-events-none absolute -left-24 top-16 -z-10 size-64 rounded-full bg-secondary-container/15 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 -z-10 size-72 rounded-full bg-primary/10 blur-3xl" />
+      <div className="mx-auto max-w-container-max px-margin-mobile md:px-gutter">
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-secondary-container/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-secondary sm:text-xs">
+            <span aria-hidden="true" className="material-symbols-outlined text-base">roofing</span>
+            Construction packages
+          </span>
+          <h2 className="mt-5 text-3xl font-black leading-tight text-on-surface sm:text-4xl md:text-5xl">
+            Construction cost per sq. ft.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-on-surface-variant sm:text-base md:text-lg">
+            Explore our package rates and get an estimate tailored to your project.
+          </p>
+        </div>
+
+        <div className="mt-9 grid items-stretch gap-5 md:mt-12 md:grid-cols-3 md:gap-6">
+          {constructionPackages.map((plan, index) => {
+            const accents = accentClasses[plan.accent];
+
+            return (
+              <article
+                className={`reveal group relative flex flex-col overflow-hidden rounded-3xl border bg-white shadow-[0_18px_48px_-30px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_28px_56px_-28px_rgba(15,23,42,0.35)] ${
+                  plan.popular
+                    ? "border-[#e65b00]/35 md:-translate-y-2 md:shadow-[0_24px_60px_-28px_rgba(230,91,0,0.45)]"
+                    : "border-outline-variant/35"
+                }`}
+                key={plan.name}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className={`flex min-h-12 items-center justify-center px-4 py-3 text-center text-[10px] font-black uppercase tracking-[0.2em] sm:text-xs ${accents.label}`}>
+                  {plan.popular ? (
+                    <span className="inline-flex items-center gap-2">
+                      <span aria-hidden="true" className="material-symbols-outlined text-base">star</span>
+                      Most Popular
+                    </span>
+                  ) : (
+                    "Construction package"
+                  )}
+                </div>
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <h3 className={`text-2xl font-black tracking-tight sm:text-3xl ${accents.title}`}>
+                    {plan.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-on-surface-variant">Construction package rate</p>
+                  <div className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                    <span className="text-4xl font-black tracking-tight text-on-surface sm:text-5xl">
+                      ₹{plan.rate.toLocaleString("en-IN")}
+                    </span>
+                    <span className="text-base font-medium text-on-surface-variant">/ sqft</span>
+                  </div>
+                  <div className="mt-6 border-t border-outline-variant/30 pt-5">
+                    <p className="text-sm leading-relaxed text-on-surface-variant">
+                      Compare this package with your plans and discuss the right scope for your home.
+                    </p>
+                  </div>
+                  <Link
+                    className={`mt-7 inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-extrabold transition duration-200 hover:-translate-y-0.5 hover:shadow-lg ${accents.button}`}
+                    to="/estimate-calculator"
+                  >
+                    Get an estimate
+                    <span aria-hidden="true" className="material-symbols-outlined text-lg">arrow_forward</span>
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <p className="mx-auto mt-6 max-w-3xl text-center text-xs leading-relaxed text-on-surface-variant sm:text-sm">
+          Final pricing may vary based on project scope, design and site conditions.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function HomeLegacySection() {
   return (
-    <section className={"relative py-section-gap"}>
+    <section className={"relative bg-white py-section-gap"}>
       <div className={"absolute top-0 right-0 w-1/2 h-full bg-surface-container-low/20 -z-10 rounded-l-[10rem]"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"grid lg:grid-cols-12 gap-12 items-center"}>
@@ -263,12 +397,12 @@ function HomeStatsSection() {
   ] as const;
 
   return (
-    <section className={"relative z-10 w-full border-y border-outline-variant/20 bg-surface-container-lowest py-8 shadow-sm sm:py-12"}>
+    <section className={"relative z-10 w-full border-y border-white/10 bg-[#08111f] py-8 shadow-sm sm:py-10"}>
       <div className={"mx-auto grid max-w-container-max grid-cols-2 gap-6 px-5 sm:gap-10 sm:px-8 md:grid-cols-4 md:gap-12 md:px-12"}>
         {stats.map((stat) => (
-          <div className={"text-left border-l-4 border-primary pl-6"} key={stat.label}>
-            <div className={"font-display-lg mb-1 text-3xl font-black text-primary sm:text-4xl"}>{stat.value}</div>
-              <p className={"font-label-sm text-[10px] font-bold uppercase tracking-[0.14em] text-on-surface-variant sm:text-label-sm sm:tracking-[0.2em]"}>{stat.label}</p>
+          <div className={"border-l-2 border-secondary-container pl-4 text-left sm:border-l-4 sm:pl-6"} key={stat.label}>
+            <div className={"font-display-lg mb-1 text-3xl font-black text-white sm:text-4xl"}>{stat.value}</div>
+            <p className={"font-label-sm text-[10px] font-bold uppercase tracking-[0.14em] text-white/70 sm:text-label-sm sm:tracking-[0.2em]"}>{stat.label}</p>
           </div>
         ))}
       </div>
@@ -309,9 +443,9 @@ function HomeExpertiseSection() {
   ] as const;
 
   return (
-    <section className={"overflow-visible py-12 sm:py-section-gap"}>
+    <section className={"overflow-visible bg-surface py-12 sm:py-section-gap"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
-        <div className={"mb-10 flex flex-col gap-6 sm:mb-20 lg:flex-row lg:items-end lg:justify-between"}>
+        <div className={"mb-10 flex flex-col gap-6 sm:mb-14 lg:flex-row lg:items-end lg:justify-between"}>
           <div className={"max-w-2xl"}>
             <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Specializations</span>
             <h2 className={"font-headline-lg text-3xl font-black sm:text-4xl lg:text-[2.75rem]"}>
@@ -347,7 +481,7 @@ function HomeProjectsSection({
   setPortfolioApi: (api: CarouselApi) => void;
 }) {
   return (
-    <section className={"relative bg-surface-container-low/30 py-12 sm:py-section-gap"}>
+    <section className={"relative bg-white py-12 sm:py-section-gap"}>
       <div className={"absolute top-0 left-0 h-40 w-full bg-linear-to-b from-background to-transparent"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10"}>
         <div className={"mb-10 md:mb-16"}>
@@ -424,7 +558,7 @@ function HomeTestimonialsSection({
   testimonialApi: CarouselApi | undefined;
 }) {
   return (
-    <section className={"relative overflow-visible bg-surface py-12 sm:pt-14 sm:pb-section-gap"}>
+    <section className={"relative overflow-visible bg-surface py-12 sm:py-section-gap"}>
       <div className={"absolute top-1/2 left-0 w-full h-2/3 bg-primary/5 -skew-y-3 -z-10"}></div>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
         <div className={"mb-16"}>
@@ -482,26 +616,23 @@ function HomeWhySection() {
       title: "Dedicated Site Engineer",
       icon: "engineering",
       body: "A qualified professional on-site from foundation to finish, ensuring strict adherence to blueprints.",
-      className: "hover:-rotate-1",
     },
     {
       title: "Structured Timelines",
       icon: "analytics",
       body: "Phased scheduling with weekly reports to ensure your project stays on track and delivers on time.",
-      className: "lg:translate-y-12 hover:rotate-0",
     },
     {
       title: "Structural Warranty",
       icon: "construction",
       body: "Financial transparency where you pay only for completed milestones, ensuring complete peace of mind.",
-      className: "hover:rotate-1",
     },
   ] as const;
 
   return (
-    <section className={"relative overflow-hidden bg-surface-container-low/50 py-12 sm:py-14 lg:py-16"}>
+    <section className={"relative overflow-hidden bg-surface-container-low/60 py-12 sm:py-section-gap"}>
       <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
-        <div className={"grid lg:grid-cols-12 gap-8 md:gap-10 items-end mb-10 md:mb-14"}>
+        <div className={"mb-10 grid items-end gap-6 md:mb-14 md:gap-10 lg:grid-cols-12"}>
           <div className={"lg:col-span-8"}>
             <h2 className={"font-headline-lg mb-4 text-3xl font-black leading-tight sm:text-4xl md:mb-5 lg:text-[2.75rem]"}>Why <span className={"text-primary italic"}>Santhi Builders</span>?</h2>
             <p className={"text-sm sm:text-base md:text-lg text-on-surface-variant font-medium max-w-2xl"}>Traditional integrity meeting modern engineering precision at every milestone.</p>
@@ -510,9 +641,9 @@ function HomeWhySection() {
             <Link className={"px-6 md:px-8 py-3.5 md:py-4 bg-white border-2 border-primary text-primary font-black rounded-xl hover:bg-primary hover:text-white transition-all shadow-xl inline-flex"} to={"/services"}>Explore All Features</Link>
           </div>
         </div>
-        <div className={"grid md:grid-cols-3 gap-6 md:gap-8 lg:gap-10 relative z-20"}>
+        <div className={"relative z-20 grid items-stretch gap-5 md:grid-cols-3 md:gap-7 lg:gap-8"}>
           {items.map((item) => (
-            <div className={`card-interactive group rounded-[2rem] border border-outline-variant/30 bg-white p-6 shadow-xl transform sm:p-8 md:rounded-[2.5rem] lg:p-10 ${item.className}`} key={item.title}>
+            <div className={"card-interactive group h-full rounded-[2rem] border border-outline-variant/30 bg-white p-6 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-8 md:rounded-[2.5rem] lg:p-10"} key={item.title}>
               <div className={"w-14 h-14 md:w-16 md:h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:scale-110 transition-transform"}>
                 <span className={"material-symbols-outlined text-4xl text-primary"}>{item.icon}</span>
               </div>
@@ -583,6 +714,83 @@ function HomeTrustedClientsSection() {
   );
 }
 
+function HomeSocialSection() {
+  const themes = {
+    instagram: {
+      label: "text-[#d62976]",
+      ring: "from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]",
+      button: "bg-gradient-to-r from-[#f9a826] via-[#ed2a7b] to-[#7b2fc9] shadow-[#ed2a7b]/20 hover:shadow-[#ed2a7b]/35",
+      divider: "from-[#f9a826] to-[#7b2fc9]",
+    },
+    facebook: {
+      label: "text-[#1877f2]",
+      ring: "from-[#74a8ff] to-[#0866ff]",
+      button: "bg-gradient-to-r from-[#1877f2] to-[#0756c9] shadow-[#1877f2]/20 hover:shadow-[#1877f2]/35",
+      divider: "from-[#74a8ff] to-[#0866ff]",
+    },
+    youtube: {
+      label: "text-[#e62117]",
+      ring: "from-[#ff675e] to-[#e62117]",
+      button: "bg-gradient-to-r from-[#ff2920] to-[#c90000] shadow-[#e62117]/20 hover:shadow-[#e62117]/35",
+      divider: "from-[#ff675e] to-[#e62117]",
+    },
+  } as const;
+
+  return (
+    <section className="relative overflow-hidden bg-surface-container-low/45 py-section-gap">
+      <div className="pointer-events-none absolute -right-20 top-0 size-72 rounded-full bg-primary/5 blur-3xl" />
+      <div className="relative mx-auto max-w-container-max px-margin-mobile md:px-gutter">
+        <div className="reveal mx-auto mb-9 max-w-2xl text-center sm:mb-12">
+          <span className="text-[10px] font-black uppercase tracking-[0.25em] text-primary sm:text-xs">
+            Follow along
+          </span>
+          <h2 className="mt-3 text-3xl font-black leading-tight text-on-surface sm:text-4xl md:text-5xl">
+            Find us on social media
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-on-surface-variant sm:text-base md:text-lg">
+            Follow our channels for project inspiration, updates and a closer look at our work.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+          {socialProfiles.map(({ name, handle, href, action, description, Icon, accent }, index) => {
+            const theme = themes[accent];
+
+            return (
+              <article
+                className="reveal group relative flex flex-col items-center overflow-hidden rounded-3xl border border-outline-variant/25 border-t-4 bg-white p-6 text-center shadow-[0_18px_48px_-32px_rgba(15,23,42,0.35)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_26px_56px_-30px_rgba(15,23,42,0.32)] sm:p-8"
+                key={name}
+                style={{ borderTopColor: accent === "instagram" ? "#e1306c" : accent === "facebook" ? "#1877f2" : "#e62117", transitionDelay: `${index * 100}ms` }}
+              >
+                <div className={`flex size-[76px] items-center justify-center rounded-full bg-gradient-to-br p-1 ${theme.ring}`}>
+                  <div className="flex size-full items-center justify-center rounded-full bg-white">
+                    <Icon aria-hidden="true" className={`size-9 ${theme.label}`} strokeWidth={2.2} />
+                  </div>
+                </div>
+                <p className={`mt-5 text-[10px] font-black uppercase tracking-[0.25em] ${theme.label}`}>
+                  {name}
+                </p>
+                <h3 className="mt-2 break-all text-xl font-black text-on-surface sm:text-2xl">{handle}</h3>
+                <div className={`my-5 h-1 w-14 rounded-full bg-gradient-to-r ${theme.divider}`} />
+                <p className="min-h-12 text-sm leading-relaxed text-on-surface-variant">{description}</p>
+                <a
+                  className={`mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-extrabold text-white shadow-lg transition duration-200 hover:-translate-y-0.5 hover:shadow-xl ${theme.button}`}
+                  href={href}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  <Icon aria-hidden="true" className="size-5" strokeWidth={2.4} />
+                  {action}
+                </a>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HomeEstimatorSection() {
   return (
 <section className="relative my-2 w-full overflow-hidden border-y border-white/10 py-10 shadow-2xl sm:my-4 sm:py-14">
@@ -594,6 +802,7 @@ function HomeEstimatorSection() {
       alt="Pondicherry coastline"
       className="h-full w-full object-cover object-center"
     />
+    <div aria-hidden="true" className="absolute inset-0 bg-[#08111f]/55"></div>
   </div>
 
   {/* Dark Overlay */}
@@ -648,7 +857,7 @@ function HomeEstimatorSection() {
 
 function HomeFaqSection() {
   return (
-    <section className={"px-margin-mobile pb-12 pt-10 sm:pb-16 sm:pt-12 md:px-gutter"}>
+    <section className={"bg-surface px-margin-mobile pb-12 pt-10 sm:pb-16 sm:pt-12 md:px-gutter"}>
       <div className={"mx-auto max-w-4xl"}>
         <div className={"flex flex-col items-center gap-6 md:gap-8 mb-8 md:mb-12 text-center mx-auto max-w-3xl"}>
           <div className={"w-full"}>
