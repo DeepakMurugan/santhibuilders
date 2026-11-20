@@ -355,7 +355,7 @@ function HomeLegacySection() {
         <div className={"grid lg:grid-cols-12 gap-12 items-center"}>
           <div className={"lg:col-span-7 relative group"}>
             <div className={"absolute -top-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10"}></div>
-            <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-contain shadow-2xl sm:aspect-16/10 lg:aspect-auto lg:h-96"} src={"/images/hero2.jpeg"} />
+            <img alt={"Santhi Builders Excellence"} className={"relative z-10 aspect-4/3 w-full rounded-3xl border border-outline-variant/20 object-cover shadow-2xl sm:aspect-16/10 sm:object-contain lg:aspect-auto lg:h-96"} src={"/images/hero2.jpeg"} />
             <div className={"absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-outline-variant/30 hidden lg:block z-20"}>
               <p className={"text-primary font-black text-2xl leading-none"}>9+</p>
               <p className={"text-xs uppercase tracking-[0.2em] font-black text-on-surface-variant mt-2"}>Years Of Trust</p>
