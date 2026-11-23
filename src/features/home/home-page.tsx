@@ -481,70 +481,129 @@ function HomeProjectsSection({
   setPortfolioApi: (api: CarouselApi) => void;
 }) {
   return (
-    <section className={"relative bg-white py-12 sm:py-section-gap"}>
-      <div className={"absolute top-0 left-0 h-40 w-full bg-linear-to-b from-background to-transparent"}></div>
-      <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter relative z-10"}>
-        <div className={"mb-10 md:mb-16"}>
-          <span className={"text-primary font-black tracking-[0.3em] uppercase text-xs mb-4 block"}>Portfolio</span>
-          <div className={"flex flex-col md:flex-row justify-between items-start md:items-end gap-8"}>
-            <h2 className={"font-headline-lg max-w-3xl text-3xl font-black leading-tight sm:text-4xl lg:text-[2.75rem]"}>
-              Our Construction <span className={"text-primary "}>Projects</span>
+    <section className="relative overflow-hidden bg-surface-container-low/50 py-12 sm:py-section-gap">
+      <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-background to-transparent" />
+      <div className="relative z-10 mx-auto max-w-container-max px-margin-mobile md:px-gutter">
+        <div className="mb-8 flex flex-col gap-6 sm:mb-10 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <span className="mb-3 block text-xs font-black uppercase tracking-[0.25em] text-primary">
+              Portfolio
+            </span>
+            <h2 className="font-headline-lg text-3xl font-black leading-tight sm:text-4xl lg:text-[2.75rem]">
+              Our Construction <span className="text-primary">Projects</span>
             </h2>
-            <Link className={"group flex items-center gap-3 text-primary font-black text-sm md:text-base hover:gap-5 transition-all bg-white px-6 md:px-8 py-3.5 md:py-4 rounded-full shadow-md"} to={"/projects"}>
-              Explore All
-              <span className={"material-symbols-outlined"}>arrow_forward</span>
+            <p className="mt-3 max-w-xl text-sm leading-relaxed text-on-surface-variant sm:text-base">
+              Explore a selection of homes shaped around the people who live in them.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <button
+              aria-label="Previous projects"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-outline-variant/50 bg-white text-on-surface shadow-sm transition hover:border-primary hover:bg-primary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:h-12 sm:w-12"
+              onClick={() => portfolioApi?.scrollPrev()}
+              type="button"
+            >
+              <span aria-hidden="true" className="material-symbols-outlined">
+                west
+              </span>
+            </button>
+            <button
+              aria-label="Next projects"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-outline-variant/50 bg-white text-on-surface shadow-sm transition hover:border-primary hover:bg-primary hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:h-12 sm:w-12"
+              onClick={() => portfolioApi?.scrollNext()}
+              type="button"
+            >
+              <span aria-hidden="true" className="material-symbols-outlined">
+                east
+              </span>
+            </button>
+            <Link
+              className="group inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:min-h-12 sm:px-6"
+              to="/projects"
+            >
+              All projects
+              <span
+                aria-hidden="true"
+                className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+              >
+                arrow_forward
+              </span>
             </Link>
           </div>
         </div>
-        <div className={"relative group/slider"}>
-          <Carousel opts={{ align: "start", loop: true }} setApi={setPortfolioApi}>
-            <CarouselContent className={"ml-0"}>
-              {residentialProjects.map((project) => {
-                const meta = residentialMeta[project.slug] ?? {
-                  status: project.status,
-                  location: "Puducherry",
-                  builtUp: "To be confirmed",
-                };
 
-                return (
-                  <CarouselItem className={"pl-0 md:pl-4 md:basis-1/2 lg:basis-1/3"} key={project.slug}>
-                    <article className={"group/card relative h-107.5 overflow-hidden rounded-[2rem] border border-outline-variant/20 shadow-xl sm:h-125 sm:rounded-[2.5rem]"}>
-                      <img alt={project.title} className={"absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"} src={project.image} />
-                      <div className={"absolute inset-0 bg-linear-to-t from-on-surface/80 via-transparent to-transparent"}></div>
-                      <div className={`absolute top-6 left-6 text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest z-20 ${meta.status === "Ongoing" ? "bg-secondary-container" : "bg-primary"}`}>
-                        {meta.status}
+        <Carousel
+          aria-label="Featured residential projects"
+          opts={{ align: "start", loop: true }}
+          setApi={setPortfolioApi}
+        >
+          <CarouselContent className="-ml-3 md:-ml-4">
+            {residentialProjects.map((project) => {
+              const meta = residentialMeta[project.slug] ?? {
+                status: project.status,
+                location: "Puducherry",
+                builtUp: "To be confirmed",
+              };
+
+              return (
+                <CarouselItem
+                  className="basis-[88%] pl-3 sm:basis-[72%] md:basis-1/2 md:pl-4 lg:basis-1/3"
+                  key={project.slug}
+                >
+                  <article className="group/card relative h-[28rem] overflow-hidden rounded-[1.75rem] bg-[#08111f] shadow-lg ring-1 ring-black/5 sm:h-[32rem] sm:rounded-[2rem]">
+                    <img
+                      alt={project.title}
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+                      loading="lazy"
+                      src={project.image}
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-[#08111f]/95 via-[#08111f]/25 to-[#08111f]/5" />
+                    <div
+                      className={`absolute left-5 top-5 rounded-full px-3.5 py-1.5 text-[10px] font-black uppercase tracking-[0.14em] sm:left-6 sm:top-6 ${meta.status === "Ongoing" ? "bg-secondary-container text-on-secondary-container" : "bg-white/95 text-on-surface"}`}
+                    >
+                      {meta.status}
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
+                      <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-white/75">
+                        <span
+                          aria-hidden="true"
+                          className="material-symbols-outlined text-base text-secondary-container"
+                        >
+                          location_on
+                        </span>
+                        <span className="line-clamp-1">{meta.location}</span>
                       </div>
-                      <div className={"absolute bottom-4 left-4 right-4 rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl transition-all duration-500 group-hover/card:-translate-y-2 sm:bottom-6 sm:left-6 sm:right-6 sm:rounded-3xl sm:p-8"}>
-                        <div className={"flex items-center gap-2 text-white/80 text-[10px] mb-2 uppercase tracking-widest font-bold"}>
-                          <span className={"material-symbols-outlined text-primary text-sm"}>location_on</span>
-                          {meta.location}
+                      <h3 className="mt-2 line-clamp-2 text-2xl font-black leading-tight sm:text-3xl">
+                        {project.title}
+                      </h3>
+                      <div className="mt-5 flex items-end justify-between gap-3 border-t border-white/20 pt-4">
+                        <div className="min-w-0">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-white/60">
+                            Built-up area
+                          </p>
+                          <p className="mt-1 truncate text-sm font-bold text-white sm:text-base">
+                            {meta.builtUp}
+                          </p>
                         </div>
-                        <h4 className={"font-black text-xl text-white mb-4 sm:text-2xl"}>{project.title}</h4>
-                        <div className={"flex justify-between items-end gap-4"}>
-                          <div>
-                            <p className={"text-[8px] uppercase font-bold text-white/60 mb-1 tracking-widest"}>Built Up</p>
-                            <p className={"font-black text-sm text-primary"}>{meta.builtUp}</p>
-                          </div>
-                          <Link className={"rounded-full bg-white px-3 py-2 text-[10px] font-black uppercase tracking-widest text-on-surface transition-all hover:bg-primary hover:text-white sm:px-4"} params={{ projectSlug: project.slug }} to={"/projects/$projectSlug"}>
-                            View Project
-                          </Link>
-                        </div>
+                        <Link
+                          aria-label={`View project: ${project.title}`}
+                          className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full bg-white px-4 text-xs font-bold text-on-surface transition hover:bg-secondary-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:min-h-11 sm:px-5 sm:text-sm"
+                          params={{ projectSlug: project.slug }}
+                          to="/projects/$projectSlug"
+                        >
+                          View project
+                          <span aria-hidden="true" className="material-symbols-outlined text-base">
+                            arrow_forward
+                          </span>
+                        </Link>
                       </div>
-                    </article>
-                  </CarouselItem>
-                );
-              })}
-            </CarouselContent>
-          </Carousel>
-          <div className={"flex justify-center gap-3 md:gap-4 mt-6 md:mt-8"}>
-            <button className={"w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-lg"} onClick={() => portfolioApi?.scrollPrev()} type={"button"}>
-              <span className={"material-symbols-outlined"}>west</span>
-            </button>
-            <button className={"w-12 h-12 md:w-14 md:h-14 rounded-full border-2 border-primary/30 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-lg"} onClick={() => portfolioApi?.scrollNext()} type={"button"}>
-              <span className={"material-symbols-outlined"}>east</span>
-            </button>
-          </div>
-        </div>
+                    </div>
+                  </article>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );
