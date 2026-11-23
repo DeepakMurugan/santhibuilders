@@ -1,166 +1,254 @@
-import type { LucideIcon } from "lucide-react";
-import { ArrowDown, Mail, MessageCircle, Phone } from "lucide-react";
-import { ConstructionEnquirySection } from "@/components/construction-enquiry-form";
-import {
-  CONTACT_EMAIL,
-  CONTACT_EMAIL_HREF,
-  CONTACT_PHONE_DISPLAY,
-  CONTACT_PHONE_HREF,
-  OFFICE_LOCATIONS,
-  WHATSAPP_LINK,
-} from "@/lib/company-info";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import { OFFICE_LOCATIONS, WHATSAPP_LINK } from "@/lib/company-info";
+
+type ContactFormFields = {
+  name: string;
+  phone: string;
+  email: string;
+  interest: string;
+  message: string;
+};
 
 export function ContactPage() {
   return (
     <main>
-      <section className="construction-contact-hero relative overflow-hidden bg-[#08111f] text-white">
-        <div className="absolute inset-0">
+      <section className="relative isolate overflow-hidden bg-[#08111f] text-white">
+        <div aria-hidden="true" className="absolute inset-0">
           <img
-            alt="Santhi Builders contact banner"
+            alt=""
             className="h-full w-full object-cover"
             src="/images/excellence.jpg"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(8,17,31,0.96)_0%,rgba(8,17,31,0.88)_38%,rgba(8,17,31,0.62)_68%,rgba(8,17,31,0.84)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(110deg,rgba(8,17,31,0.94)_0%,rgba(8,17,31,0.78)_48%,rgba(8,17,31,0.65)_100%)]" />
           <div className="construction-contact-hero__grid absolute inset-0" />
         </div>
-        <div className="relative mx-auto max-w-container-max px-margin-mobile py-10 sm:py-14 md:px-gutter md:py-16 lg:py-20">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-[10px] font-black uppercase tracking-[0.22em] text-white/80 backdrop-blur-md md:text-xs">
-                <span className="material-symbols-outlined text-sm text-secondary-container">
-                  waving_hand
-                </span>
-                Get in touch
-              </span>
-              <h1 className="mt-6 text-4xl font-black leading-[1.02] sm:text-5xl md:text-6xl lg:text-7xl">
-                Let’s build something great together.
+        <div className="relative mx-auto max-w-container-max px-margin-mobile py-8 sm:py-12 md:px-gutter md:py-16 lg:py-20">
+          <div className="grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+            <div className="max-w-xl">
+              <p className="text-xs font-black uppercase tracking-[0.22em] text-white/75 sm:text-sm">
+                Contact us
+              </p>
+              <h1 className="mt-3 text-4xl font-black leading-tight sm:text-5xl md:text-6xl">
+                Let’s connect.
               </h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg md:text-xl">
-                Have a project in mind? Talk to our team about your plans, ask a question, or find
-                the right next step.
-              </p>
-              <a
-                className="mt-8 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:text-base"
-                href="#contact-form"
-              >
-                Tell us about your project
-                <ArrowDown aria-hidden="true" className="h-4 w-4" />
-              </a>
             </div>
-
-            <div className="rounded-[2rem] border border-white/60 bg-white p-5 text-on-surface shadow-2xl sm:p-7 md:p-8">
-              <p className="text-[10px] font-black uppercase tracking-[0.22em] text-primary md:text-xs">
-                Contact Santhi Builders
-              </p>
-              <h2 className="mt-2 text-2xl font-black leading-tight sm:text-3xl">
-                We’d love to hear from you.
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-on-surface-variant sm:text-base">
-                Choose the easiest way to reach our team.
-              </p>
-              <div className="mt-5 grid gap-3">
-                <InfoCard
-                  icon={Phone}
-                  title="Call us"
-                  value={CONTACT_PHONE_DISPLAY}
-                  href={CONTACT_PHONE_HREF}
-                />
-                <InfoCard
-                  icon={Mail}
-                  title="Email us"
-                  value={CONTACT_EMAIL}
-                  href={CONTACT_EMAIL_HREF}
-                />
-                <InfoCard
-                  icon={MessageCircle}
-                  title="WhatsApp"
-                  value="Chat with our team"
-                  href={WHATSAPP_LINK}
-                />
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-8 sm:py-10 lg:py-14">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
-          <div className="mb-7 max-w-2xl md:mb-9">
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary sm:text-xs">
-              Find us
-            </span>
-            <h2 className="mt-2 text-3xl font-black text-on-surface sm:text-4xl">
-              Visit our offices
-            </h2>
-            <p className="mt-3 text-base leading-relaxed text-on-surface-variant sm:text-lg">
-              We’re ready to talk through your plans in person.
-            </p>
-          </div>
-          <div className="grid gap-5 md:grid-cols-2">
-            {OFFICE_LOCATIONS.map((office) => (
-              <div
-                className="rounded-[2rem] border border-outline-variant/25 bg-surface-container-low/50 p-6 shadow-sm sm:p-7"
+      <section className="bg-white py-10 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-container-max px-margin-mobile md:px-gutter">
+          <h2 className="text-2xl font-black text-on-surface sm:text-3xl">Our branches</h2>
+          <div className="mt-5 grid gap-4 sm:mt-7 md:grid-cols-2 md:gap-6">
+            {OFFICE_LOCATIONS.map((office, index) => (
+              <article
+                className="rounded-3xl border border-outline-variant/30 bg-white p-5 shadow-sm transition-shadow hover:shadow-md sm:p-7"
                 key={office.label}
               >
-                <span className="inline-flex items-center gap-2 rounded-full bg-primary/8 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.18em] text-primary">
-                  {office.label}
-                </span>
-                <div className="mt-5 space-y-2 text-base leading-relaxed text-on-surface-variant sm:text-lg">
-                  {office.address.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
+                <div className="flex items-start gap-4">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <span aria-hidden="true" className="material-symbols-outlined">
+                      location_on
+                    </span>
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary sm:text-xs">
+                      Office {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-2 text-base font-black leading-snug text-on-surface sm:text-lg">
+                      {office.address.map((line) => (
+                        <span className="block" key={line}>
+                          {line}
+                        </span>
+                      ))}
+                    </h3>
+                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="[&>section]:py-8 md:[&>section]:py-10 lg:[&>section]:py-14" id="contact-form">
-        <ConstructionEnquirySection
-          description="Share a few details about your project and our team will be in touch."
-          eyebrow="Get in touch"
-          source="Contact Page"
-          title="Tell us about your project."
-        />
-      </div>
+      <section className="bg-surface-container-low/50 py-10 sm:py-12 md:py-16">
+        <div className="mx-auto max-w-container-max px-margin-mobile md:px-gutter">
+          <h2 className="text-2xl font-black text-on-surface sm:text-3xl">Find us</h2>
+          <div className="mt-5 grid gap-5 sm:mt-7 md:grid-cols-2 md:gap-6">
+            {OFFICE_LOCATIONS.map((office, index) => {
+              const address = encodeURIComponent(office.address.join(" "));
+
+              return (
+                <article
+                  className="overflow-hidden rounded-3xl border border-outline-variant/30 bg-white shadow-sm"
+                  key={office.label}
+                >
+                  <div className="px-5 py-4 sm:px-6 sm:py-5">
+                    <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary sm:text-xs">
+                      Office {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-1.5 text-sm font-bold leading-relaxed text-on-surface sm:text-base">
+                      {office.address.map((line) => (
+                        <span className="block" key={line}>
+                          {/* {line} */}
+                        </span>
+                      ))}
+                    </h3>
+                  </div>
+                  <iframe
+                    allowFullScreen
+                    className="aspect-[4/3] w-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={`https://www.google.com/maps?q=${address}&output=embed`}
+                    title={`${office.address.join(" ")} map`}
+                  />
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
 
-function InfoCard({
-  href,
-  icon: Icon,
-  title,
-  value,
-}: {
-  href: string;
-  icon: LucideIcon;
-  title: string;
-  value: string;
-}) {
-  const external = href.startsWith("http");
+function ContactForm() {
+  const [fields, setFields] = useState<ContactFormFields>({
+    name: "",
+    phone: "",
+    email: "",
+    interest: "General enquiry",
+    message: "",
+  });
+
+  const updateField =
+    (field: keyof ContactFormFields) =>
+    (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+      setFields((current) => ({ ...current, [field]: event.target.value }));
+    };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const message = [
+      "Hello Santhi Builders, I would like to get in touch.",
+      `Name: ${fields.name}`,
+      `Phone: ${fields.phone}`,
+      `Email: ${fields.email || "-"}`,
+      `Enquiry type: ${fields.interest}`,
+      `Message: ${fields.message}`,
+    ].join("\n");
+
+    window.open(
+      `${WHATSAPP_LINK}?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
+  const fieldClass =
+    "mt-1.5 box-border min-h-11 w-full min-w-0 rounded-xl border border-outline-variant/40 bg-surface-container-low px-3 py-2 text-sm text-on-surface outline-none transition placeholder:text-on-surface-variant/60 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 focus-visible:outline-none sm:text-base";
+  const labelClass = "block min-w-0 text-xs font-bold text-on-surface-variant sm:text-sm";
 
   return (
-    <a
-      aria-label={`${title}: ${value}`}
-      className="flex min-w-0 items-center gap-3 rounded-2xl border border-outline-variant/25 bg-surface-container-low/60 px-4 py-3.5 transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:bg-primary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:gap-4 sm:px-5"
-      href={href}
-      rel={external ? "noreferrer" : undefined}
-      target={external ? "_blank" : undefined}
-      title={value}
-    >
-      <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-        <Icon className="h-4 w-4" strokeWidth={2.2} />
-      </span>
-      <span className="min-w-0 text-left">
-        <span className="block text-xs font-bold uppercase tracking-[0.12em] text-on-surface-variant">
-          {title}
-        </span>
-        <span className="mt-0.5 block break-words text-sm font-semibold text-on-surface sm:text-base">
-          {value}
-        </span>
-      </span>
-    </a>
+    <div className="rounded-3xl border border-white/60 bg-white p-4 text-on-surface shadow-2xl sm:p-5 md:p-6">
+      <div className="mb-4 sm:mb-5">
+        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary sm:text-xs">
+          Contact form
+        </p>
+        <h2 className="mt-2 text-2xl font-black leading-tight sm:text-3xl">
+          Send us a message
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-on-surface-variant">
+          Share a few details and we’ll be in touch.
+        </p>
+      </div>
+      <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
+        <div className="grid min-w-0 gap-4 sm:grid-cols-2 sm:gap-x-5">
+          <label className={labelClass}>
+            Full name <span className="text-primary">*</span>
+            <input
+              autoComplete="name"
+              className={fieldClass}
+              onChange={updateField("name")}
+              placeholder="Your name"
+              minLength={2}
+              required
+              type="text"
+              value={fields.name}
+            />
+          </label>
+          <label className={labelClass}>
+            Phone number <span className="text-primary">*</span>
+            <input
+              autoComplete="tel"
+              className={fieldClass}
+              inputMode="tel"
+              onChange={updateField("phone")}
+              placeholder="+91"
+              pattern="(?=.*[0-9])[0-9+() -]{7,20}"
+              required
+              type="tel"
+              title="Enter a valid phone number"
+              value={fields.phone}
+            />
+          </label>
+          <label className={labelClass}>
+            Email address
+            <input
+              autoComplete="email"
+              className={fieldClass}
+              onChange={updateField("email")}
+              placeholder="you@example.com"
+              type="email"
+              value={fields.email}
+            />
+          </label>
+          <label className={labelClass}>
+            Enquiry type
+            <select
+              className={fieldClass}
+              onChange={updateField("interest")}
+              value={fields.interest}
+            >
+              {[
+                "General enquiry",
+                "New construction",
+                "Interior design",
+                "Renovation",
+                "Other",
+              ].map((interest) => (
+                <option key={interest} value={interest}>
+                  {interest}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <label className={labelClass}>
+          How can we help? <span className="text-primary">*</span>
+          <textarea
+            className={`${fieldClass} min-h-20 resize-y`}
+            onChange={updateField("message")}
+            placeholder="Tell us briefly about your project or question"
+            minLength={5}
+            required
+            rows={3}
+            value={fields.message}
+          />
+        </label>
+        <div className="flex sm:justify-end">
+          <button
+            className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-primary px-5 py-2.5 text-sm font-black text-white shadow-sm transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-auto sm:px-7"
+            type="submit"
+          >
+            Send message
+            <span aria-hidden="true" className="material-symbols-outlined text-base">
+              arrow_forward
+            </span>
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

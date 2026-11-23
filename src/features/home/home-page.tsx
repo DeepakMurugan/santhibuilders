@@ -480,6 +480,30 @@ function HomeProjectsSection({
   residentialProjects: typeof PROJECT_LISTING_ITEMS;
   setPortfolioApi: (api: CarouselApi) => void;
 }) {
+  const [portfolioPosition, setPortfolioPosition] = useState({ index: 0, total: 0 });
+
+  useEffect(() => {
+    if (!portfolioApi) {
+      return;
+    }
+
+    const updatePosition = () => {
+      setPortfolioPosition({
+        index: portfolioApi.selectedScrollSnap(),
+        total: portfolioApi.scrollSnapList().length,
+      });
+    };
+
+    updatePosition();
+    portfolioApi.on("select", updatePosition);
+    portfolioApi.on("reInit", updatePosition);
+
+    return () => {
+      portfolioApi.off("select", updatePosition);
+      portfolioApi.off("reInit", updatePosition);
+    };
+  }, [portfolioApi]);
+
   return (
     <section className="relative overflow-hidden bg-surface-container-low/50 py-12 sm:py-section-gap">
       <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-background to-transparent" />
@@ -604,6 +628,36 @@ function HomeProjectsSection({
             })}
           </CarouselContent>
         </Carousel>
+        {portfolioPosition.total > 0 && (
+          <div className="mt-5 flex items-center justify-between gap-4">
+            <p className="text-xs font-medium text-on-surface-variant sm:text-sm">
+              Swipe or use the arrows to explore
+            </p>
+            <div className="flex shrink-0 items-center gap-2.5">
+              <span className="text-xs font-black tabular-nums text-primary">
+                {String(portfolioPosition.index + 1).padStart(2, "0")}
+              </span>
+              <div
+                aria-label="Project carousel position"
+                aria-valuemax={portfolioPosition.total}
+                aria-valuemin={1}
+                aria-valuenow={portfolioPosition.index + 1}
+                className="h-1 w-16 overflow-hidden rounded-full bg-outline-variant/50 sm:w-24"
+                role="progressbar"
+              >
+                <span
+                  className="block h-full rounded-full bg-primary transition-[width] duration-300"
+                  style={{
+                    width: `${((portfolioPosition.index + 1) / portfolioPosition.total) * 100}%`,
+                  }}
+                />
+              </div>
+              <span className="text-xs font-bold tabular-nums text-on-surface-variant">
+                {String(portfolioPosition.total).padStart(2, "0")}
+              </span>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

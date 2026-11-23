@@ -1,4 +1,4 @@
-export type ProjectCategory = "Residential";
+export type ProjectCategory = "Residential" | "Interior";
 export type ProjectSize = "wide" | "tall" | "square";
 export type ProjectStatus = "Completed" | "Ongoing";
 
@@ -26,6 +26,8 @@ export type ProjectDetailItem = {
 
 export const PROJECT_FILTERS = [
   "All Projects",
+  "Residential",
+  "Interior",
   "Completed",
   "Ongoing",
 ] as const;
@@ -43,7 +45,7 @@ export const PROJECT_LISTING_ITEMS: ProjectListingItem[] = [
   {
     title: "Shobana Residency",
     type: "Residential",
-    image: "../images/project/s22.jpeg",
+    image: "/images/project/s22.jpeg",
     to: "/projects/shobana-residency",
     slug: "shobana-residency",
     size: "square",
@@ -94,8 +96,8 @@ export const PROJECT_DETAILS: Record<string, ProjectDetailItem> = {
     category: "Residential",
     title: "Shobana Residency",
     subtitle: "Residential project details",
-    hero: "../images/project/s22.jpeg",
-    gallery: ["../images/project/s11.jpeg", "../images/project/s22.jpeg","../images/project/s33.jpeg","../images/project/s44.jpeg","../images/project/s55.jpeg"],
+    hero: "/images/project/s22.jpeg",
+    gallery: ["/images/project/s11.jpeg", "/images/project/s22.jpeg", "/images/project/s33.jpeg", "/images/project/s44.jpeg", "/images/project/s55.jpeg"],
     status: "Completed",
     location: "Pinnachikuppam, Puducherry",
     builtUpArea: "2467 sq ft",
