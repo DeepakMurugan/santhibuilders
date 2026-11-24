@@ -2,16 +2,15 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { useReveal } from "@/hooks/use-reveal";
 
-const supportPhone = "+91 88386 11658";
-const supportTel = "tel:+918838611658";
 const supportWhatsapp = "https://wa.me/918838611658";
 
 const heroSlides = [
   {
     image: "/images/hero1.jpeg",
     badge: "Idea to Identity",
-    titlePrimary: "Built around",
-    titleAccent: "your plans.",
+        titlePrimary: "Santhi Builders",
+        titleAccent: "Best Residential Company in Pondicherry",
+
     titleSuffix: "",
     description:
       "Construction, design and project support to help you create a space that feels considered from the first drawing to the finishing details.",
@@ -19,17 +18,17 @@ const heroSlides = [
   {
     image: "/images/highrise.jpg",
     badge: "Planning to handover",
-    titlePrimary: "A clear process.",
-    titleAccent: "A considered build.",
-    titleSuffix: "",
+    titlePrimary: "Santhi Builders",
+    titleAccent: "Best Residential Company in Pondicherry",
+   titleSuffix: "",
     description:
       "Explore a connected range of services for residential and commercial projects, with each stage shaped around your requirements.",
   },
   {
     image: "/images/hero3.jpeg",
     badge: "Made for real life",
-    titlePrimary: "Good work",
-    titleAccent: "starts on site.",
+    titlePrimary: "Santhi Builders",
+    titleAccent: "Best Residential Company in Pondicherry",
     titleSuffix: "",
     description:
       "Practical coordination and careful attention to the details help turn drawings into spaces made for everyday use.",
@@ -48,7 +47,7 @@ export function AboutPage() {
       <AboutHeroSection activeHeroSlide={activeHeroSlide} currentSlide={currentSlide} onPrev={() => setActiveHeroSlide((current) => (current - 1 + heroSlides.length) % heroSlides.length)} onNext={() => setActiveHeroSlide((current) => (current + 1) % heroSlides.length)} onSelectSlide={setActiveHeroSlide} />
       <AboutLegacySection />
       <AboutBlueprintSection />
-      <AboutTeamSection />
+      <AboutPrestigiousProjectsSection />
       <AboutPeopleSection />
       <AboutCtaSection />
     </>
@@ -108,7 +107,7 @@ function AboutLegacySection() {
         <div className={"grid items-center gap-10 md:gap-14 lg:grid-cols-2 lg:gap-20"}>
           <div className={"space-y-6 md:space-y-8"}>
             <span className={"text-primary font-black uppercase tracking-[0.3em] text-[10px] block border-l-4 border-primary pl-4"}>Our story</span>
-            <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Considered design. <span className={"text-primary"}>Careful construction.</span></h2>
+            <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Santhi Builders Construction Process  <span className={"text-primary"}>From Vision to Reality.</span></h2>
             <div className={"space-y-4 text-base font-medium leading-relaxed text-on-surface-variant sm:text-lg"}>
               <p>Building your dream home should be a well-planned and hassle-free experience. At Santhi Builders, we follow a structured construction process that ensures every stage is handled with care, transparency and attention to detail.</p>
               <p>200+ Homes, Commercial Buildings Delivered across Pondicherry, Santhi Builders combines thoughtful planning, reliable construction and quality craftsmanship to bring your dream home to life. </p>
@@ -170,39 +169,43 @@ function AboutBlueprintSection() {
   );
 }
 
-function AboutTeamSection() {
-  const priorities = [
-    { icon: "rule", title: "Clear scope", body: "Start by discussing your site, requirements and the work you want to take on." },
-    { icon: "architecture", title: "Practical planning", body: "Bring design decisions and project details into view before work progresses." },
-    { icon: "handyman", title: "Careful execution", body: "Keep the agreed plans and finishing details in focus as the project takes shape." },
+function AboutPrestigiousProjectsSection() {
+  const projectLogos = [
+    { alt: "Partner 1", src: "/images/lo1.png" },
+    { alt: "Partner 2", src: "/images/cc2.webp" },
+    { alt: "Partner 3", src: "/images/lo2.png" },
   ] as const;
 
   return (
-    <section className={"relative overflow-hidden bg-[#101c2b] py-section-gap text-white"}>
-      <div className={"absolute inset-0 opacity-15"} style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.18) 1px, transparent 1px)", backgroundSize: "36px 36px" }} />
-      <div className={"max-w-container-max mx-auto px-margin-mobile md:px-gutter"}>
-        <div className={"relative mb-10 max-w-3xl md:mb-14"}>
-          <div className={"max-w-2xl"}>
-            <span className={"mb-5 block border-l-4 border-secondary-container pl-4 text-[10px] font-black uppercase tracking-[0.3em] text-secondary-container"}>The way we work</span>
-            <h2 className={"text-4xl font-black leading-tight sm:text-5xl md:text-6xl"}>The details make <span className={"text-secondary-container"}>the difference.</span></h2>
-            <p className={"mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"}>A well-managed build is made of many considered decisions. We keep the brief, design and site work connected throughout the project.</p>
-          </div>
-        </div>
-        <div className={"relative grid gap-4 md:grid-cols-3 md:gap-6"}>
-          {priorities.map((item, index) => (
-            <article className={"rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm sm:p-8"} key={item.title}>
-              <span className={"text-xs font-black uppercase tracking-[0.2em] text-secondary-container"}>0{index + 1}</span>
-              <span className={"material-symbols-outlined mt-5 block text-3xl text-secondary-container"}>{item.icon}</span>
-              <h3 className={"mt-4 text-xl font-black sm:text-2xl"}>{item.title}</h3>
-              <p className={"mt-3 text-sm leading-relaxed text-white/70 sm:text-base"}>{item.body}</p>
-            </article>
+    <section aria-labelledby={"prestigious-projects-title"} className={"relative isolate overflow-hidden bg-[#101c2b] py-16 text-white sm:py-20"}>
+      <div aria-hidden={"true"} className={"absolute -left-24 top-0 size-72 rounded-full bg-primary/20 blur-3xl"} />
+      <div aria-hidden={"true"} className={"absolute -right-24 bottom-0 size-72 rounded-full bg-sky-400/15 blur-3xl"} />
+      <div className={"relative mx-auto mb-9 max-w-container-max px-margin-mobile text-center md:mb-12 md:px-gutter"}>
+        <span className={"mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[10px] font-black uppercase tracking-[0.25em] text-sky-300 sm:text-xs"}>
+          <span aria-hidden={"true"} className={"size-1.5 rounded-full bg-sky-400"} />
+          Trusted collaborations
+        </span>
+        <h2 className={"text-3xl font-black uppercase leading-tight tracking-tight sm:text-4xl md:text-5xl"} id={"prestigious-projects-title"}>
+          Our <span className={"text-sky-300"}>Prestigious Projects</span>
+        </h2>
+        <p className={"mx-auto mt-4 max-w-xl text-sm leading-relaxed text-white/65 sm:text-base"}>
+          Built on trusted partnerships and a shared commitment to quality.
+        </p>
+      </div>
+      <div className={"relative z-10 mx-auto max-w-container-max overflow-hidden px-margin-mobile md:px-gutter"}>
+        <div className={"logo-scroll"}>
+          {[false, true].map((isDuplicate) => (
+            <div aria-hidden={isDuplicate} className={"flex flex-shrink-0"} key={String(isDuplicate)}>
+              {projectLogos.map((logo) => (
+                <div
+                  className={"group mx-2 flex h-28 w-40 flex-shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white px-5 shadow-lg shadow-black/10 transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:mx-3 sm:h-32 sm:w-56 sm:px-8 md:w-64"}
+                  key={logo.alt}
+                >
+                  <img alt={logo.alt} className={"max-h-20 w-auto max-w-full object-contain transition-transform duration-300 group-hover:scale-105 sm:max-h-24"} decoding={"async"} src={logo.src} />
+                </div>
+              ))}
+            </div>
           ))}
-        </div>
-        <div className={"relative mt-8"}>
-          <Link className={"inline-flex items-center gap-3 rounded-lg bg-secondary-container px-6 py-3.5 text-sm font-black text-on-secondary transition-colors hover:bg-white hover:text-on-surface"} to={"/services"}>
-            Explore our services
-            <span className={"material-symbols-outlined text-lg"}>arrow_forward</span>
-          </Link>
         </div>
       </div>
     </section>
@@ -256,22 +259,135 @@ function AboutPeopleSection() {
 }
 
 function AboutCtaSection() {
+  const [formState, setFormState] = useState({
+    firstName: "",
+    mobile: "",
+    email: "",
+    location: "",
+    service: "",
+    message: "",
+  });
+
   return (
-    <section className={"relative overflow-hidden bg-primary py-section-gap text-white"}>
-      <div className={"blueprint-pattern absolute inset-0 opacity-20"}></div>
-      <div className={"absolute -top-28 -left-20 h-72 w-72 rounded-full bg-white/10 blur-3xl"}></div>
-      <div className={"absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-secondary-container/20 blur-3xl"}></div>
-      <div className={"relative z-10 mx-auto max-w-5xl px-margin-mobile md:px-gutter"}>
-        <div className={"space-y-7 rounded-[2rem] border border-white/20 bg-white/10 px-6 py-10 text-center shadow-2xl backdrop-blur-xl md:space-y-9 md:rounded-[2.5rem] md:px-12 md:py-14"}>
-          <div className={"inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/15 px-5 py-2.5 text-[10px] font-black uppercase tracking-[0.3em] md:text-xs"}><span className={"material-symbols-outlined text-sm md:text-base"}>handshake</span><span>Start with a conversation</span></div>
-          <h2 className={"text-3xl font-black leading-[1.1] sm:text-4xl md:text-6xl"}>Have a project in mind?</h2>
-          <p className={"mx-auto max-w-3xl text-base font-medium leading-relaxed opacity-95 sm:text-lg md:text-xl"}>Tell us what you are planning. We can help you explore the services and next steps that fit your project.</p>
-          <div className={"flex flex-col justify-center gap-4 pt-2 sm:flex-row md:gap-6"}>
-            <a className={"inline-flex w-full items-center justify-center gap-3 rounded-xl bg-white px-8 py-4 text-sm font-black uppercase tracking-[0.18em] text-primary transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(0,0,0,0.3)] sm:w-auto md:px-12 md:py-5 md:text-base"} href={supportTel}><span className={"material-symbols-outlined text-lg"}>call</span><span>Schedule a call</span></a>
-            <a className={"inline-flex w-full items-center justify-center gap-3 rounded-xl bg-secondary-container px-8 py-4 text-sm font-black uppercase tracking-[0.16em] text-on-secondary transition-all duration-500 hover:-translate-y-1 hover:brightness-95 sm:w-auto md:px-12 md:py-5 md:text-base"} href={supportWhatsapp} rel={"noreferrer"} target={"_blank"}><span className={"material-symbols-outlined text-lg"}>chat</span><span>WhatsApp us</span></a>
-          </div>
-          <div className={"flex flex-col items-center justify-center gap-2 text-white/90 sm:flex-row sm:gap-4"}><span className={"text-[10px] font-black uppercase tracking-[0.32em] text-white/60 md:text-xs"}>Direct assistance</span><a className={"text-lg font-extrabold tracking-wide transition-colors hover:text-secondary-container md:text-2xl"} href={supportTel}>{supportPhone}</a></div>
+    <section aria-labelledby={"about-enquiry-title"} className={"relative overflow-hidden bg-white py-14 sm:py-16 md:py-20"}>
+      <div aria-hidden={"true"} className={"absolute -left-28 top-1/3 size-64 rounded-full bg-primary/5 blur-3xl"} />
+      <div aria-hidden={"true"} className={"absolute -right-28 bottom-0 size-64 rounded-full bg-primary/5 blur-3xl"} />
+      <div className={"relative mx-auto max-w-5xl px-margin-mobile md:px-gutter"}>
+        <div className={"mb-8 text-center sm:mb-10"}>
+          <h2 className={"text-2xl font-black leading-tight text-primary sm:text-3xl md:text-4xl"} id={"about-enquiry-title"}>
+            Ready to Bring Your Vision to Life?
+          </h2>
+          <p className={"mt-2 text-sm text-on-surface-variant sm:text-base"}>
+            Get a free consultation with our experts and start your project today.
+          </p>
         </div>
+        <form
+          className={"rounded-2xl border border-outline-variant/30 bg-white p-5 shadow-[0_20px_60px_rgba(15,35,60,0.08)] sm:p-8 md:p-10"}
+          onSubmit={(event) => {
+            event.preventDefault();
+            const message = [
+              "Hello Santhi Builders, I would like to enquire about a project.",
+              `Name: ${formState.firstName}`,
+              `Mobile: +91 ${formState.mobile}`,
+              `Email: ${formState.email || "-"}`,
+              `Location: ${formState.location || "-"}`,
+              `Service: ${formState.service}`,
+              `Message: ${formState.message || "-"}`,
+            ].join("\n");
+            window.open(`${supportWhatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+          }}
+        >
+          <div className={"grid gap-x-10 sm:grid-cols-2"}>
+            <label className={"block border-b border-outline-variant/50 py-3 focus-within:border-primary"}>
+              <span className={"block text-xs font-bold text-on-surface"}>First Name</span>
+              <input
+                autoComplete={"given-name"}
+                className={"mt-2 w-full bg-transparent text-sm text-on-surface outline-none placeholder:text-on-surface-variant/60"}
+                name={"firstName"}
+                onChange={(event) => setFormState((current) => ({ ...current, firstName: event.target.value }))}
+                placeholder={"Enter your name"}
+                required
+                value={formState.firstName}
+              />
+            </label>
+            <label className={"block border-b border-outline-variant/50 py-3 focus-within:border-primary"}>
+              <span className={"block text-xs font-bold text-on-surface"}>Mobile</span>
+              <span className={"mt-2 flex items-center gap-3 text-sm text-on-surface"}>
+                <span aria-hidden={"true"}>🇮🇳</span>
+                <span className={"border-r border-outline-variant pr-3 text-on-surface-variant"}>+91</span>
+                <input
+                  autoComplete={"tel-national"}
+                  className={"min-w-0 flex-1 bg-transparent outline-none placeholder:text-on-surface-variant/60"}
+                  inputMode={"tel"}
+                  name={"mobile"}
+                  onChange={(event) => setFormState((current) => ({ ...current, mobile: event.target.value }))}
+                  placeholder={"Enter your mobile number"}
+                  required
+                  type={"tel"}
+                  value={formState.mobile}
+                />
+              </span>
+            </label>
+            <label className={"block border-b border-outline-variant/50 py-3 focus-within:border-primary"}>
+              <span className={"block text-xs font-bold text-on-surface"}>Email</span>
+              <input
+                autoComplete={"email"}
+                className={"mt-2 w-full bg-transparent text-sm text-on-surface outline-none placeholder:text-on-surface-variant/60"}
+                name={"email"}
+                onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value }))}
+                placeholder={"Enter your email"}
+                type={"email"}
+                value={formState.email}
+              />
+            </label>
+            <label className={"block border-b border-outline-variant/50 py-3 focus-within:border-primary"}>
+              <span className={"block text-xs font-bold text-on-surface"}>Location</span>
+              <input
+                autoComplete={"address-level2"}
+                className={"mt-2 w-full bg-transparent text-sm text-on-surface outline-none placeholder:text-on-surface-variant/60"}
+                name={"location"}
+                onChange={(event) => setFormState((current) => ({ ...current, location: event.target.value }))}
+                placeholder={"Enter your area/city"}
+                value={formState.location}
+              />
+            </label>
+          </div>
+          <fieldset className={"mt-6"}>
+            <legend className={"text-xs font-bold text-on-surface"}>Service</legend>
+            <div className={"mt-3 flex flex-wrap gap-x-5 gap-y-3"}>
+              {["Construction", "Architecture", "Interior", "Renovation"].map((service) => (
+                <label className={"inline-flex items-center gap-2 text-sm text-on-surface-variant"} key={service}>
+                  <input
+                    checked={formState.service === service}
+                    className={"size-4 accent-primary"}
+                    name={"service"}
+                    onChange={() => setFormState((current) => ({ ...current, service }))}
+                    required
+                    type={"radio"}
+                    value={service}
+                  />
+                  {service}
+                </label>
+              ))}
+            </div>
+          </fieldset>
+          <label className={"mt-6 block border-b border-outline-variant/50 py-3 focus-within:border-primary"}>
+            <span className={"block text-xs font-bold text-on-surface"}>Message</span>
+            <textarea
+              className={"mt-2 min-h-20 w-full resize-y bg-transparent text-sm text-on-surface outline-none placeholder:text-on-surface-variant/60"}
+              name={"message"}
+              onChange={(event) => setFormState((current) => ({ ...current, message: event.target.value }))}
+              placeholder={"Write your message..."}
+              rows={3}
+              value={formState.message}
+            />
+          </label>
+          <div className={"mt-7 flex justify-center"}>
+            <button className={"w-full rounded-full border-2 border-primary bg-white px-8 py-3 text-sm font-black text-primary shadow-sm transition-colors hover:bg-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:w-2/3 md:w-1/2"} type={"submit"}>
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   );
