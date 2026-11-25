@@ -171,9 +171,9 @@ function AboutBlueprintSection() {
 
 function AboutPrestigiousProjectsSection() {
   const projectLogos = [
-    { alt: "Partner 1", src: "/images/lo1.png" },
-    { alt: "Partner 2", src: "/images/cc2.webp" },
-    { alt: "Partner 3", src: "/images/lo2.png" },
+    { alt: "Partner 1", src: "/images/mah.png" },
+    { alt: "Partner 2", src: "/images/mgm.webp" },
+    { alt: "Partner 3", src: "/images/clg.png" },
   ] as const;
 
   return (
