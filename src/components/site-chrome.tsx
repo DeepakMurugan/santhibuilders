@@ -200,7 +200,7 @@ export function SiteFooter() {
 
         <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:grid-cols-6 sm:gap-x-8 lg:grid-cols-12 lg:gap-8">
           <div className="col-span-2 space-y-4 sm:col-span-6 lg:col-span-4">
-            <img alt="Santhi Builders" className="h-10 w-auto object-contain sm:h-11" src={FLOGO} />
+            <img alt="Santhi Builders" className="h-auto w-auto object-cover sm:h-14" src={FLOGO} />
             <p className="max-w-md text-xs leading-relaxed text-white/70">
               Planning, design, construction and project support for residential and commercial
               spaces.

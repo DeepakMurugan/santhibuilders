@@ -16,7 +16,7 @@ const heroSlides = [
       "Construction, design and project support to help you create a space that feels considered from the first drawing to the finishing details.",
   },
   {
-    image: "/images/highrise.jpg",
+    image: "/images/hero2.jpeg",
     badge: "Planning to handover",
     titlePrimary: "Santhi Builders",
     titleAccent: "Best Residential Company in Pondicherry",
@@ -107,7 +107,7 @@ function AboutLegacySection() {
         <div className={"grid items-center gap-10 md:gap-14 lg:grid-cols-2 lg:gap-20"}>
           <div className={"space-y-6 md:space-y-8"}>
             <span className={"text-primary font-black uppercase tracking-[0.3em] text-[10px] block border-l-4 border-primary pl-4"}>Our story</span>
-            <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Santhi Builders Construction Process  <span className={"text-primary"}>From Vision to Reality.</span></h2>
+            <h2 className={"text-4xl font-black leading-tight text-on-surface sm:text-5xl md:text-6xl"}>Santhi Builders  <span className={"text-primary"}>Your Partner in Turning Dreams into Reality.</span></h2>
             <div className={"space-y-4 text-base font-medium leading-relaxed text-on-surface-variant sm:text-lg"}>
               <p>Building your dream home should be a well-planned and hassle-free experience. At Santhi Builders, we follow a structured construction process that ensures every stage is handled with care, transparency and attention to detail.</p>
               <p>200+ Homes, Commercial Buildings Delivered across Pondicherry, Santhi Builders combines thoughtful planning, reliable construction and quality craftsmanship to bring your dream home to life. </p>
@@ -123,9 +123,9 @@ function AboutLegacySection() {
 
           </div>
           <div className={"relative overflow-hidden rounded-3xl shadow-2xl"}>
-            <img alt={"Contemporary home built with considered architectural details"} className={"aspect-[4/3] w-full object-cover"} src={"/images/excellence.jpg"} />
+            <img alt={"Contemporary home built with considered architectural details"} className={"aspect-[4/3] w-full object-cover"} src={"/images/ab.jpeg"} />
             <div className={"absolute inset-0 bg-gradient-to-t from-[#08111f]/70 via-transparent to-transparent"}></div>
-            <p className={"absolute bottom-5 left-5 right-5 text-lg font-bold text-white sm:bottom-8 sm:left-8 sm:right-8 sm:text-2xl"}>Spaces shaped around the people who use them.</p>
+            {/* <p className={"absolute bottom-5 left-5 right-5 text-lg font-bold text-white sm:bottom-8 sm:left-8 sm:right-8 sm:text-2xl"}>Spaces shaped around the people who use them.</p> */}
           </div>
         </div>
       </div>
@@ -172,7 +172,7 @@ function AboutBlueprintSection() {
 function AboutPrestigiousProjectsSection() {
   const projectLogos = [
     { alt: "Partner 1", src: "/images/mah.png" },
-    { alt: "Partner 2", src: "/images/mgm.webp" },
+    { alt: "Partner 2", src: "/images/fan.png" },
     { alt: "Partner 3", src: "/images/clg.png" },
   ] as const;
 
@@ -216,10 +216,12 @@ function AboutPeopleSection() {
   const teamMembers = [
     { name: "Lokesh Raj", designation: "Founder & CEO", image: "/images/team/founder.png" },
     { name: "Boobalan G", designation: "Quantity Surveyor & CAD Engineer", image: "/images/team/t1.png" },
-    { name: "Vasanthakumar M", designation: "Supervisor", image: "/images/team/t2.png" },
-    { name: "Shanthapriya H", designation: "Front Office & Admin Executive", image: "/images/team/t3.png" },
-    { name: "Ravikumar S", designation: "Senior Site Engineer", image: "/images/team/t4.png" },
+        { name: "Ravikumar S", designation: "Senior Site Engineer", image: "/images/team/t4.png" },
     { name: "Prakash T", designation: "Site Engineer", image: "/images/team/t5.png" },
+
+        { name: "Shanthapriya H", designation: "Front Office & Admin Executive", image: "/images/team/t3.png" },
+
+    { name: "Vasanthakumar M", designation: "Supervisor", image: "/images/team/t2.png" },
   ] as const;
 
   return (
